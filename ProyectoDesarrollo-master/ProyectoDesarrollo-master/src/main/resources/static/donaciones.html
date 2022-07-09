@@ -1,52 +1,112 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
-    <head>
-        <title>Adopcion de Mascotas</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/index.css"/>
-    </head>
-    <body>
-        <div class="container">
-            <a class=" title"><h1><img src="images/Logo.png" width="50px" height="50px"></span>Peludos - Donaciones</h1></a>
-            <!--<h1>Peludos</h1>-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <html>
+        <head>
+            <title>Adopcion de Mascotas</title>
 
-            <nav>
+            <link rel="stylesheet" href="css/index.css"/>
+        </head>
+        <body>
+            <div class="container">
+                <a class=" title"><h1><img src="images/Logo.png" width="50px" height="50px"></span>Peludos - Donaciones</h1></a>
+                <!--<h1>Peludos</h1>-->
 
-                <ul class="menu">
+                <nav>
 
-                    <li ><a href="index.html">Inicio</a></li>
-                    <li ><a href="#">Animales en adopcion</a>
-                        <ul class="submenu">
-                            <li><a href="perros.html">Perros</a></li>
-                            <li><a href="gatos.html">Gatos</a></li>
-                        </ul>
-                    </li>
-                    <li ><a href="#">Servicios</a>
-                        <ul class="submenu">
-                            <li><a href="consejos.html">Consejos</a></li>
-                            <li><a href="Alimentos.html">Alimentos</a></li>
-                        </ul>
-                    </li>
-                    <li ><a href="contacto.html">Contactenos</a></li>
-                    <li ><a href="acercaDe.html">¿Quienes somos?</a></li>
-                    <li ><a href="donaciones.html">Donaciones</a></li>
-                    <li ><a href="login.html">Login</a></li>
-                </ul>
-            </nav>
-        </div>
-        <!--Textos-->
-        <div class="text">
-            <h1>Cualquier tipo de donacion que puedas hacernos, para poder seguir salvando vidas seran bien recibidas</h1>
-            <h2>¡Muchas gracias por el apoyo!</h2>
-        </div>
-        <!--Imagenes-->
-        <div class="money">
-            <img src="images/moneda.jpg" alt="Esto es una imagen de moneda">
-        </div>
-    </body>
-</html>
+                    <ul class="menu">
+
+                        <li ><a href="index.html">Inicio</a></li>
+                        <li ><a href="#">Animales en adopcion</a>
+                            <ul class="submenu">
+                                <li><a href="perros.html">Perros</a></li>
+                                <li><a href="gatos.html">Gatos</a></li>
+                            </ul>
+                        </li>
+                        <li ><a href="#">Servicios</a>
+                            <ul class="submenu">
+                                <li><a href="consejos.html">Consejos</a></li>
+                                <li><a href="Alimentos.html">Alimentos</a></li>
+                            </ul>
+                        </li>
+                        <li ><a href="contacto.html">Contactenos</a></li>
+                        <li ><a href="acercaDe.html">¿Quienes somos?</a></li>
+                        <li ><a href="donaciones.html">Donaciones</a></li>
+                        <li ><a href="login.html">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!--Textos-->
+            <div class="text">
+                <h1>Cualquier tipo de donacion que puedas hacernos, para poder seguir salvando vidas seran bien recibidas</h1>
+                <h2>¡Muchas gracias por el apoyo!</h2>
+            </div>
+            <div class="Container">
+
+                <div class="card-header bg-black text-white"> </div>
+                <div class="container">
+                    <form th:object ="${adopcion}"
+                          th:action ="@{/save}"
+                          method="POST" 
+                          >
+                        <input type="hidden" th:field="*{id}">
+
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Nombre_Tarjeta</label>
+                            <input type="text" th:field="*{nombre_tarjeta}" class="form-control" id="nombre_tarjeta" placeholder="Nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Apellido 1</label>
+                            <input type="text" th:field="*{codigo_seguridad}" class="form-control" id="codigo_seguridad" placeholder="Apeliido 1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Apellido 2</label>
+                            <input type="text" th:field="*{monto}"class="form-control" id="monto" placeholder="Apellido 2">
+                        </div>
+         
+                            </div> 
+                        </div>
+                        <input class="btn btn-primary" type="submit" value="Guardar Usuario">
+                    </form>
+                </div>
+            </div>
+
+
+        </body>
+    </html>
+    <!-- comment 
+            <div class="contar">
+                <form th:object ="${adopcion}"
+                      th:action ="@{/save}"
+                      method="POST" 
+                      >
+                        <input type="hidden" th:field="*{id}">
+                    <div class="contact_donacion">
+                        <div class="Donación">      
+                            <h1>Realizar donacion</h1>
+
+                            <p>
+                                <label for="numero_tarjeta" class="numero_tarjeta">numero_tarjeta
+                                    <span class="obligatorio">*</span>
+                                </label>
+                                <input type="text" name="numero_tarjeta" id="numero_tarjeta" required="obligatorio" placeholder="Digite número de tarjeta">
+                            </p>
+
+                            <p>
+                                <label for="codigo_seguridad" class="codigo_seguridad">codigo_seguridad
+                                    <span class="obligatorio">*</span>
+                                </label>
+                                <input type="text" name="codigo_seguridad" id="codigo_seguridad" required="obligatorio" placeholder="Digite número de seguridad de la tarjeta">
+                            </p>
+                            <p>
+                                <label for="monto" class="monto">monto
+                                    <span class="obligatorio">*</span>
+                                </label>
+                                <input type="text" name="monto" id="monto" required="obligatorio" placeholder="Ingrese el monto a donar">
+                            </p>
+                            <button type="submit" name="Inicio" id="enviar"><p>Realizar Donacion.</p></button>
+                        </div>  
+                    </div>
+                    
+                </form>
+            </div>
+    comment -->
