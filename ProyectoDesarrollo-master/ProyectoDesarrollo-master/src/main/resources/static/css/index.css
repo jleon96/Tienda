@@ -24,16 +24,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 
 
-.Donación {
-    width: 460px;
-    height: auto;
-    margin: 80px auto;
-    border-radius: 10px;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    background-color: #fbfbfb;
-    padding-left: 30px;
-}
+
 
 button{
     height: 45px;
@@ -117,6 +108,16 @@ nav{
     background-color: red;
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
+}
+
+.Formulario {
+    position: relative;
+    background-color: red;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    align-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .container h1{
