@@ -17,12 +17,12 @@ public class DonacionController {
     @Autowired
     private IDonacionService donacionService;
 
-    @GetMapping("/Consulta")
+    @GetMapping("leerdonaciones")
     public String Index(Model model) {
         List<Donacion> listaDonacion = donacionService.getAllDonacion();
         model.addAttribute("titulo", "Lista de Donaciones");
         model.addAttribute("donacion", listaDonacion);
-        return "Consulta";
+        return "leerdonaciones";
     }
 
     @GetMapping("donacionesN")
