@@ -34,7 +34,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </li>
                     <li ><a href="contacto.html">Contactenos</a></li>
                     <li ><a href="acercaDe.html">¿Quienes somos?</a></li>
-                    <li ><a href="donaciones.html">Donaciones</a></li>
+                    <li ><a href="/donacionesN">Donaciones</a></li>
                     <li ><a href="login.html">Login</a></li>
                 </ul>
             </nav>
@@ -53,19 +53,41 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </p>
 
                     <p>
+                        <label for="apellido1" class="colocar_apellido1">Apellido1
+                            <span class="obligatorio">*</span>
+                        </label>
+                        <input type="text" name="introducir_nombre" id="apellido1" required="obligatorio" placeholder="Primer Apellido">
+                    </p>
+
+                    <p>
+                        <label for="apellido2" class="colocar_apellido1">Apellido2
+                            <span class="obligatorio">*</span>
+                        </label>
+                        <input type="text" name="introducir_nombre" id="apellido2" required="obligatorio" placeholder="Segundo Apellido">
+                    </p>
+
+                    <p>
+                        <label for="telefono" class="colocar_telefono">Teléfono
+                        </label>
+                        <input type="tel" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
+                    </p>  
+
+                    <p>
                         <label for="email" class="colocar_email">Email
                             <span class="obligatorio">*</span>
                         </label>
                         <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Email">
                     </p>
 
-                    <p>
-                        <label for="telefone" class="colocar_telefono">Teléfono
-                        </label>
-                        <input type="tel" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
-                    </p>    
 
-                    <button type="submit" name="Inicio" id="enviar"><p>Inicio</p></button>
+                    <p>
+                        <label for="contraseña" class="colocar_contraseña">Contraseña
+                            <span class="obligatorio">*</span>
+                        </label>
+                        <input type="text" name="introducir_contraseña" id="contraseña" required="obligatorio" placeholder="Ingresar contraseña">
+                    </p>
+
+                    <button type="submit" name="Inicio" id="enviar"><p>Guardar usuario.</p></button>
 
                     <p class="aviso">
                         <span class="obligatorio"> * </span>los campos son obligatorios.
