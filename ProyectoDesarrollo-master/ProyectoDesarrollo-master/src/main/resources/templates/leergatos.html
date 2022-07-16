@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <html> 
+        <head>
+            <title>Adopcion de Mascotas</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="css/index.css"/>
+
+        </head>
+        <body>
+            <div class="container">
+                <a class=" title"><h1><img src="images/logopata.png" width="50px" height="50px"></span>Peludos - Gatos</h1></a>
+                <!--<h1>Peludos</h1>-->
+
+                <nav>
+
+                    <ul class="menu">
+
+                        <li ><a href="index.html">Inicio</a></li>
+                        <li ><a href="#">Animales en adopcion</a>
+                            <ul class="submenu">
+                                <li><a href="perros.html">Perros</a></li>
+                                <li><a href="gatos.html">Gatos</a></li>
+                            </ul>
+                        </li>
+                        <li ><a href="#">Servicios</a>
+                            <ul class="submenu">
+                                <li><a href="consejos.html">Consejos</a></li>
+                                <li><a href="Alimentos.html">Alimentos</a></li>
+                            </ul>
+                        </li>
+                        <li ><a href="contacto.html">Contactenos</a></li>
+                        <li ><a href="acercaDe.html">¿Quienes somos?</a></li>
+                        <li ><a href="/donacionesN">Donaciones</a></li>
+                        <li ><a href="login.html">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!--Imagenes-->
+
+            <!--Textos-->
+            <div class="text">
+                <h1>Sitio para encontrar distintos gatos en adopcion</h1>
+            </div>
+            <div class="Container">
+                <h1 th:text="${titulo}"></h1>
+                <table class="table table-dark table-striped"> <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Raza</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Genero</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Eliminar</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="user : ${gatos}">
+                        <tr>
+                            <td th:text="${user.getRaza}"></td>
+                            <td th:text="${user.getNombre}"></td>
+                            <td th:text="${user.getEdad}"></td>
+                            <td th:text="${user.getGenero}"></td>
+                            <td th:text="${user.getDescripcion}"></td>
+                            <td th:text="${user.getEstado}"></td>
+                            <td>
+                                <a th:href="@{/EditarGato/{idGato}(idGato=${user.getIdGato})}">Edit</a>
+                            </td>
+                            <td>
+                                <a th:href="@{/delete/{idGato}(idGato=${user.getIdGato})}">Delete</a>
+                            </td>
+
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>
+            </div>
+
+        </body>
+    </html>

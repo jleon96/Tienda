@@ -1,1 +1,17 @@
+com\AdopcionMascotas\Controller\GatoController.class
+com\AdopcionMascotas\Repository\DonacionRepository.class
+com\AdopcionMascotas\Repository\PerroRepository.class
+com\AdopcionMascotas\Repository\GatoRepository.class
+com\AdopcionMascotas\Entity\Donacion.class
+com\AdopcionMascotas\Entity\Perro.class
+com\AdopcionMascotas\Service\IGatoService.class
+com\AdopcionMascotas\Service\IDonacionService.class
+com\AdopcionMascotas\Service\IPerroService.class
+com\AdopcionMascotas\Controller\DonacionController.class
+com\AdopcionMascotas\Service\GatoService.class
 com\AdopcionMascotas\DemoApplication.class
+com\AdopcionMascotas\Service\DonacionService.class
+com\AdopcionMascotas\Service\PerroService.class
+com\AdopcionMascotas\Entity\Gato.class
+com\AdopcionMascotas\Controller\PerroController.class
+com\AdopcionMascotas\Entity\Usuario.class

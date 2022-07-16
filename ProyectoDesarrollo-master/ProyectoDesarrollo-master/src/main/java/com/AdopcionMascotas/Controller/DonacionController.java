@@ -37,16 +37,5 @@ public class DonacionController {
         return "redirect:/index.html";
     }
 
-    @GetMapping("/EditarDonacion/{id}")
-    public String EditarDonacion(@PathVariable("id") Long idDonacion, Model model) {
-        Donacion D = donacionService.getDonacionById(idDonacion);
-        model.addAttribute("donacion", D);
-        return "Agregar";
-    }
-
-    @GetMapping("/delete/{id}")
-    public String EliminarDonacion(Donacion D) {
-        donacionService.delete(D.getId());
-        return "redirect:/index";
-    }
+    
 }
