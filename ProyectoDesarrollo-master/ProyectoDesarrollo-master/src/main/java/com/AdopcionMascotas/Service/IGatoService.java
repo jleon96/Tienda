@@ -9,7 +9,7 @@ public interface IGatoService {
 
     public void saveGato(Gato G);
 
-    public void delete(long idGato);
+    public void EliminarGato(long ID);
 
-    public Gato getGatoById(long idGato);
+    public Gato getGatoById(long ID);
 }

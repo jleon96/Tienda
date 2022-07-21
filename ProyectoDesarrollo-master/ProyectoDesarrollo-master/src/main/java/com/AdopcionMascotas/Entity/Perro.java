@@ -15,68 +15,70 @@ public class Perro implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private long idPerro;
-    private String raza;
-    private String nombre;
-    private String edad;
-    private String genero;
-    private String descripcion;
-    private String estado;
+    private long ID;
+    private String Nombre;
+    private String Raza;
+    private String Edad;
+    private String Genero;
+    private String Descripcion;
+    private String Estado;
 
-    public long getIdPerro() {
-        return idPerro;
+    public long getID() {
+        return ID;
     }
 
-    public void setIdPerro(long idPerro) {
-        this.idPerro = idPerro;
-    }
-
-    public String getRaza() {
-        return raza;
-    }
-
-    public void setRaza(String raza) {
-        this.raza = raza;
+    public void setID(long ID) {
+        this.ID = ID;
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public String getRaza() {
+        return Raza;
+    }
+
+    public void setRaza(String Raza) {
+        this.Raza = Raza;
     }
 
     public String getEdad() {
-        return edad;
+        return Edad;
     }
 
-    public void setEdad(String edad) {
-        this.edad = edad;
+    public void setEdad(String Edad) {
+        this.Edad = Edad;
     }
 
     public String getGenero() {
-        return genero;
+        return Genero;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setGenero(String Genero) {
+        this.Genero = Genero;
     }
 
     public String getDescripcion() {
-        return descripcion;
+        return Descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescripcion(String Descripcion) {
+        this.Descripcion = Descripcion;
     }
 
     public String getEstado() {
-        return estado;
+        return Estado;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
     }
+
+ 
 
 }

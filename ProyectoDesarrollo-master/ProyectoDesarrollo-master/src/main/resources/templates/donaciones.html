@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <html>
-      
-    <head th:replace="plantilla/plantilla::head"></head>
-     
-
-
-
+        <head>
+            <title>Adopcion de Mascotas</title>
+            <link rel="stylesheet" href="css/index.css"/>
+        </head>
         <body>
-           
-                <header th:replace="plantilla/plantilla::header"></header>
-      
+            <div class="container">
+                <a class=" title"><h1><img src="images/Logo.png" width="50px" height="50px"></span>Adopta Un Amigo</h1></a>
+                <!--<h1>Adopta un amigo</h1>-->
+
+                <nav>
+
+                    <ul class="menu">
+
+                        <li ><a href="index.html">Inicio</a></li>
+                        <li ><a href="#">Animales en adopcion</a>
+                            <ul class="submenu">
+                                <li><a href="perros.html">Perros</a></li>
+                                <li><a href="gatos.html">Gatos</a></li>
+                            </ul>
+                        </li>
+                        <li ><a href="#">Servicios</a>
+                            <ul class="submenu">
+                                <li><a href="consejos.html">Consejos</a></li>
+                                <li><a href="Alimentos.html">Alimentos</a></li>
+                            </ul>
+                        </li>
+                        <li ><a href="contacto.html">Contactenos</a></li>
+                        <li ><a href="acercaDe.html">Quienes somos?</a></li>
+                        <li ><a href="/donacionesN">Donaciones</a></li>
+                        <li ><a href="login.html">Login</a></li>                  
+                    </ul>
+                </nav>
+            </div>
+
             <!--Textos-->
             <div class="text">
                 <h1>Cualquier tipo de donacion sera de gran ayuda, para poder seguir salvando vidas seran bien recibidas</h1>
@@ -42,8 +66,6 @@
                     </form>
                 </div>
             </div>
-
-
             <footer th:replace="plantilla/plantilla::footer"></footer>
         </body>
     </html>

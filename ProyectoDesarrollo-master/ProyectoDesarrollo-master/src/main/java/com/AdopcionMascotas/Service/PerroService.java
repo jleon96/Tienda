@@ -23,13 +23,13 @@ public class PerroService implements IPerroService {
     }
 
     @Override
-    public void delete(long idPerro) {
-        perroRepository.deleteById(idPerro);
+    public void EliminarPerro(long ID) {
+        perroRepository.deleteById(ID);
     }
 
     @Override
-    public Perro getPerroById(long idPerro) {
-        return perroRepository.findById(idPerro).orElse(null);
+    public Perro getPerroById(long ID) {
+        return perroRepository.findById(ID).orElse(null);
     }
 
 }

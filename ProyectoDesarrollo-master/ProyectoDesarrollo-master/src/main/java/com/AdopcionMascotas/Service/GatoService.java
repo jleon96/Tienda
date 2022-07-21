@@ -23,12 +23,12 @@ public class GatoService implements IGatoService {
     }
 
     @Override
-    public void delete(long idGato) {
-        gatoRepository.deleteById(idGato);
+    public void EliminarGato(long ID) {
+        gatoRepository.deleteById(ID);
     }
 
     @Override
-    public Gato getGatoById(long idGato) {
-        return gatoRepository.findById(idGato).orElse(null);
+    public Gato getGatoById(long IDGato) {
+        return gatoRepository.findById(IDGato).orElse(null);
     }
 }

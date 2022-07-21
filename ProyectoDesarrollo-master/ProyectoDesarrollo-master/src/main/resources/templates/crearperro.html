@@ -1,0 +1,49 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+    <head th:replace="plantilla/plantilla::head"></head>
+    <body>
+
+    </head>
+    <div class="Container">
+
+        <div class="card-header bg-black text-white"> </div>
+        <div class="container">
+            <form th:object ="${perros}"
+                  th:action ="@{/saveP}"
+                  method="POST" 
+                  >
+                <input type="hidden" th:field="*{ID}">
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                    <input type="text" th:field="*{Nombre}" class="form-control" id="Nombre" placeholder="Nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Raza</label>
+                    <input type="text" th:field="*{Raza}" class="form-control" id="Raza" placeholder="Raza">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Edad</label>
+                    <input type="text" th:field="*{Edad}"class="form-control" id="Edad" placeholder="Edad">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Genero</label>
+                    <input type="text" th:field="*{Genero}"class="form-control" id="Genero" placeholder="Género">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Descripcion</label>
+                    <input type="text" th:field="*{Descripcion}"class="form-control" id="Descripcion" placeholder="Descripción">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Estado</label>
+                    <input type="text" th:field="*{Estado}"class="form-control" id="Estado" placeholder="Estado">
+                </div>
+                <input class="btn btn-primary"  type="submit" value="Guardar Perro">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+

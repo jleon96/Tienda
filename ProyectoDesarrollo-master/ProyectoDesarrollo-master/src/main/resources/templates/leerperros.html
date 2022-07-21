@@ -1,80 +1,59 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <html>
 
-        <head>
-            <title>Adopcion de Mascotas</title>
+    <head>
+        <title>Adopcion de Mascotas</title>
 
-            <link rel="stylesheet" href="css/index.css"/>
-        </head>
-        <body>
-            <div class="container">
-                <a class=" title"><h1><img src="images/logopata.png" width="50px" height="50px"></span>Peludos - Perros</h1></a>
-                <!--<h1>Peludos</h1>-->
+    <head th:replace="plantilla/plantilla::head"></head>
 
-                <nav>
+</head>
+<body>
+    <header th:replace="plantilla/plantilla::header"></header>
 
-                    <ul class="menu">
+    <div class="descripcion" align-items="center">
+        <h1>Sitio para encontrar distintos perros en adopcion!</h1>
+    </div>
 
-                        <li ><a href="index.html">Inicio</a></li>
-                        <li ><a href="#">Animales en adopcion</a>
-                            <ul class="submenu">
-                                <li><a href="perros.html">Perros</a></li>
-                                <li><a href="gatos.html">Gatos</a></li>
-                            </ul>
-                        </li>
-                        <li ><a href="#">Servicios</a>
-                            <ul class="submenu">
-                                <li><a href="consejos.html">Consejos</a></li>
-                                <li><a href="alimentos.html">Alimentos</a></li>
-                            </ul>
-                        </li>
-                        <li ><a href="contacto.html">Contactenos</a></li>
-                        <li ><a href="acercaDe.html">¿Quienes somos?</a></li>
-                        <li ><a href="/donacionesN">Donaciones</a></li>
-                        <li ><a href="login.html">Login</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <!--Textos-->
-            <div class="text">
-                <h1>Sitio para encontrar distintos perros en adopcion!</h1>
-            </div>
+    <div class="container">
+        <h1 th:text="${titulo}"></h1>
+        <table class="table table-dark table-striped"> 
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Raza</th>
+                    <th scope="col">Género</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Editar </th>
+                    <th scope="col">Eliminar </th>
+                </tr>
+            </thead>
 
-            <div class="Container">
-                <h1 th:text="${titulo}"></h1>
-                <table class="table table-dark table-striped"> <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Raza</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Edad</th>
-                            <th scope="col">Genero</th>
-                            <th scope="col">Descripcion</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Eliminar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <th:block th:each="user : ${perros}">
-                        <tr>
-                            <td th:text="${user.getRaza}"></td>
-                            <td th:text="${user.getNombre}"></td>
-                            <td th:text="${user.getEdad}"></td>
-                            <td th:text="${user.getGenero}"></td>
-                            <td th:text="${user.getDescripcion}"></td>
-                            <td th:text="${user.getEstado}"></td>
-                            <td>
-                                <a th:href="@{/EditarPerro/{idPerro}(idPerro=${user.getIdPerro})}">Edit</a>
-                            </td>
-                            <td>
-                                <a th:href="@{/delete/{idPerro}(idPerro=${user.getIdPerro})}">Delete</a>
-                            </td>
-                        </tr>
-                    </th:block>
-                    </tbody>
-                </table>
-            </div>
+            <tbody>
 
-        </body>
-    </html>
+            <th:block th:each="user : ${perros}">
+                <tr>
+                    <td th:text="${user.getNombre}"></td>
+                    <td th:text="${user.getRaza}"></td>
+                    <td th:text="${user.getGenero}"></td>
+                    <td th:text="${user.getEdad}"></td>
+                    <td th:text="${user.getEstado}"></td>
+                    <td th:text="${user.getDescripcion}"></td>
+                    <td>
+                        <a th:href="@{/EditarPerro/{ID}(ID=${user.getID})}">Edit</a>
+                    </td>
+                    <td>
+                        <a th:href="@{/EliminarPerro/{ID}(ID=${user.getID})}">Delete</a>
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+        <button>
+            <a href="/crearperroN">Crear nuevo dato</a>
+        </button>
+    </div>
+</body>
+</html>
+

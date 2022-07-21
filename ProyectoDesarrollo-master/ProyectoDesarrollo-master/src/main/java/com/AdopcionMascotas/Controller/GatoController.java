@@ -17,7 +17,7 @@ public class GatoController {
     @Autowired
     private IGatoService gatoService;
 
-    @GetMapping("leergatos")
+    @GetMapping("/leergatos")
     public String Index(Model model) {
         List<Gato> listaGato = gatoService.getAllGato();
         model.addAttribute("titulo", "Lista de Gatos");
@@ -25,27 +25,27 @@ public class GatoController {
         return "leergatos";
     }
 
-    @GetMapping("gatosN")
+    @GetMapping("creargatoN")
     public String CrearGato(Model model) {
         model.addAttribute("gatos", new Gato());
-        return "leergatos";
+        return "creargato";
     }
 
-//    @PostMapping("/save")
-//    public String GuardarGato(@ModelAttribute Gato G) {
-//        gatoService.saveGato(G);
-//        return "redirect:/index.html";
-//    }
-    @GetMapping("/EditarGato/{idGato}")
-    public String EditarGato(@PathVariable("idGato") Long idGato, Model model) {
-        Gato G = gatoService.getGatoById(idGato);
+    @PostMapping("/saveG")
+    public String GuardarGato(@ModelAttribute Gato G) {
+        gatoService.saveGato(G);
+        return "redirect:/leergatos";
+    }
+    @GetMapping("/EditarGato/{ID}")
+    public String EditarGato(@PathVariable("ID") Long IDGato, Model model) {
+        Gato G = gatoService.getGatoById(IDGato);
         model.addAttribute("gatos", G);
-        return "leergatos";
+        return "/creargato";
     }
 
-    @GetMapping("/delete/{idGato}")
+    @GetMapping("/EliminarGato/{ID}")
     public String EliminarGato(Gato G) {
-        gatoService.delete(G.getIdGato());
+        gatoService.EliminarGato(G.getID());
         return "redirect:/leergatos";
     }
 }

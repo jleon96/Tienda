@@ -17,7 +17,7 @@ public class PerroController {
     @Autowired
     private IPerroService perroService;
 
-    @GetMapping("leerperros")
+    @GetMapping("/leerperros")
     public String Index(Model model) {
         List<Perro> listaPerro = perroService.getAllPerro();
         model.addAttribute("titulo", "Lista de Perros");
@@ -25,28 +25,28 @@ public class PerroController {
         return "leerperros";
     }
 
-    @GetMapping("perrosN")
+    @GetMapping("crearperroN")
     public String CrearPerro(Model model) {
         model.addAttribute("perros", new Perro());
-        return "leerperros";
+        return "crearperro";
     }
 
-//    @PostMapping("/save")
-//    public String GuardarPerro(@ModelAttribute Perro P) {
-//        perroService.savePerro(P);
-//        return "redirect:/index.html";
-//    }
+    @PostMapping("/saveP")
+    public String GuardarPerro(@ModelAttribute Perro P) {
+        perroService.savePerro(P);
+        return "redirect:/leerperros";
+    }
 
-    @GetMapping("/EditarPerro/{idPerro}")
-    public String EditarPerro(@PathVariable("idPerro") Long idPerro, Model model) {
-        Perro P = perroService.getPerroById(idPerro);
+    @GetMapping("/EditarPerro/{ID}")
+    public String EditarPerro(@PathVariable("ID") Long IDPerro, Model model) {
+        Perro P = perroService.getPerroById(IDPerro);
         model.addAttribute("perros", P);
-        return "leerperros";
+        return "crearperro";
     }
-//
-//    @GetMapping("/delete/{idPerro}")
-//    public String EliminarPerro(Perro P) {
-//        perroService.delete(P.getIdPerro());
-//        return "redirect:/index";
-//    }
+
+    @GetMapping("/EliminarPerro/{ID}")
+    public String EliminarPerro(Perro P) {
+        perroService.EliminarPerro(P.getID());
+        return "redirect:/leerperros";
+    }
 }

@@ -9,8 +9,8 @@ public interface IPerroService {
 
     public void savePerro(Perro P);
 
-    public void delete(long idPerro);
+    public void EliminarPerro(long ID);
 
-    public Perro getPerroById(long idPerro);
+    public Perro getPerroById(long ID);
 
 }
