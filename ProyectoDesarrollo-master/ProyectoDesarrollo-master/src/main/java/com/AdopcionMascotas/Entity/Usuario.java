@@ -18,6 +18,7 @@ public class Usuario implements Serializable {
     private String Nombre;
     private String Apellido1;
     private String Apellido2;
+    private String UserName;
     private int Telefono;
     private String Email;
     private String Contraseña;
@@ -52,6 +53,14 @@ public class Usuario implements Serializable {
 
     public void setApellido2(String Apellido2) {
         this.Apellido2 = Apellido2;
+    }
+
+    public String getUserName() {
+        return UserName;
+    }
+
+    public void setUserName(String UserName) {
+        this.UserName = UserName;
     }
 
     public int getTelefono() {
