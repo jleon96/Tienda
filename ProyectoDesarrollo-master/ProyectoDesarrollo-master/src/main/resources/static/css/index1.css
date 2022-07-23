@@ -33,8 +33,8 @@ button{
     margin-bottom: 20px;
     margin-top: 10px;
     text-transform: uppercase;
-    background-color: #ab4493;
-    border-color: #ab4493;
+    background-color: blue;
+    border-color: black;
     border-style: solid;
     border-radius: 10px;
     width: 420px;
@@ -103,16 +103,23 @@ nav{
 
 /*FIN DE MENU DE NAVEGACION.*/
 .container{
-
     position: relative;
     background-color: red;
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
 }
 
+.descripcion{
+    position: relative;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+}
 .Formulario {
     position: relative;
-    background-color: white;
+    background-color: red;
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
     align-content: center;
@@ -305,14 +312,4 @@ p{
 .formulario textarea:focus{
     outline:0;
     border: 1px solid #97d848;
-}
-
-
-
-.newUser{
-      text-decoration: none;
-    margin-top: 10px;
-    color: black;
-    text-align: center;
-  
 }

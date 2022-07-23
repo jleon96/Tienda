@@ -39,18 +39,47 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </ul>
             </nav>
         </div>
-
+ <!-- Inicia Formulario para creacion de un nuevo usuario -->
         <div class="contact_form">
             <div class="formulario">      
-                <h1>Iniciar sesion</h1>
+                <h1>Nuevo Usuario</h1>
                 <form action="submeter-formulario.php" method="post">       
 
                     <p>
-                        <label for="nombre" class="colocar_nombre">Usuario
+                        <label for="nombre" class="colocar_nombre">Nombre
                             <span class="obligatorio">*</span>
                         </label>
                         <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Escribe tu nombre">
                     </p>
+
+                    <p>
+                        <label for="apellido1" class="colocar_apellido1">Apellido1
+                            <span class="obligatorio">*</span>
+                        </label>
+                        <input type="text" name="introducir_nombre" id="apellido1" required="obligatorio" placeholder="Primer Apellido">
+                    </p>
+
+                    <p>
+                        <label for="apellido2" class="colocar_apellido1">Apellido2
+                            <span class="obligatorio">*</span>
+                        </label>
+                        <input type="text" name="introducir_nombre" id="apellido2" required="obligatorio" placeholder="Segundo Apellido">
+                    </p>
+
+                    <p>
+                        <label for="telefono" class="colocar_telefono">Teléfono
+                        </label>
+                        <input type="tel" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
+                    </p>  
+
+                    <p>
+                        <label for="email" class="colocar_email">Email
+                            <span class="obligatorio">*</span>
+                        </label>
+                        <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Email">
+                    </p>
+
+
                     <p>
                         <label for="contraseña" class="colocar_contraseña">Contraseña
                             <span class="obligatorio">*</span>
@@ -58,17 +87,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <input type="password" name="introducir_contraseña" id="contraseña" required="obligatorio" placeholder="Ingresar contraseña">
                     </p>
 
-                    <button type="submit" name="Inicio" id="enviar"><p>Ingresar</p></button>
+                    <button type="submit" name="Inicio" id="enviar"><p>Guardar usuario.</p></button>
 
                     <p class="aviso">
                         <span class="obligatorio"> * </span>los campos son obligatorios.
-                    </p>      
-                    <div class="newUser">
-                       <a href="nuevoUsuario.html">Crear nuevo Usuario</a>
-                       <a href="templates/nuevoUsuario.html"></a>
-                    </div>
+                    </p>          
                 </form>
             </div>  
         </div>
+        <!-- fin formulario -->
     </body>
 </html>
