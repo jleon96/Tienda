@@ -18,9 +18,10 @@ public class Usuario implements Serializable {
     private String Nombre;
     private String Apellido1;
     private String Apellido2;
+    private String UserName;
     private int Telefono;
     private String Email;
-    private String Contraseña;
+    private String password;
 
     public long getID() {
         return ID;
@@ -54,6 +55,14 @@ public class Usuario implements Serializable {
         this.Apellido2 = Apellido2;
     }
 
+    public String getUserName() {
+        return UserName;
+    }
+
+    public void setUserName(String UserName) {
+        this.UserName = UserName;
+    }
+
     public int getTelefono() {
         return Telefono;
     }
@@ -70,12 +79,14 @@ public class Usuario implements Serializable {
         this.Email = Email;
     }
 
-    public String getContraseña() {
-        return Contraseña;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContraseña(String Contraseña) {
-        this.Contraseña = Contraseña;
+    public void setPassword(String password) {
+        this.password = password;
     }
+
+
 
 }

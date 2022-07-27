@@ -3,7 +3,7 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Adopcion de Mascotas</title>
         <meta charset="UTF-8">
@@ -64,7 +64,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <span class="obligatorio"> * </span>los campos son obligatorios.
                     </p>      
                     <div class="newUser">
-                        <a href="nuevoUsuario.html">Crear nuevo Usuario</a>
+                        <a th:href="@{/nuevoUsuario/}">Crear nuevo Usuario</a>
+                        
+                        
+                        
                         <a href="templates/nuevoUsuario.html"></a>
                     </div>
                 </form>

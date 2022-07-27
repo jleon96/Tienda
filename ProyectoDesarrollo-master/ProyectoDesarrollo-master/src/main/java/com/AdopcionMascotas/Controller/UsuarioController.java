@@ -25,7 +25,7 @@ public class UsuarioController {
         return "leerusuarios";
     }
 
-    @GetMapping("")
+    @GetMapping("/nuevoUsuario")
     public String CrearUsuario(Model model) {
         model.addAttribute("usuario", new Usuario());
         return "nuevoUsuario";
@@ -35,7 +35,7 @@ public class UsuarioController {
     @PostMapping("/saveU")
     public String GuardarUsuario(@ModelAttribute Usuario U) {
         usuarioService.saveUsuario(U);
-        return "redirect:/login.html";
+        return "redirect:/login";
     }
 
     @GetMapping("/EditarUsuario/{ID}")

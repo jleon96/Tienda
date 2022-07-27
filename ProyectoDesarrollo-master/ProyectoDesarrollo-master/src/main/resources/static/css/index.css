@@ -1,11 +1,4 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 1 jun. 2022, 22:15:28
-    Author     : xLyonCR
-*/
+
 
 * {
     margin: 0;
@@ -54,8 +47,11 @@ nav{
     margin: auto;
     background-color: red;
     font-size: 20px;
-    margin-top: 0;
+  
 
+}
+header{
+    margin-top: 0;
 }
 
 .menu{
@@ -102,6 +98,9 @@ nav{
 }
 
 /*FIN DE MENU DE NAVEGACION.*/
+
+
+
 .container{
 
     position: relative;
@@ -194,10 +193,7 @@ nav{
     background-color: lightgoldenrodyellow;
 }
 
-.footer {
-    text-align: center;
-    margin-top: 50px;
-}
+
 
 /*ESTILO CONTACTO*/
 .contact_form{
@@ -310,9 +306,9 @@ p{
 
 
 .newUser{
-      text-decoration: none;
+    text-decoration: none;
     margin-top: 10px;
     color: black;
     text-align: center;
-  
+
 }

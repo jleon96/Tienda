@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 
 
-    <head th:replace="plantilla/plantilla::head"></head>
+    <head th:replace="plantilla/template::head"></head>
 
 
 
@@ -10,7 +10,7 @@
     <body>
 
 
-        <header th:replace="plantilla/plantilla::header"></header>
+        <header th:replace="plantilla/template::header"></header>
 
         <!--Textos-->
         <div>
@@ -47,6 +47,7 @@
         </div>
 
 
-        <footer th:replace="plantilla/plantilla::footer"></footer>
+        <footer th:replace="plantilla/template::footer">  
+        </footer>
     </body>
 </html>
