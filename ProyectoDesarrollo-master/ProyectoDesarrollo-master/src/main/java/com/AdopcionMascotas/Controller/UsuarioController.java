@@ -1,6 +1,5 @@
 package com.AdopcionMascotas.Controller;
 
-
 import com.AdopcionMascotas.Entity.Usuario;
 import com.AdopcionMascotas.Service.IUsuarioService;
 import java.util.List;
@@ -26,17 +25,19 @@ public class UsuarioController {
         return "leerusuarios";
     }
 
-//    @GetMapping("crearusuarioN")
-//    public String CrearUsuario(Model model) {
-//        model.addAttribute("usuario", new Usuario());
-//        return "crearusuario";
-//    }
+    @GetMapping("")
+    public String CrearUsuario(Model model) {
+        model.addAttribute("usuario", new Usuario());
+        return "nuevoUsuario";
+    }
 //
-//    @PostMapping("/saveU")
-//    public String GuardarUsuario(@ModelAttribute Usuario U) {
-//        usuarioService.saveUsuario(U);
-//        return "redirect:/";
-//    }
+
+    @PostMapping("/saveU")
+    public String GuardarUsuario(@ModelAttribute Usuario U) {
+        usuarioService.saveUsuario(U);
+        return "redirect:/login.html";
+    }
+
     @GetMapping("/EditarUsuario/{ID}")
     public String EditarUsuario(@PathVariable("ID") Long IDUsuario, Model model) {
         Usuario U = usuarioService.getUsuarioById(IDUsuario);

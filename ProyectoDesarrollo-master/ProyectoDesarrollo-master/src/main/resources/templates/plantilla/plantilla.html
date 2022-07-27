@@ -49,7 +49,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <footer th:fragment="footer" class="footer">
         <div class="text-center p-3 border-top border-white bg-black">
             © 2022 Copyright: Desarrollo 
-            
+            <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+               th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>  
+            <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+               th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
         </div>
         
     </footer>
