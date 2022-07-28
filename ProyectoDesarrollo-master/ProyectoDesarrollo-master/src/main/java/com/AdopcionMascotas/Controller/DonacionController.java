@@ -31,7 +31,7 @@ public class DonacionController {
         return "donaciones";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/saveD")
     public String GuardarDonacion(@ModelAttribute Donacion D) {
         donacionService.saveDonacion(D);
         return "redirect:/index.html";

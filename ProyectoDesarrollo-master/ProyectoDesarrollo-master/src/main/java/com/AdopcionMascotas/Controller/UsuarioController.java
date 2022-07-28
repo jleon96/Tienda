@@ -17,6 +17,7 @@ public class UsuarioController {
     @Autowired
     private IUsuarioService usuarioService;
 
+    /*Metodo para leer los usuario*/
     @GetMapping("/leerusuarios")
     public String Index(Model model) {
         List<Usuario> listaUsuario = usuarioService.getAllUsuario();
@@ -25,19 +26,20 @@ public class UsuarioController {
         return "leerusuarios";
     }
 
-    @GetMapping("/nuevoUsuario")
-    public String CrearUsuario(Model model) {
-        model.addAttribute("usuario", new Usuario());
+    /*Metodo para crear una persona*/
+    @GetMapping("/usuarioN")
+    public String crearUsuario(Model model) {
+        model.addAttribute("Usuario", new Usuario());
         return "nuevoUsuario";
     }
-//
 
-    @PostMapping("/saveU")
-    public String GuardarUsuario(@ModelAttribute Usuario U) {
+    @PostMapping("/save")
+    public String guardarUsuario(@ModelAttribute Usuario U) {
         usuarioService.saveUsuario(U);
-        return "redirect:/login";
+        return "redirect:/login.html";
     }
 
+    /*Metodo para editar un usuario*/
     @GetMapping("/EditarUsuario/{ID}")
     public String EditarUsuario(@PathVariable("ID") Long IDUsuario, Model model) {
         Usuario U = usuarioService.getUsuarioById(IDUsuario);
@@ -45,6 +47,7 @@ public class UsuarioController {
         return "/crearusuario";
     }
 
+    /*Metodo para eliminar un usuario*/
     @GetMapping("/EliminarUsuario/{ID}")
     public String EliminarUsuario(Usuario U) {
         usuarioService.EliminarUsuario(U.getID());
