@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Adopcion de Mascotas</title>
@@ -43,7 +39,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <div class="contact_form">
             <div class="formulario">      
                 <h1>Iniciar sesion</h1>
-                <form action="submeter-formulario.php" method="post">       
+               
 
                     <p>
                         <label for="nombre" class="colocar_nombre">Usuario
@@ -64,7 +60,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <span class="obligatorio"> * </span>los campos son obligatorios.
                     </p>      
                     <div class="newUser">                     
-                        <a th:href="@{/usuarioN}"">Crear nuevo Usuario</a>                      
+                        <a href="/usuarioN"">Crear nuevo Usuario</a>   
+                   
                     </div>
                 </form>
             </div>  
