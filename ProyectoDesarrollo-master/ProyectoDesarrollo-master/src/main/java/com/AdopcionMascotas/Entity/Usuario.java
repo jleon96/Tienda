@@ -1,6 +1,9 @@
 package com.AdopcionMascotas.Entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,9 +24,8 @@ public class Usuario implements Serializable {
     private String username;
     private int Telefono;
     private String Email;
+
     private String password;
-    
-      
     private int active;
     private String roles = "";
     private String permisos = "";
@@ -108,6 +110,20 @@ public class Usuario implements Serializable {
         this.permisos = permisos;
     }
 
+    public List<String> getRoleList() {
+        if (this.roles.length() > 0) {
+            return Arrays.asList(this.permisos.split(","));
+        }
+        return new ArrayList<>();
+    }
+
+    public List<String> getPermisosList() {
+        if (this.permisos.length() > 0) {
+            return Arrays.asList(this.permisos.split(","));
+        }
+        return new ArrayList<>();
+    }
+
     public String getUsername() {
         return username;
     }
@@ -115,7 +131,5 @@ public class Usuario implements Serializable {
     public void setUsername(String username) {
         this.username = username;
     }
-
-
 
 }

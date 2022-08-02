@@ -31,4 +31,9 @@ public class UsuarioService implements IUsuarioService {
     public Usuario getUsuarioById(long IDUsuario) {
         return usuarioRepository.findById(IDUsuario).orElse(null);
     }
+
+    @Override
+    public Usuario findByNombre(String nombre) {
+        return usuarioRepository.findByNombre(nombre);
+    }
 }

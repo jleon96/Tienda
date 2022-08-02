@@ -13,4 +13,6 @@ public interface IUsuarioService {
 
     public Usuario getUsuarioById(long ID);
 
+    public Usuario findByNombre(String nombre);
+
 }

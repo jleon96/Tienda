@@ -14,7 +14,7 @@
     <name>Adopcion_Mascotas</name>
     <description>Proyecto de Desarrollo Web</description>
     <properties>
-        <java.version>18</java.version>
+        <java.version>16</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -89,6 +89,11 @@
             <artifactId>spring-web</artifactId>
             <version>5.3.21</version>
             <type>jar</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
     </dependencies>
 
