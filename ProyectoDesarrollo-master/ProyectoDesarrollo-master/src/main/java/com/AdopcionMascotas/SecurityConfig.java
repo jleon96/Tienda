@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public UserService getUserService() {
         return new UserService();
     }
-    
+
     @Bean
     DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public SecurityConfig(UserService userPrincipalDetailsService) {
         this.userDetailsService = userPrincipalDetailsService;
     }
-    
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) {
         auth.authenticationProvider(authenticationProvider());
@@ -55,13 +55,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/persona", "/login")
+                .antMatchers("/leerusuarios", "/login")
                 .hasRole("ADMIN")
-                .antMatchers("/personasN", "/persona", "/", "/login")
-                .hasAnyRole("USER","ADMIN")
+                .antMatchers("/usuarioN", "/leerusuarios", "/", "/login")
+                .hasAnyRole("USER", "ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login").permitAll().defaultSuccessUrl("/persona", true);
+                .loginPage("/login").permitAll().defaultSuccessUrl("/leerusuarios", true);
     }
 }

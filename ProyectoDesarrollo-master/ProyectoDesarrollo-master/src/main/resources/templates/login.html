@@ -1,70 +1,36 @@
 <!DOCTYPE html>
-
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Adopcion de Mascotas</title>
-        <link rel="stylesheet" href="css/index.css"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     </head>
     <body>
-        <div class="container">
-            <a class=" title"><h1><img src="images/logopata.png" width="50px" height="50px"></span>Peludos</h1></a>
-            <!--<h1>Peludos</h1>-->
-
-            <nav>
-
-                <ul class="menu">
-
-                    <li ><a href="index.html">Inicio</a></li>
-                    <li ><a href="#">Animales en adopcion</a>
-                        <ul class="submenu">
-                            <li><a href="perros.html">Perros</a></li>
-                            <li><a href="gatos.html">Gatos</a></li>
-                        </ul>
-                    </li>
-                    <li ><a href="#">Servicios</a>
-                        <ul class="submenu">
-                            <li><a href="consejos.html">Consejos</a></li>
-                            <li><a href="Alimentos.html">Alimentos</a></li>
-                        </ul>
-                    </li>
-                    <li ><a href="contacto.html">Contactenos</a></li>
-                    <li ><a href="acercaDe.html">¿Quienes somos?</a></li>
-                    <li ><a href="/donacionesN">Donaciones</a></li>
-                    <li ><a href="login.html">Login</a></li>
-                    <a href="login.html">Login</a>
-                </ul>
-            </nav>
-        </div>
+    <header th:replace="plantilla/template::header"></header>
 
         <div class="contact_form">
             <div class="formulario">      
                 <h1>Iniciar sesion</h1>
-      
 
-                    <p>
-                        <label for="nombre" class="colocar_nombre">Usuario
-                            <span class="obligatorio">*</span>
-                        </label>
-                        <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Ingresar Usuario">
-                    </p>
-                    <p>
-                        <label for="contraseña" class="colocar_contraseña">Contraseña
-                            <span class="obligatorio">*</span>
-                        </label>
-                        <input type="password" name="introducir_contraseña" id="contraseña" required="obligatorio" placeholder="Ingresar contraseña">
-                    </p>
 
-                    <button type="submit" name="Inicio" id="enviar"><p>Ingresar</p></button>
-
-                    <p class="aviso">
-                        <span class="obligatorio"> * </span>los campos son obligatorios.
-                    </p>     
-                    
-                    <div class="">                     
-
-                    </div>
+                <form name="f" th:action="@{/login}" method="post">
+                    <fieldset>
+                        <!-- Thymeleaf + Spring Security error display -->                                
+                        <div th:if="${param.error}" class="alert alert-danger">                                    Invalid username and password.
+                        </div>
+                        <div th:if="${param.logout}" class="alert alert-success">                                    You have been logged out.
+                        </div>
+                        <!-- Login Controls -->                                
+                        <div class="form-group">                                    <label for="txtUsername">Username</label>                                    <input type="text" class="form-control" id="username" name="username"                                           placeholder="Username">                                </div>
+                        <div class="form-group">                                    <label for="txtPassword">Password</label>                                    <input type="password" class="form-control" id="password" name="password"                                           placeholder="Password">                                </div>
+                        <div class="form-check">                                    <input type="checkbox" class="form-check-input" id="checkRememberMe" name="checkRememberMe">                                    <label class="form-check-label" for="checkRememberMe">Remember me?</label>                                </div>
+                        <!-- Login Button -->                                
+                        <div class="form-actions" style="margin-top: 12px;">                                    <button type="submit" class="btn btn-success">Log in</button>                                </div>
+                    </fieldset>
                 </form>
             </div>  
         </div>
+
     </body>
 </html>

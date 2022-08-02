@@ -14,7 +14,7 @@
     <name>Adopcion_Mascotas</name>
     <description>Proyecto de Desarrollo Web</description>
     <properties>
-        <java.version>16</java.version>
+        <java.version>18</java.version>
     </properties>
     <dependencies>
         <dependency>

@@ -18,7 +18,7 @@ public class Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private long ID;
-    private String Nombre;
+    private String nombre;
     private String Apellido1;
     private String Apellido2;
     private String username;
@@ -39,11 +39,11 @@ public class Usuario implements Serializable {
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getApellido1() {
