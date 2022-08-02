@@ -1,6 +1,8 @@
 package com.AdopcionMascotas;
 
 import com.AdopcionMascotas.Service.UserService;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,8 +11,10 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.web.util.UrlPathHelper;
 
 @Configuration
 @EnableWebSecurity
@@ -62,6 +66,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login").permitAll().defaultSuccessUrl("/leerusuarios", true);
+                .loginPage("/login").permitAll().defaultSuccessUrl("/leerusuarios", true)
+                
+                .and()
+                .logout()
+                .logoutSuccessHandler((HttpServletRequest request, HttpServletResponse response, Authentication authentication) -> {
+                    System.out.println("El usuario" + authentication.getName() + " ha salido.");
+                    UrlPathHelper helper = new UrlPathHelper();
+                    String context1 = helper.getContextPath(request);
+                    response.sendRedirect(context1 + "/login");
+                });
     }
 }
