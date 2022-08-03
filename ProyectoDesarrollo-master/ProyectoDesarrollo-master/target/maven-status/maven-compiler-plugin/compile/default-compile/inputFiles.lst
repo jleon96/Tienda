@@ -4,14 +4,17 @@ C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\Pr
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Controller\LoginController.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Entity\Usuario.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Repository\GatoRepository.java
+C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Service\ComentarioService.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Controller\PerroController.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Repository\UsuarioRepository.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Entity\Gato.java
+C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Service\IComentarioService.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Service\IPerroService.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Service\PerroService.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Repository\PerroRepository.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\SecurityConfig.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Service\IDonacionService.java
+C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Entity\Comentario.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Service\IUsuarioService.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\DemoApplication.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Entity\Perro.java
@@ -22,6 +25,8 @@ C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\Pr
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Service\UserService.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Controller\DonacionController.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Controller\GatoController.java
+C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Controller\ComentarioController.java
+C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Repository\ComentarioRepository.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Service\UsuarioService.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Service\IGatoService.java
 C:\Users\Ariana\Documents\GitHub\ProyectoDesarrollo\ProyectoDesarrollo-master\ProyectoDesarrollo-master\src\main\java\com\AdopcionMascotas\Controller\UsuarioController.java
