@@ -33,8 +33,11 @@ public class UsuarioController {
         return "nuevoUsuario";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/saveU")
     public String guardarUsuario(@ModelAttribute Usuario U) {
+        U.setActive(1);
+        U.setPermisos("USER");
+        U.setRoles("USER");
         usuarioService.saveUsuario(U);
         return "redirect:/login.html";
     }

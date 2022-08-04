@@ -10,26 +10,26 @@ import org.springframework.stereotype.Service;
 public class ComentarioService implements IComentarioService {
 
     @Autowired
-    private ComentarioRepository comentarioRepository;
+    private ComentarioRepository CR;
 
     @Override
-    public List<Comentario> getAllComent() {
-        return (List<Comentario>) comentarioRepository.findAll();
+    public List<Comentario> getAllComentario() {
+        return (List<Comentario>) CR.findAll();
     }
 
     @Override
-    public void saveComent(Comentario C) {
-        comentarioRepository.save(C);
+    public void saveComentario(Comentario C) {
+        CR.save(C);
     }
 
     @Override
-    public void EliminarComent(long id) {
-        comentarioRepository.deleteById(id);
+    public void EliminarComentario(long ID) {
+        CR.deleteById(ID);
     }
 
     @Override
-    public Comentario getComentById(long id) {
-        return comentarioRepository.findById(id).orElse(null);
+    public Comentario getComentarioById(long ID) {
+        return CR.findById(ID).orElse(null);
     }
 
 }

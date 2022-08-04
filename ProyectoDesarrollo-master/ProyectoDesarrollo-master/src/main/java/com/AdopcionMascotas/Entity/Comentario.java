@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.AdopcionMascotas.Entity;
 
 import java.io.Serializable;
@@ -9,37 +13,37 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "comentario")
-
 public class Comentario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private String nombre;
-    private String comentario;
-    private int id;
+    private long ID;
+    private String Usuario;
+    private String Comentario;
 
-    public String getNombre() {
-        return nombre;
+    public long getID() {
+        return ID;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setID(long ID) {
+        this.ID = ID;
+    }
+
+    public String getUsuario() {
+        return Usuario;
+    }
+
+    public void setUsuario(String Usuario) {
+        this.Usuario = Usuario;
     }
 
     public String getComentario() {
-        return comentario;
+        return Comentario;
     }
 
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
+    public void setComentario(String Comentario) {
+        this.Comentario = Comentario;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 }

@@ -14,8 +14,8 @@ public class UserService implements UserDetailsService {
     public IUsuarioService usuarioService;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Usuario usuario = this.usuarioService.findByNombre(username);
+    public UserDetails loadUserByUsername(String nombre) throws UsernameNotFoundException {
+        Usuario usuario = this.usuarioService.findByNombre(nombre);
         Userprincipal userPrincipal = new Userprincipal (usuario);
         return userPrincipal;
     }

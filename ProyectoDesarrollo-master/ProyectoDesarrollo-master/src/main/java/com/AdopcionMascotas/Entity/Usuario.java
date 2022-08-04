@@ -21,14 +21,13 @@ public class Usuario implements Serializable {
     private String nombre;
     private String Apellido1;
     private String Apellido2;
-    private String username;
+    private String Username;
     private int Telefono;
     private String Email;
-
-    private String password;
-    private int active;
-    private String roles = "";
-    private String permisos = "";
+    private String Password;
+    private int Active;
+    private String Roles = "";
+    private String Permisos = "";
 
     public long getID() {
         return ID;
@@ -58,6 +57,14 @@ public class Usuario implements Serializable {
         return Apellido2;
     }
 
+    public String getUsername() {
+        return Username;
+    }
+
+    public void setUsername(String Username) {
+        this.Username = Username;
+    }
+
     public void setApellido2(String Apellido2) {
         this.Apellido2 = Apellido2;
     }
@@ -79,57 +86,49 @@ public class Usuario implements Serializable {
     }
 
     public String getPassword() {
-        return password;
+        return Password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String Password) {
+        this.Password = Password;
     }
 
     public int getActive() {
-        return active;
+        return Active;
     }
 
-    public void setActive(int active) {
-        this.active = active;
+    public void setActive(int Active) {
+        this.Active = Active;
     }
 
     public String getRoles() {
-        return roles;
+        return Roles;
     }
 
-    public void setRoles(String roles) {
-        this.roles = roles;
+    public void setRoles(String Roles) {
+        this.Roles = Roles;
     }
 
     public String getPermisos() {
-        return permisos;
+        return Permisos;
     }
 
-    public void setPermisos(String permisos) {
-        this.permisos = permisos;
+    public void setPermisos(String Permisos) {
+        this.Permisos = Permisos;
     }
 
     public List<String> getRoleList() {
-        if (this.roles.length() > 0) {
-            return Arrays.asList(this.permisos.split(","));
+        if (this.Roles.length() > 0) {
+            return Arrays.asList(this.Permisos.split(","));
         }
         return new ArrayList<>();
     }
 
     public List<String> getPermisosList() {
-        if (this.permisos.length() > 0) {
-            return Arrays.asList(this.permisos.split(","));
+        if (this.Permisos.length() > 0) {
+            return Arrays.asList(this.Permisos.split(","));
         }
         return new ArrayList<>();
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
 }

@@ -5,11 +5,11 @@ import java.util.List;
 
 public interface IComentarioService {
 
-    public List<Comentario> getAllComent();
+    public List<Comentario> getAllComentario();
 
-    public void saveComent(Comentario C);
+    public void saveComentario(Comentario C);
 
-    public void EliminarComent(long id);
+    public void EliminarComentario(long ID);
 
-    public Comentario getComentById(long id);
+    public Comentario getComentarioById(long ID);
 }

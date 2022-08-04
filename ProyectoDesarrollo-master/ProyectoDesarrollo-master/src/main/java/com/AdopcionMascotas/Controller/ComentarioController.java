@@ -8,38 +8,38 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ComentarioController {
 
     @Autowired
-    private IComentarioService comentarioService;
+    private IComentarioService ICS;
 
-    @GetMapping("/leercoment")
+    @GetMapping("/leercomentarios")
     public String Index(Model model) {
-        List<Comentario> listaComentario = comentarioService.getAllComent();
+        List<Comentario> listaComentario = ICS.getAllComentario();
         model.addAttribute("titulo", "Lista de Comentarios");
         model.addAttribute("comentario", listaComentario);
-        return "leercoment";
+        return "leercomentarios";
     }
 
-    @GetMapping("crearComentN")
-    public String CrearComent(Model model) {
+    @GetMapping("crearcomentarioN")
+    public String CrearComentario(Model model) {
         model.addAttribute("comentario", new Comentario());
-        return "leercoment";
+        return "leercomentarios";
     }
 
     @PostMapping("/saveC")
-    public String GuardarComent(@ModelAttribute Comentario C) {
-        comentarioService.saveComent(C);
-        return "redirect:/leercoment";
+    public String GuardarComentario(@ModelAttribute Comentario C) {
+        ICS.saveComentario(C);
+        return "redirect:/leercomentarios";
     }
 
-    @GetMapping("/EliminarComent/{ID}")
-    public String EliminarComent(Comentario C) {
-        comentarioService.EliminarComent(C.getId());
-        return "redirect:/leercoment";
+    @GetMapping("/EliminarComentario/{ID}")
+    public String EliminarComentario(Comentario C) {
+        ICS.EliminarComentario(C.getID());
+        return "redirect:/leergatos";
     }
+
 }
