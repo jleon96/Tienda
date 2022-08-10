@@ -29,7 +29,7 @@ public class UsuarioController {
     /*Metodo para crear una persona*/
     @GetMapping("/usuarioN")
     public String crearUsuario(Model model) {
-        model.addAttribute("Usuario", new Usuario());
+        model.addAttribute("usuario", new Usuario());
         return "nuevoUsuario";
     }
 
@@ -39,7 +39,7 @@ public class UsuarioController {
         U.setPermisos("USER");
         U.setRoles("USER");
         usuarioService.saveUsuario(U);
-        return "redirect:/login.html";
+        return "redirect:/leerusuarios";
     }
 
     /*Metodo para editar un usuario*/
@@ -47,13 +47,13 @@ public class UsuarioController {
     public String EditarUsuario(@PathVariable("ID") Long IDUsuario, Model model) {
         Usuario U = usuarioService.getUsuarioById(IDUsuario);
         model.addAttribute("usuario", U);
-        return "/crearusuario";
+        return "nuevoUsuario";
     }
 
     /*Metodo para eliminar un usuario*/
     @GetMapping("/EliminarUsuario/{ID}")
     public String EliminarUsuario(Usuario U) {
-        usuarioService.EliminarUsuario(U.getID());
+        usuarioService.EliminarUsuario(U.getId());
         return "redirect:/leerusuarios";
     }
 }

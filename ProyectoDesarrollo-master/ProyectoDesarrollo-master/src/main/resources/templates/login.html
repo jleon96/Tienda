@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header"><i class="fa fa-user"></i> Iniciar Sesion</div>
                     <div class="card-block" style="padding: 24px;">
-                        <form name="f" th:action="@{/login}" method="post" enctype="">
+                        <form name="f" th:action="@{/login}" method="post" >
                             <fieldset>
                                 <!-- Thymeleaf + Spring Security error display -->
                                 <div th:if="${param.error}" class="alert alert-danger">Usuario o Contrasena invalida</div>
@@ -19,6 +19,7 @@
                                 <div class="form-check"><input type="checkbox" class="form-check-input" id="checkRememberMe" name="checkRememberMe" /> <label class="form-check-label" for="checkRememberMe">Recordarme?</label></div>
                                 <!-- Login Button -->
                                 <div class="form-actions" style="margin-top: 12px;"><button type="submit" class="btn btn-primary">Ingesar</button></div>
+                                  
                             </fieldset>
                         </form>
                     </div>
