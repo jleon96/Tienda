@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
+
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+
     <head   th:fragment="head">
-        <title>Adopcion</title>
-        <link rel="stylesheet" href="css/index.css"/>
-
+        <title>Adopcion Mascotas</title>
+        <!-- CSS only -->
+      
+            <link href="../../static/css/index.css" rel="stylesheet" type="text/css"/>
+            <link href="../css/index.css" rel="stylesheet" type="text/css"/>
     </head>
-    </head>
 
-<body>
+
+    <body>
 
         <header th:fragment="header">
             <div class="container">
-                <a class=" title"><h1><img src="images/Logo.png" width="50px" height="50px"></span>Adopta Un Amigo</h1></a>
-                <!--<h1>Adopta un amigo</h1>-->
+                <a class=" title"><h1><img src="images/Logo.png" width="50px" height="50px"></span></span>Adopta Un Amigo</h1></a>
+
+                <!--<h1>Adopta un amigo</h1>  src="images/Logo.png"  -->
 
                 <nav>
 
                     <ul class="menu">
 
-                        <li ><a href="/inicio.html">Inicio</a></li>
+                        <li ><a href="index.html">Inicio</a></li>
                         <li ><a href="#">Animales en adopcion</a>
                             <ul class="submenu">
                                 <li><a href="perros.html">Perros</a></li>
@@ -33,7 +35,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <li ><a href="#">Servicios</a>
                             <ul class="submenu">
                                 <li><a href="consejos.html">Consejos</a></li>
-                               
+
                                 <li> <a href="../alimentos.html">Alimentos</a></li>
                             </ul>
                         </li>
@@ -46,18 +48,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </div>
         </header>
 
-    <footer th:fragment="footer" class="footer">
-        <div class="text-center p-3 border-top border-white bg-black">
-            © 2022 Copyright: Desarrollo 
-            <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
-               th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>  
-            <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
-               th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
-        </div>
-        
-    </footer>
+        <footer th:fragment="footer" class="footer">
+            <div class="text-center p-3 border-top border-white bg-black text-white">
+                © 2022 Copyright: Desarrollo 
+                <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                   th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>  
+                <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                   th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
+            </div>
 
 
-</body>
+        </footer>
+
+
+    </body>
 
 </html>
