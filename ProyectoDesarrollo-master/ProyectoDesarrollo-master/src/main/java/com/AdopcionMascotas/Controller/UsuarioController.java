@@ -52,8 +52,8 @@ public class UsuarioController {
 
     /*Metodo para eliminar un usuario*/
     @GetMapping("/EliminarUsuario/{ID}")
-    public String EliminarUsuario(Usuario U) {
-        usuarioService.EliminarUsuario(U.getId());
+    public String EliminarUsuario(@PathVariable("ID") Long ID) {
+        usuarioService.EliminarUsuario(ID);
         return "redirect:/leerusuarios";
     }
 }
