@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.AdopcionMascotas</groupId>
     <artifactId>demo</artifactId>
-    <version>1</version>
+    <version>16</version>
     <name>Adopcion_Mascotas</name>
     <description>Proyecto de Desarrollo Web</description>
     <properties>

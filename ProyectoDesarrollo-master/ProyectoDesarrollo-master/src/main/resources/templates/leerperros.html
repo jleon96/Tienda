@@ -62,10 +62,10 @@
                         <td th:text="${user.getEstado}"></td>
                         <td th:text="${user.getDescripcion}"></td>
                         <td>
-                            <a th:href="@{/EditarPerro/{ID}(ID=${user.getID})}">Edit</a>
+                            <a th:href="@{/EditarPerro/{ID}(ID=${user.getID})}">Editar</a>
                         </td>
                         <td>
-                            <a th:href="@{/EliminarPerro/{ID}(ID=${user.getID})}">Delete</a>
+                            <a th:href="@{/EliminarPerro/{ID}(ID=${user.getID})}">Eliminar</a>
                         </td>
                     </tr>
                 </th:block>
