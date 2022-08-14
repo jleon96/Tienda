@@ -17,7 +17,7 @@ public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private long id;
+    private long ID;
     private String nombre;
     private String Apellido1;
     private String Apellido2;
@@ -29,12 +29,12 @@ public class Usuario implements Serializable {
     private String Roles = "";
     private String Permisos = "";
 
-    public long getId() {
-        return id;
+    public long getID() {
+        return ID;
     }
 
-    public void setId(long ID) {
-        this.id = ID;
+    public void setID(long ID) {
+        this.ID = ID;
     }
 
     public String getNombre() {

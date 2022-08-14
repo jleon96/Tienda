@@ -59,15 +59,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/leerusuarios", "/login")
+                .antMatchers("/leerusuarios",  "/login", "/leergatos", "/leerperros", "/creargato", "/creargatoN", "/crearperro", "/crearperroN", "/leerdonaciones")
                 .hasRole("ADMIN")
-                .antMatchers("/usuarioN", "/leerusuarios", "/", "/login")
-                .hasAnyRole("USER", "ADMIN")
+                .antMatchers("/leercomentarios",  "/", "/login", "/donaciones", "/alimentos.html", "/acercaDe.html", "/gatos.html", "/perros.html", "/index.html", "/donacionesN")
+                .hasAnyRole("USER")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login").permitAll().defaultSuccessUrl("/leerusuarios", true)
-                
+                .loginPage("/login").permitAll().defaultSuccessUrl("/index.html", true)
                 .and()
                 .logout()
                 .logoutSuccessHandler((HttpServletRequest request, HttpServletResponse response, Authentication authentication) -> {

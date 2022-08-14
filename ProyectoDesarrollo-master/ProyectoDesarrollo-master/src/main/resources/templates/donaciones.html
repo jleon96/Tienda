@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a class=" title"><h1><img src="images/Logo.png" width="50px" height="50px"></span>Adopta Un Amigo</h1></a>
+            <!--<h1>Adopta un amigo</h1>-->
 
+            <nav>
 
-    <head th:replace="plantilla/template::head"></head>
+                <ul class="menu">
 
-
-
-
-    <body>
-
-
-        <header th:replace="plantilla/template::header"></header>
-
-        <!--Textos-->
-        <div>
-            <div class="text">
-                <h1>Cualquier tipo de donacion sera de gran ayuda, para poder seguir salvando vidas seran bien recibidas</h1>
-                <h2>¡Muchas gracias por el apoyo!</h2>
-            </div>
+                    <li ><a href="index.html">Inicio</a></li>
+                    <li ><a href="#">Animales en adopcion</a>
+                        <ul class="submenu">
+                            <li><a href="perros.html">Perros</a></li>
+                            <li><a href="gatos.html">Gatos</a></li>
+                        </ul>
+                    </li>
+                    <li ><a href="#">Servicios</a>
+                        <ul class="submenu">
+                            <li><a href="consejos.html">Consejos</a></li>
+                            <li><a href="Alimentos.html">Alimentos</a></li>
+                        </ul>
+                    </li>
+                    <li ><a href="leercomentarios.html">Comentarios</a></li>
+                    <li ><a href="acercaDe.html">Quienes somos?</a></li>
+                    <li ><a href="/donacionesN">Donaciones</a></li>
+                    <li ><a href="perfil">Perfil</a></li>                  
+                </ul>
+            </nav>
         </div>
+    </header>
+    <div>
+        <div class="text">
+            <h1>Cualquier tipo de donacion sera de gran ayuda, para poder seguir salvando vidas seran bien recibidas</h1>
+            <h2>¡Muchas gracias por el apoyo!</h2>
+        </div>
+    </div>
 
-        <div>
+    <div>
 
-            <div class="contact_form">
-                <form th:object ="${donacion}"
-                      th:action ="@{/saveD}"
-                      method="POST" 
-                      >
-                    <input type="hidden" th:field="*{id}">
+        <div class="contact_form">
+            <form th:object ="${donacion}"
+                  th:action ="@{/saveD}"
+                  method="POST" 
+                  >
+                <input type="hidden" th:field="*{id}">
 
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Numero</label>
@@ -41,13 +61,13 @@
                         <label for="exampleFormControlInput1" class="form-label">Monto</label>
                         <input type="text" th:field="*{monto}"class="form-control" id="monto" placeholder="Monto a donar">
                     </div>
-                     <button type="submit" name="Inicio" id="enviar"><p>Realizar Donacion</p></button>
-                </form>
-            </div>
+                    <button type="submit" name="Inicio" id="enviar"><p>Realizar Donacion</p></button>
+            </form>
         </div>
+    </div>
 
 
-        <footer th:replace="plantilla/template::footer">  
-        </footer>
-    </body>
+    <footer th:replace="plantilla/template::footer">  
+    </footer>
+</body>
 </html>

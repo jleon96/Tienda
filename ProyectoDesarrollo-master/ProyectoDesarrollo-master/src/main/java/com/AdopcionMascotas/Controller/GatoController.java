@@ -36,11 +36,12 @@ public class GatoController {
         gatoService.saveGato(G);
         return "redirect:/leergatos";
     }
+
     @GetMapping("/EditarGato/{ID}")
     public String EditarGato(@PathVariable("ID") Long IDGato, Model model) {
         Gato G = gatoService.getGatoById(IDGato);
         model.addAttribute("gatos", G);
-        return "/creargato";
+        return "creargato";
     }
 
     @GetMapping("/EliminarGato/{ID}")

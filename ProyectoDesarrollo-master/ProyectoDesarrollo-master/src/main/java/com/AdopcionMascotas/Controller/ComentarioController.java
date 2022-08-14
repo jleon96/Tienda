@@ -21,6 +21,7 @@ public class ComentarioController {
         List<Comentario> listaComentario = ICS.getAllComentario();
         model.addAttribute("titulo", "Lista de Comentarios");
         model.addAttribute("comentario", listaComentario);
+         model.addAttribute("comentario2", new Comentario());
         return "leercomentarios";
     }
 
@@ -39,7 +40,7 @@ public class ComentarioController {
     @GetMapping("/EliminarComentario/{ID}")
     public String EliminarComentario(Comentario C) {
         ICS.EliminarComentario(C.getID());
-        return "redirect:/leergatos";
+        return "redirect:/leercomentarios";
     }
 
 }
