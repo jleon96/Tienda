@@ -1,19 +1,22 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
     <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
         <head th:replace="plantilla/template::head"></head>
 
+
+    <head th:replace="plantilla/template::head"></head>
+
+    <body>
+        <header th:replace="plantilla/template::header"></header>
         <body>
             <header th:replace="plantilla/template::header"></header>
-            <div class="Container">
 
-                <div class="card-header bg-black text-white"></div>
-                <div class="container">
-                    <form th:object ="${gatos}"
-                          th:action ="@{/saveG}"
-                          method="POST" 
-                          >
-                        <input type="hidden" th:field="*{ID}">
+            <div class="card-header bg-black text-white"> 
+            <div class="container">
+                <form th:object ="${gatos}"
+                      th:action ="@{/saveG}"
+                      method="POST" 
+                      >
+                    <input type="hidden" th:field="*{ID}">
 
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Nombre</label>
@@ -45,5 +48,6 @@
                                 </div>
                                 </body>
                                 </html>
+
 
 

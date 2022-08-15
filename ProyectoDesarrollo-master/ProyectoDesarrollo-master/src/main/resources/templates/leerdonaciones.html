@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"xmlns="http://www.w3.org/1999/xhtml">
-    <head th:replace="plantilla/template::head">
-
-    </head>
+<html  xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+    <head th:replace="plantilla/template::head"></head>
+    
     <body>
         <header th:replace="plantilla/template::header"></header>
+        
+        
         <div class="descripcion" align-items="center">
             <h1>Informacion de donaciones realizadas</h1>
         </div>
@@ -20,18 +21,19 @@
                 </thead>
 
                 <tbody>
-                <th:block th:each="user : ${donacion}">
-                    <tr>
-                        <td th:text="${user.getNumero}"></td>
-                        <td th:text="${user.getCodigo}"></td>
-                        <td th:text="${user.getMonto}"></td>
-                    </tr>
-                </th:block>
+                    <th:block th:each="user : ${donacion}">
+                        <tr>
+                            <td th:text="${user.getNumero}"></td>
+                            <td th:text="${user.getCodigo}"></td>
+                            <td th:text="${user.getMonto}"></td>
+                        </tr>
+                    </th:block>
                 </tbody>
             </table>
         </div>
 
-        <footer th:replace="plantilla/template::footer"></footer>
+       <footer th:replace="plantilla/template::footer"></footer>
     </body>
 </html>
+
 

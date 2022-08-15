@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="plantilla/template::head">
-    </head>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+    <head th:replace="plantilla/template::head"></head>
     <body>
         <header th:replace="plantilla/template::header"></header>
+        
         <div class="descripcion" align-items="center">
             <h1>Informacion de perros disponibles</h1>
         </div>
@@ -26,29 +27,28 @@
 
                 <tbody>
 
-                <th:block th:each="user : ${perros}">
-                    <tr>
-                        <td th:text="${user.getNombre}"></td>
-                        <td th:text="${user.getRaza}"></td>
-                        <td th:text="${user.getGenero}"></td>
-                        <td th:text="${user.getEdad}"></td>
-                        <td th:text="${user.getEstado}"></td>
-                        <td th:text="${user.getDescripcion}"></td>
-                        <td>
-                            <a th:href="@{/EditarPerro/{ID}(ID=${user.getID})}">Editar</a>
-                        </td>
-                        <td>
-                            <a th:href="@{/EliminarPerro/{ID}(ID=${user.getID})}">Eliminar</a>
-                        </td>
-                    </tr>
-                </th:block>
+                    <th:block th:each="user : ${perros}">
+                        <tr>
+                            <td th:text="${user.getNombre}"></td>
+                            <td th:text="${user.getRaza}"></td>
+                            <td th:text="${user.getGenero}"></td>
+                            <td th:text="${user.getEdad}"></td>
+                            <td th:text="${user.getEstado}"></td>
+                            <td th:text="${user.getDescripcion}"></td>
+                            <td>
+                                <a th:href="@{/EditarPerro/{ID}(ID=${user.getID})}">Edit</a>
+                            </td>
+                            <td>
+                                <a th:href="@{/EliminarPerro/{ID}(ID=${user.getID})}">Delete</a>
+                            </td>
+                        </tr>
+                    </th:block>
                 </tbody>
             </table>
             <button>
-                <a href="/crearperroN">Crear nuevo dato</a>
+                <a href="/crearperroN">Crear nuevo Perro</a>
             </button>
         </div>
-        <footer th:replace="plantilla/template::footer"></footer>
+     <footer th:replace="plantilla/template::footer"></footer>
     </body>
 </html>
-

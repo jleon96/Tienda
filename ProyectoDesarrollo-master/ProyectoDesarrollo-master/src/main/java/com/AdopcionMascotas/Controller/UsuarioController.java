@@ -41,7 +41,7 @@ public class UsuarioController {
         U.setPermisos("USER");
         U.setRoles("USER");
         usuarioService.saveUsuario(U);
-        return "redirect:/leerusuarios";
+        return "redirect:/login";
     }
 
     /*Metodo para editar un usuario*/
