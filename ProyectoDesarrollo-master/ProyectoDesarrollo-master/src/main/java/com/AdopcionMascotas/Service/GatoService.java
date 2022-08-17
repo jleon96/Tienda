@@ -31,4 +31,5 @@ public class GatoService implements IGatoService {
     public Gato getGatoById(long IDGato) {
         return gatoRepository.findById(IDGato).orElse(null);
     }
+    
 }
