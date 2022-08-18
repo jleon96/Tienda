@@ -2,29 +2,32 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 
     <head th:replace="plantilla/template::head"></head>
-
+       <link rel="stylesheet" href="css/Formularios.css"/>
     <body>
         <header th:replace="plantilla/template::header"></header>
-        <div class="contact_form">
+        
+        <div class="Formulario">
             <div class="formulario">      
                 <h1>Crear un comentario</h1>
-                <form th:object ="${comentario}"
+                <form th:object ="${comentarioN}"
                       th:action ="@{/saveC}"
                       method="POST" 
                       >
-
+                           <input type="hidden" th:field="*{ID}">
                     <p>
                         <label for="Usuario" class="colocar_nombre">Nombre
                             <span class="obligatorio">*</span>
                         </label>
-                        <input type="text" name="introducir_nombre" id="Usuario" required="obligatorio" placeholder="Escribe tu nombre">
+                        <input type="text" th:field="*{Usuario}" name="introducir_nombre" id="Usuario" 
+                               required="obligatorio" placeholder="Escribe tu nombre">
                     </p>
 
                     <p>
                         <label for="Comentario" class="colocar_comentario">Comentario
                             <span class="obligatorio">*</span>
                         </label>                     
-                        <textarea name="introducir_comentario" class="texto_mensaje" id="comentario" required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea> 
+                        <textarea name="introducir_comentario"th:field="*{Comentario}" class="texto_mensaje" id="Comentario" 
+                                  required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea> 
                     </p>                    
 
                     <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
@@ -52,7 +55,7 @@
                             <td th:text="${user.getUsuario}"></td>
                             <td th:text="${user.getComentario}"></td>
                             <td>
-                                <a th:href="@{/EliminarComentario/{ID}(ID=${user.getID})}">Delete</a>
+                                <a th:href="@{/EliminarComentario/{ID}(ID=${user.getID})}">Eliminar Comentario</a>
                             </td>
                         </tr>
 
@@ -60,6 +63,6 @@
                 </tbody>
             </table>
         </div>
-         <footer th:replace="plantilla/template::footer"></footer>
+        <footer th:replace="plantilla/template::footer"></footer>
     </body>
 </html>

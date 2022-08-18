@@ -21,13 +21,13 @@ public class ComentarioController {
         List<Comentario> listaComentario = ICS.getAllComentario();
         model.addAttribute("titulo", "Lista de Comentarios");
         model.addAttribute("comentario", listaComentario);
-         model.addAttribute("comentario2", new Comentario());
+        model.addAttribute("comentarioN", new Comentario());
         return "leercomentarios";
     }
 
     @GetMapping("crearcomentarioN")
     public String CrearComentario(Model model) {
-        model.addAttribute("comentario", new Comentario());
+        model.addAttribute("comentarioN", new Comentario());
         return "leercomentarios";
     }
 
