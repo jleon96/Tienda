@@ -20,7 +20,7 @@ public class PersonaReportService {
 
     public String generateReport() {
         try {
-            File file = ResourceUtils.getFile("classpath:ReportePersonas.jasper");
+            File file = ResourceUtils.getFile("classpath:ReporteUsuarios.jasper");
             reportPath = file.getParent();
 // Carga el reporte
             JasperReport jasperReport = (JasperReport) JRLoader.loadObject(file);
@@ -33,8 +33,8 @@ public class PersonaReportService {
 // Llena el reporte
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, con);
 // Exporta a PDF
-            JasperExportManager.exportReportToPdfFile(jasperPrint, reportPath + "\\ReportePersonas.pdf");
-            return reportPath + "\\ReportePersonas.pdf";
+            JasperExportManager.exportReportToPdfFile(jasperPrint, reportPath + "\\ReporteUsuarios.pdf");
+            return reportPath + "\\ReporteUsuarios.pdf";
         } catch (Exception e) {
             return e.getMessage();
         }

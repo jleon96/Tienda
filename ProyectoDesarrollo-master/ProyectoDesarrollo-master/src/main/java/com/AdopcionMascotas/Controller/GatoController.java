@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
 @Controller
 public class GatoController {
 
@@ -46,25 +45,19 @@ public class GatoController {
 
     @PostMapping("/saveG")
     public String GuardarGato(@ModelAttribute Gato G, @RequestParam(name = "file", required = false) MultipartFile imagen, RedirectAttributes flash) {
-
         if (!imagen.isEmpty()) {
             String ruta = "C://temp//fotos";
-
             try {
                 byte[] bytes = imagen.getBytes();
                 Path rutaAbsoluta = Paths.get(ruta + "//" + imagen.getOriginalFilename());
                 Files.write(rutaAbsoluta, bytes);
                 G.setImagen(imagen.getOriginalFilename());
-
             } catch (Exception e) {
-                
             }
-
         }
         gatoService.saveGato(G);
 //        flash.addFlashAttribute("Gato creado con exito!");
         return "redirect:/leergatos";
-
     }
 
     @GetMapping("/EditarGato/{ID}")

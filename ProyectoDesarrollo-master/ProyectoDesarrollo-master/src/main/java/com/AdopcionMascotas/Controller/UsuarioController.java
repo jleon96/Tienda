@@ -2,9 +2,15 @@ package com.AdopcionMascotas.Controller;
 
 import com.AdopcionMascotas.Entity.Usuario;
 import com.AdopcionMascotas.Service.IUsuarioService;
+import com.AdopcionMascotas.Service.PersonaReportService;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class UsuarioController {
@@ -58,18 +65,33 @@ public class UsuarioController {
         model.addAttribute("usuario", U);
         return "perfil";
     }
-    @GetMapping("/perfil")
-    public String Consultar(Model model, @PathVariable("ID") Long id) {
-       Usuario U = usuarioService.getUsuarioById(id);
-        model.addAttribute("usuario", U);
-        return "perfil";
-    }
 
     /*Metodo para eliminar un usuario*/
     @GetMapping("/EliminarUsuario/{ID}")
     public String EliminarUsuario(@PathVariable("ID") Long ID) {
         usuarioService.EliminarUsuario(ID);
         return "redirect:/leerusuarios";
+    }
+
+    @Autowired
+    private PersonaReportService PReportService;
+
+    @GetMapping(path = "/leerusuarios/ReporteUsuarios", produces = MediaType.APPLICATION_PDF_VALUE)
+    public @ResponseBody
+    byte[] getFile() throws IOException {
+        try {
+            FileInputStream fis = new FileInputStream(new File(PReportService.generateReport()));
+            byte[] targetArray = new byte[fis.available()];
+            fis.read(targetArray);
+            return targetArray;
+        } catch (FileNotFoundException e) {
+// TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+// TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return null;
     }
 
 //    @Controller
