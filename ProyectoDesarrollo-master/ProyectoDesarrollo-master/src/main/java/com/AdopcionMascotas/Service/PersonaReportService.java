@@ -29,7 +29,7 @@ public class PersonaReportService {
 //Instanciar la conexión
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/adopcion", "root", "admin");
+                    "jdbc:mysql://localhost/adopcion", "root", "demo8yeah");
 // Llena el reporte
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, con);
 // Exporta a PDF
