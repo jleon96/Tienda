@@ -2,11 +2,17 @@ package com.AdopcionMascotas.Controller;
 
 import com.AdopcionMascotas.Entity.Perro;
 import com.AdopcionMascotas.Service.IPerroService;
+import com.AdopcionMascotas.Service.PerroReportService;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +20,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -31,14 +38,14 @@ public class PerroController {
         return "leerperros";
     }
 
-        @GetMapping("/leerperrosU")
+    @GetMapping("/leerperrosU")
     public String leerperrosU(Model model) {
         List<Perro> listaPerro = perroService.getAllPerro();
         model.addAttribute("titulo", "Lista de Perros");
         model.addAttribute("perros", listaPerro);
         return "leerperrosU";
     }
-    
+
     @GetMapping("crearperroN")
     public String CrearPerro(Model model) {
         model.addAttribute("perros", new Perro());
@@ -79,4 +86,26 @@ public class PerroController {
         perroService.EliminarPerro(P.getID());
         return "redirect:/leerperros";
     }
+
+    @Autowired
+    private PerroReportService PReportService;
+
+    @GetMapping(path = "/leerperros/Perros", produces = MediaType.APPLICATION_PDF_VALUE)
+    public @ResponseBody
+    byte[] getFile() throws IOException {
+        try {
+            FileInputStream fis = new FileInputStream(new File(PReportService.generateReport()));
+            byte[] targetArray = new byte[fis.available()];
+            fis.read(targetArray);
+            return targetArray;
+        } catch (FileNotFoundException e) {
+// TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+// TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }
