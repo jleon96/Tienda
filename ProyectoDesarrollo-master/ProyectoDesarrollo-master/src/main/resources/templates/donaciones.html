@@ -5,8 +5,8 @@
      <header th:replace="plantilla/template::header"></header>
     <div>
         <div class="text">
-            <h1>Cualquier tipo de donacion sera de gran ayuda, para poder seguir salvando vidas seran bien recibidas</h1>
-            <h2>¡Muchas gracias por el apoyo!</h2>
+            <h1 th:text="#{accion.infodonaciones}"></h1>
+            <h2 th:text="#{accion.donaciongracias}"></h2>
         </div>
     </div>
 
@@ -20,18 +20,18 @@
                 <input type="hidden" th:field="*{id}">
 
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Numero</label>
+                        <label for="exampleFormControlInput1" class="form-label" th:text="#{donacion.numtarjeta}" ></label>
                         <input type="text" th:field="*{numero}" class="form-control" id="numero" placeholder="Numero de tarjeta">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Codigo de Seguridad</label>
+                        <label for="exampleFormControlInput1" class="form-label" th:text="#{donacion.codigo}"></label>
                         <input type="text" th:field="*{codigo}" class="form-control" id="codigo" placeholder="Codigo de seguridad">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Monto</label>
+                        <label for="exampleFormControlInput1" class="form-label" th:text="#{donacion.monto}"></label>
                         <input type="text" th:field="*{monto}"class="form-control" id="monto" placeholder="Monto a donar">
                     </div>
-                    <button type="submit" name="Inicio" id="enviar"><p>Realizar Donacion</p></button>
+                    <button type="submit" name="Inicio" id="enviar"><p th:text="#{accion.hacerdonacion}"></p></button>
             </form>
         </div>
     </div>

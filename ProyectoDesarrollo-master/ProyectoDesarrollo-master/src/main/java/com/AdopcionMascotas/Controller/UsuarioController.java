@@ -96,7 +96,6 @@ public class UsuarioController {
     @GetMapping("/usuarioNI")
     public String crearUsuarioI(Model model) {
         model.addAttribute("usuario", new Usuario());
-
         return "nuevoUsuario";
     }
 

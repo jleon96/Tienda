@@ -5,37 +5,29 @@
 
     </head>
     <body>
+
         <header th:replace="plantilla/template::header"></header>
         <div class="fondopagina">
-
-
-
             <div class="descripcion" align-content="center">
                 <h1 th:text="#{leerusuario.titulo}"></h1>
             </div>
-
-
             <div class="container">
                 <h1 th:text="#{leerusuarios.lista}"></h1>
-
-
                 <table class="table table-dark table-hover"> 
                     <tbody>
 
                         <th:block th:each="user : ${usuario}">
-
                             <thead class="thead-dark">
                                 <th scope="col" th:text="#{cliente.nombre}"></th>
                                 <th scope="col" th:text="#{cliente.apellido}"></th>
                                 <th scope="col" th:text="#{cliente.apellido2}"></th>
-
                                 <th scope="col" th:text="#{cliente.telefono}"></th>
                                 <th scope="col" th:text="#{cliente.correo}"></th>
                                 <th scope="col" th:text="#{accion.editar}"> </th>
-                                <th scope="col" th:text="#{accion.eliminar}"> </th>
-
+                                <th scope="col" th:text="#{accion.eliminar}"></th>
                                 </tr>
                             </thead>
+                        </th:block>
                     </tbody>
                     <tbody>
 
@@ -83,7 +75,7 @@
                                     <h4 th:text="${user.getApellido1}"></h4>
                                     <p th:text="${user.getApellido2}"></p>
                                     <a th:href="@{/EditarUsuario/{ID}(ID=${user.getID})}" th:text="#{accion.editar}" class="btn btn-dark">Editar</a>
-                                     <a th:href="@{/EliminarUsuario/{ID}(ID=${user.getID})}" th:text="#{accion.eliminar}"class="btn btn-dark">Editar</a>
+                                    <a th:href="@{/EliminarUsuario/{ID}(ID=${user.getID})}" th:text="#{accion.eliminar}"class="btn btn-dark">Editar</a>
                             </div>
                         </div>
                     </div>
