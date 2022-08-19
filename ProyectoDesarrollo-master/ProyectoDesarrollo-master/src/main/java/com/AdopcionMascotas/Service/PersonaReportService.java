@@ -20,7 +20,7 @@ public class PersonaReportService {
 
     public String generateReport() {
         try {
-            File file = ResourceUtils.getFile("classpath:ReporteUsuarios.jasper");
+            File file = ResourceUtils.getFile("classpath:Usuarios.jasper");
             reportPath = file.getParent();
 // Carga el reporte
             JasperReport jasperReport = (JasperReport) JRLoader.loadObject(file);
@@ -29,12 +29,12 @@ public class PersonaReportService {
 //Instanciar la conexión
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/tienda", "root", "brl092022");
+                    "jdbc:mysql://localhost:3306/tienda", "root", "admin");
 // Llena el reporte
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, con);
 // Exporta a PDF
-            JasperExportManager.exportReportToPdfFile(jasperPrint, reportPath + "\\ReporteUsuarios.pdf");
-            return reportPath + "\\ReporteUsuarios.pdf";
+            JasperExportManager.exportReportToPdfFile(jasperPrint, reportPath + "\\Usuarios.pdf");
+            return reportPath + "\\Usuarios.pdf";
         } catch (Exception e) {
             return e.getMessage();
         }

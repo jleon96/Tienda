@@ -55,7 +55,7 @@ public class PerroController {
         }
         perroService.savePerro(P);
 //        flash.addFlashAttribute("Perro creado con exito!");
-        return "redirect:/leergatos";
+        return "redirect:/leerperros";
 
     }
 

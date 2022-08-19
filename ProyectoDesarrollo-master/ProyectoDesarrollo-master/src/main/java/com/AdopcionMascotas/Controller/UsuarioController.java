@@ -76,7 +76,7 @@ public class UsuarioController {
     @Autowired
     private PersonaReportService PReportService;
 
-    @GetMapping(path = "/leerusuarios/ReporteUsuarios", produces = MediaType.APPLICATION_PDF_VALUE)
+    @GetMapping(path = "/leerusuarios/Usuarios", produces = MediaType.APPLICATION_PDF_VALUE)
     public @ResponseBody
     byte[] getFile() throws IOException {
         try {
