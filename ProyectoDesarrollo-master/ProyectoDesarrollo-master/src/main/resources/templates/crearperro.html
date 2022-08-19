@@ -1,12 +1,12 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 
-    <head th:replace="plantilla/template::head"></head>
 
+
+    <head th:replace="plantilla/template::head"></head>
 
     <body>
         <header th:replace="plantilla/template::header"></header>
-
         <div class="Container">
 
             <div class="card-header bg-white text-black"> 
@@ -14,6 +14,7 @@
                     <form th:object ="${perros}"
                           th:action ="@{/saveP}"
                           method="POST" 
+                          enctype ="multipart/form-data"
                           >
                         <input type="hidden" th:field="*{ID}">
 
@@ -41,16 +42,24 @@
                                 <label for="exampleFormControlInput1" class="form-label">Estado</label>
                                 <input type="text" th:field="*{Estado}"class="form-control" id="Estado" placeholder="Estado">
                             </div>
-                            <input class="btn btn-primary"  type="submit" value="Guardar Perro">
-                                </form>
-                                </div>
-                                </div>
-                                </div>
-
-                                <footer th:replace="plantilla/template::footer">
-
-                                </footer>
-                                </body>
-                                </html>
 
 
+                            <div class="form-group row">
+                                <label class="col-md-2" for="imagen">Imagen</label>
+                                <input type="file" name="file" th:fiel="*{imagen}" class="form-control form-control-sm col-md-6" id=" imagen" 
+                                       >
+                                    <!-- Validacion 
+                                    <small class="form-text text-danger" th:if="${#fields.hasErrors('stock')}" th:errors="*{stock}">
+                                     </small>-->
+                            </div>
+
+
+                            <div>
+                                <input class="btn btn-primary"  type="submit" required="obligatorio" value="Guardar Perro">
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
