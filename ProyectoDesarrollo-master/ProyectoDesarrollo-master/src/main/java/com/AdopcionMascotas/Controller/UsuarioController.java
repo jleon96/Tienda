@@ -7,6 +7,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +21,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class UsuarioController {
@@ -43,10 +49,26 @@ public class UsuarioController {
     }
 
     @PostMapping("/saveU")
-    public String guardarUsuario(@ModelAttribute Usuario U) {
+    public String guardarUsuario(@ModelAttribute Usuario U, @RequestParam(name = "file", required = false) MultipartFile imagen, RedirectAttributes flash) {
         U.setActive(1);
         U.setPermisos("USER");
         U.setRoles("USER");
+
+        if (!imagen.isEmpty()) {
+            String ruta = "C://temp//fotos";
+
+            try {
+                byte[] bytes = imagen.getBytes();
+                Path rutaAbsoluta = Paths.get(ruta + "//" + imagen.getOriginalFilename());
+                Files.write(rutaAbsoluta, bytes);
+                U.setImagen(imagen.getOriginalFilename());
+
+            } catch (Exception e) {
+
+            }
+
+        }
+
         usuarioService.saveUsuario(U);
         return "redirect:/login";
     }

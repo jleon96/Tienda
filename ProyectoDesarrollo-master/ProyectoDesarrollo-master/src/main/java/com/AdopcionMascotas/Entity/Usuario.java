@@ -17,7 +17,7 @@ public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private long ID;
+    private long id;
     private String nombre;
     private String Apellido1;
     private String Apellido2;
@@ -27,13 +27,14 @@ public class Usuario implements Serializable {
     private int Active;
     private String Roles = "";
     private String Permisos = "";
+    private String imagen;
 
     public long getID() {
-        return ID;
+        return id;
     }
 
     public void setID(long ID) {
-        this.ID = ID;
+        this.id = ID;
     }
 
     public String getNombre() {
@@ -122,4 +123,27 @@ public class Usuario implements Serializable {
         return new ArrayList<>();
     }
 
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public Usuario(long id, String nombre, String Apellido1, String Apellido2, int Telefono, String Email, String Password, int Active, String imagen) {
+        this.id = id;
+        this.nombre = nombre;
+        this.Apellido1 = Apellido1;
+        this.Apellido2 = Apellido2;
+        this.Telefono = Telefono;
+        this.Email = Email;
+        this.Password = Password;
+        this.Active = Active;
+        this.imagen = imagen;
+    }
+
+    public Usuario() {
+
+    }
 }
