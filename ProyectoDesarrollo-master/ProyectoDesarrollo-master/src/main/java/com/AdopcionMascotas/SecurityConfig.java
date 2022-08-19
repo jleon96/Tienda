@@ -13,6 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.web.util.UrlPathHelper;
 
@@ -24,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private UserService userDetailsService;
 
     @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
@@ -56,10 +57,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     //El siguiente metodo funciona para hacer la autenticacion del usuraio
-    @Override
+  @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/leerusuarios","/leerusuarioU",  "/login", "/leergatos", "/leerperros", "/creargato", "/creargatoN", "/crearperro", "/crearperroN","/index.html", "/leerdonaciones")
+                .antMatchers("/leerusuarios","/leerusuarioU", "usuarioNI", "/login", "/leergatos", "/leerperros", "/creargato", "/creargatoN", "/crearperro", "/crearperroN","/index.html", "/leerdonaciones")
                 .hasRole("ADMIN")
                 .antMatchers("/leercomentarios","/leerusuarioU",  "/", "/leergatosU", "/login", "/donaciones", "/alimentos.html", "/acercaDe.html", "/gatos.html", "/perros.html", "/index.html", "/donacionesN", "/leergatos")
                 .hasAnyRole("USER", "ADMIN")

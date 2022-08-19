@@ -11,9 +11,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +30,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class UsuarioController {
 
     @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
     private IUsuarioService usuarioService;
 
     /*Metodo para leer los usuario*/
@@ -41,28 +44,29 @@ public class UsuarioController {
         return "leerusuarios";
     }
 
-    /*Se trato de configurar paraa ver la informacion de un solo usuario*/
-    @GetMapping("/leerusuarioU")
-    public String leerusuarioU(Model model) {
-        List<Usuario> listaUsuario = usuarioService.getAllUsuario();
-        model.addAttribute("titulo", "Lista de Usuarios");
-        model.addAttribute("usuario", listaUsuario);
-        return "leerusuarioU";
-    }
-    
-    @GetMapping("/verPerfil/{ID}")
-    public String verPerfil(Model model, @PathVariable("ID") Long id) {
-        Usuario U = usuarioService.getUsuarioById(id);
-        model.addAttribute("usuario", U);
-        return "nuevoUsuario";
-    }
-
+//    /*Se trato de configurar paraa ver la informacion de un solo usuario*/
+//    @GetMapping("/leerusuarioU")
+//    public String leerusuarioU(Model model) {
+//        List<Usuario> listaUsuario = usuarioService.getAllUsuario();
+//        model.addAttribute("titulo", "Lista de Usuarios");
+//        model.addAttribute("usuario", listaUsuario);
+//        return "leerusuarioU";
+//    }
+//    
+//    @GetMapping("/verPerfil/{ID}")
+//    public String verPerfil(Model model, @PathVariable("ID") Long id) {
+//        Usuario U = usuarioService.getUsuarioById(id);
+//        model.addAttribute("usuario", U);
+//        return "nuevoUsuario";
+//    }
+//
+//    
+//    
     /*Metodo para crear una persona
     este se usa en el boton de login*/
     @GetMapping("/usuarioN")
     public String crearUsuario(Model model) {
         model.addAttribute("usuario", new Usuario());
-
         return "nuevoUsuario";
     }
 
@@ -76,6 +80,9 @@ public class UsuarioController {
                 byte[] bytes = imagen.getBytes();
                 Path rutaAbsoluta = Paths.get(ruta + "//" + imagen.getOriginalFilename());
                 Files.write(rutaAbsoluta, bytes);
+                String passw = U.getPassword();//recibo la contrasena en texto plano
+                String encriptado = passwordEncoder.encode(passw);//convierto la contrasena
+                U.setPassword(encriptado);//mando la contrasena ya encriptada
                 U.setImagen(imagen.getOriginalFilename());
                 U.setActive(1);
                 U.setPermisos("USER");
@@ -90,16 +97,16 @@ public class UsuarioController {
         usuarioService.saveUsuario(U);
         return "redirect:/login";
     }
-    
-        /*Metodo para crear una persona
+
+    /*Metodo para crear una persona
     este se usa en el boton de leerusuarios*/
     @GetMapping("/usuarioNI")
     public String crearUsuarioI(Model model) {
         model.addAttribute("usuario", new Usuario());
-        return "nuevoUsuario";
+        return "nuevoUsuario1";
     }
 
-    @PostMapping("/saveUI")
+    @PostMapping("/saveI")
     public String guardarUsuarioI(@ModelAttribute Usuario U, @RequestParam(name = "file", required = false) MultipartFile imagen, RedirectAttributes flash) {
 
         if (!imagen.isEmpty()) {
@@ -110,11 +117,14 @@ public class UsuarioController {
                 Path rutaAbsoluta = Paths.get(ruta + "//" + imagen.getOriginalFilename());
                 Files.write(rutaAbsoluta, bytes);
                 U.setImagen(imagen.getOriginalFilename());
+                String passw = U.getPassword();//recibo la contrasena en texto plano
+                String encriptado = passwordEncoder.encode(passw);//convierto la contrasena
+                U.setPassword(encriptado);//mando la contrasena ya encriptada
                 U.setActive(1);
                 U.setPermisos("USER");
                 U.setRoles("USER");
 
-            } catch (Exception e) {
+            } catch (IOException e) {
 
             }
 
@@ -123,14 +133,16 @@ public class UsuarioController {
         usuarioService.saveUsuario(U);
         return "leerusuarios";
     }
-    
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /*Metodo para editar un usuario*/
     @GetMapping("/EditarUsuario/{ID}")
     public String EditarUsuario(@PathVariable("ID") Long id, Model model) {
         Usuario U = usuarioService.getUsuarioById(id);
         model.addAttribute("usuario", U);
-        return "nuevoUsuario";
+        return "nuevoUsuario1";
     }
 
     @RequestMapping("/ConsultarUsuario/{ID}")
@@ -150,7 +162,7 @@ public class UsuarioController {
     @Autowired
     private PersonaReportService PReportService;
 
-    @GetMapping(path = "/leerusuarios/Usuarios", produces = MediaType.APPLICATION_PDF_VALUE)
+    @GetMapping(path = "/leerusuarios/usuarios", produces = MediaType.APPLICATION_PDF_VALUE)
     public @ResponseBody
     byte[] getFile() throws IOException {
         try {

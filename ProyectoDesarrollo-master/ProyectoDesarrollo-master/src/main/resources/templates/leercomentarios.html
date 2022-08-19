@@ -1,42 +1,36 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
-
     <head th:replace="plantilla/template::head"></head>
-       
     <body>
-        <header th:replace="plantilla/template::header"></header>
         
+        <header th:replace="plantilla/template::header"></header>
         <div class="Formulario">
             <div class="formulario">      
-                <h1>Crear un comentario</h1>
+                <h1 th:text="#{comentario.info}"></h1>
                 <form th:object ="${comentarioN}"
                       th:action ="@{/saveC}"
                       method="POST" 
                       >
-                           <input type="hidden" th:field="*{ID}">
-                    <p>
-                        <label for="Usuario" class="colocar_nombre">Nombre
-                            <span class="obligatorio">*</span>
-                        </label>
-                        <input type="text" th:field="*{Usuario}" name="introducir_nombre" id="Usuario" 
-                               required="obligatorio" placeholder="Escribe tu nombre">
-                    </p>
-
-                    <p>
-                        <label for="Comentario" class="colocar_comentario">Comentario
-                            <span class="obligatorio">*</span>
-                        </label>                     
-                        <textarea name="introducir_comentario"th:field="*{Comentario}" class="texto_mensaje" id="Comentario" 
-                                  required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea> 
-                    </p>                    
-
-                    <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
-
-                    <p class="aviso">
-                        <span class="obligatorio"> * </span>los campos son obligatorios.
-                    </p>          
+                    <input type="hidden" th:field="*{ID}">
+                        <p>
+                            <label for="Usuario" class="colocar_nombre" th:text="#{comentario.nombre}">
+                                <span class="obligatorio">*</span>
+                            </label>
+                            <input type="text" th:field="*{Usuario}" name="introducir_nombre" id="Usuario" 
+                                   required="obligatorio">
+                        </p>
+                        <p>
+                            <label for="Comentario" class="colocar_comentario" th:text="#{comentario.texto}">
+                                <span class="obligatorio">*</span>
+                            </label>                     
+                            <textarea name="introducir_comentario"th:field="*{Comentario}" class="texto_mensaje" id="Comentario" 
+                                      required="obligatorio"></textarea> 
+                        </p>                    
+                        <button type="submit" name="enviar_formulario" id="enviar"><p th:text="#{comentario.enviar}"></p></button>
+                        <p class="aviso">
+                            <span class="obligatorio" th:text="#{accion.obligatorio}"></span>
+                        </p>          
                 </form>
-
             </div>  
         </div>
         <div class="Container">
@@ -48,7 +42,6 @@
                         <th scope="col">Eliminar</th>    
                     </tr>
                 </thead>
-
                 <tbody>
                     <th:block th:each="user : ${comentario}">
                         <tr>
@@ -58,7 +51,6 @@
                                 <a th:href="@{/EliminarComentario/{ID}(ID=${user.getID})}">Eliminar Comentario</a>
                             </td>
                         </tr>
-
                     </th:block>
                 </tbody>
             </table>

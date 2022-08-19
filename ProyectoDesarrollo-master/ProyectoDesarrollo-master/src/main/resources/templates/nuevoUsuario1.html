@@ -1,15 +1,15 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 
-    <head th:replace="plantilla/template2::head"></head>
+    <head th:replace="plantilla/template::head"></head>
 
 
     <body>
-        <header th:replace="plantilla/template2::header"></header>
+        <header th:replace="plantilla/template::header"></header>
 
         <!--  Inicio formulario -->
         <section class="vh-100 bg-image">
-            <a class="btn btn-primary" th:href="@{/login}"  role="button" >Volver  </a>
+            <a class="btn btn-primary" th:href="@{/leerusuarios}"  role="button" >Volver  </a>
             <div class="mask d-flex align-items-center h-100 gradient-custom-3">
                 <div class="container h-100">
                     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -19,7 +19,7 @@
                                     <h2 class="text-uppercase text-center mb-5">Nuevo Usuario</h2>
 
                                     <form th:object="${usuario}"
-                                          th:action="@{/saveU}"
+                                          th:action="@{/saveI}"
                                           method="POST"
                                           enctype ="multipart/form-data"
                                           >
@@ -73,7 +73,7 @@
 
                                             <div class="d-flex justify-content-center">
                                                 <button type="submit"
-                                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Registrar</button>
+                                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Crear Usuario</button>
                                             </div>
 
 
@@ -87,7 +87,7 @@
                 </div>
             </div>
         </section>
-        </div>  
+
 
 
     </body>
