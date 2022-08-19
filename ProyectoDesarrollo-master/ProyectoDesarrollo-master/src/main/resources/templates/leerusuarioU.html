@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
-
     <head th:replace="plantilla/template::head">
-
     </head>
     <body>
-
         <header th:replace="plantilla/template::header"></header>
+        
         <div class="fondopagina">
             <div class="descripcion" align-content="center">
                 <h1 th:text="#{leerusuario.titulo}"></h1>
@@ -40,7 +38,7 @@
                                 <td th:text="${user.getTelefono}"></td>
                                 <td th:text="${user.getEmail}"></td>
                                 <td>
-                                    <a role="button" th:href="@{/verPerfil/{ID}(ID=${user.getID})}" >Ver</a>
+                                    <a role="button" th:href="@{/verPerfil/{ID}(ID=${user.getID})}">Ver</a>
                                 </td>
                                 <td>
                                     <a th:href="@{/EliminarUsuario/{ID}(ID=${user.getID})}" th:text="#{accion.eliminar}"></a>
