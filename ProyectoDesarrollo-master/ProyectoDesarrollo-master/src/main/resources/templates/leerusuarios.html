@@ -1,50 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
-
     <head th:replace="plantilla/template::head">
-
     </head>
     <body>
+        
         <header th:replace="plantilla/template::header"></header>
         <div class="fondopagina">
-
-
-
             <div class="descripcion" align-content="center">
                 <h1 th:text="#{leerusuario.titulo}"></h1>
             </div>
 
-
             <div class="container">
                 <h1 th:text="#{leerusuarios.lista}"></h1>
-
-
                 <table class="table table-dark table-hover"> 
                     <tbody>
-
                         <th:block th:each="user : ${usuario}">
-
                             <thead class="thead-dark">
                                 <th scope="col" th:text="#{cliente.nombre}"></th>
                                 <th scope="col" th:text="#{cliente.apellido}"></th>
                                 <th scope="col" th:text="#{cliente.apellido2}"></th>
-
                                 <th scope="col" th:text="#{cliente.telefono}"></th>
                                 <th scope="col" th:text="#{cliente.correo}"></th>
                                 <th scope="col" th:text="#{accion.editar}"> </th>
                                 <th scope="col" th:text="#{accion.eliminar}"> </th>
-
                                 </tr>
                             </thead>
+                            </th:block>
                     </tbody>
                     <tbody>
-
                         <th:block th:each="user : ${usuario}">
                             <tr>
                                 <td th:text="${user.getNombre}"></td>
                                 <td th:text="${user.getApellido1}"></td>
                                 <td th:text="${user.getApellido2}"></td>
-
                                 <td th:text="${user.getTelefono}"></td>
                                 <td th:text="${user.getEmail}"></td>
                                 <td>
@@ -53,23 +41,18 @@
                                 <td>
                                     <a th:href="@{/EliminarUsuario/{ID}(ID=${user.getID})}" th:text="#{accion.eliminar}"></a>
                                 </td>
-                                                                <td>
-                                    <a th:href="@{/leerusuarioU/{ID}(ID=${user.getID})}" >Ver</a>
+                                <td>
+                                    <a th:href="@{/leerusuarioU/{ID}(ID=${user.getID})}">Ver</a>
                                 </td>
                             </tr>
                         </th:block>
                     </tbody>
                 </table>
             </div>
-
         </div>
-
         <div class="d-flex justify-content-center">
             <a class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"  role="button" th:href="@{/usuarioNI/}" th:text="#{accion.nuevousuario}"></a>
         </div>
-
-
-
 
         <!-- Prueba para mostar los datos de los usuarios usando el CARD de bootstrap -->
         <div class="container mt-5">
@@ -86,16 +69,13 @@
                                     <h4 th:text="${user.getApellido1}"></h4>
                                     <p th:text="${user.getApellido2}"></p>
                                     <a th:href="@{/EditarUsuario/{ID}(ID=${user.getID})}" th:text="#{accion.editar}" class="btn btn-dark">Editar</a>
-                                     <a th:href="@{/EliminarUsuario/{ID}(ID=${user.getID})}" th:text="#{accion.eliminar}"class="btn btn-dark">Editar</a>
+                                    <a th:href="@{/EliminarUsuario/{ID}(ID=${user.getID})}" th:text="#{accion.eliminar}"class="btn btn-dark">Editar</a>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </th:block>
-
         </div>
-
         <section class="py-4 mb-4 bg-light">
             <div class="container">
                 <div class="row">
@@ -107,7 +87,6 @@
                 </div>
             </div>
         </section><!-- comment -->
-
         <footer th:replace="plantilla/template::footer"></footer>
     </body>
 </html>
