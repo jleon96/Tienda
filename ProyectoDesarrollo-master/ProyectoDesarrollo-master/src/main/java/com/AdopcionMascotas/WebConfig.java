@@ -32,14 +32,14 @@ public class WebConfig implements WebMvcConfigurer {
         registro.addInterceptor(localeChangeInterceptor());
     }
 
-//    Lo de abajo se usara para las imagen del gato
+//    Lo de abajo se usara para las imagenes
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         WebMvcConfigurer.super.addResourceHandlers(registry);
-        
+
         registry.addResourceHandler("/fotos/**").addResourceLocations("file:/C:/temp/fotos/");
+        registry.addResourceHandler("/fotosU/**").addResourceLocations("file:/C:/temp/fotosU/");
+
     }
-    
-    
-    
+
 }

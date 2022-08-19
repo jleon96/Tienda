@@ -28,9 +28,9 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav justify-content-end">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#" th:text="#{accion.inicio}"></a>
+                                <a class="nav-link active" aria-current="page" href="/Index.html" th:text="#{accion.inicio}"></a>
                             </li>
 
                             <li class="nav-item">
@@ -39,15 +39,27 @@
 
                             <li class="nav-item ">
                                 <a class="nav-link  active"  href="/Alimentos.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.alimentoMascotas}">
-                                   
-                                    
+
+
                                 </a>
-                            <!--    <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#" th:text="#{animal.perro}" > </a></li>
-                                    <li><a class="dropdown-item" href="#">Para Gatos</a></li>
-                                    <!-- <li><hr class="dropdown-divider"></li>
-                                         <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>-->
+                                <!--    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#" th:text="#{animal.perro}" > </a></li>
+                                        <li><a class="dropdown-item" href="#">Para Gatos</a></li>
+                                <!-- <li><hr class="dropdown-divider"></li>
+                                     <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>-->
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.usuarios}">
+
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" th:href="@{/leerusuarios/}" th:text="#{accion.leerusuarios}"></a></li>
+                                    <li><a class="dropdown-item" th:href="@{/usuarioN/}" th:text="#{accion.nuevousuario}"></a></li>
+                                    
+
+                                </ul>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -60,9 +72,10 @@
 
                                 </ul>
                             </li>
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{animales.adopcion}">
-                             
+
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" th:href="@{/leerperros}" th:text="#{animal.perro}" ></a></li>
@@ -71,14 +84,20 @@
                                          <li><a class="dropdown-item" href="#">Something else here</a></li>-->
                                 </ul>
                             </li>
+
                             <li class="nav-item">
-                                <a class="nav-link disabled">Disabled</a>
+                                <a class="nav-link active" aria-current="page" th:href="@{/leerusuarios}">Mi pelfil</a>
                             </li>
                         </ul>
                         <!-- <form class="d-flex" role="search">
                                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                                       <button  class="btn btn-dark" type="submit"> Search</button>
-                              </form>-->
+                              </form>
+                        
+                                                    <li class="nav-item">
+                                <a class="nav-link disabled">Disabled</a>
+                            </li>
+                        -->
                         <form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/logout}">
                             <button sec:authorize="isAuthenticated()" class="btn btn-dark btn-lg " type="submit" th:text="#{accion.cerrarsesion}"></button>
                         </form>
@@ -94,7 +113,7 @@
 
         <footer th:fragment="footer" class="">
 
-            <div class="bd-footer bg-dark">
+            <div class="mb-0 bg-dark">
                 <!-- Grid container -->
 
                 <!-- Grid container -->

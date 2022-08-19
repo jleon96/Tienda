@@ -33,9 +33,11 @@ public class Usuario implements Serializable {
         return id;
     }
 
-    public void setID(long ID) {
-        this.id = ID;
+    public void setID(long id) {
+        this.id = id;
     }
+
+
 
     public String getNombre() {
         return nombre;
@@ -131,7 +133,7 @@ public class Usuario implements Serializable {
         this.imagen = imagen;
     }
 
-    public Usuario(long id, String nombre, String Apellido1, String Apellido2, int Telefono, String Email, String Password, int Active, String imagen) {
+    public Usuario(long id, String nombre, String Apellido1, String Apellido2, int Telefono, String Email, String Password,  String imagen) {
         this.id = id;
         this.nombre = nombre;
         this.Apellido1 = Apellido1;
@@ -139,7 +141,7 @@ public class Usuario implements Serializable {
         this.Telefono = Telefono;
         this.Email = Email;
         this.Password = Password;
-        this.Active = Active;
+    
         this.imagen = imagen;
     }
 

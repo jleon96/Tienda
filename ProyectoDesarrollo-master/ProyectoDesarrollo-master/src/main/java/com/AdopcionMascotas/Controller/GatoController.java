@@ -36,6 +36,13 @@ public class GatoController {
         model.addAttribute("gatos", listaGato);
         return "leergatos";
     }
+    @GetMapping("/leergatosU")
+    public String leergatosU(Model model) {
+        List<Gato> listaGato = gatoService.getAllGato();
+        model.addAttribute("titulo", "Lista de Gatos");
+        model.addAttribute("gatos", listaGato);
+        return "leergatosU";
+    }
 
     @GetMapping("creargatoN")
     public String CrearGato(Model model) {

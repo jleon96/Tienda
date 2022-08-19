@@ -41,27 +41,45 @@ public class UsuarioController {
         return "leerusuarios";
     }
 
-    /*Metodo para crear una persona*/
+    /*Se trato de configurar paraa ver la informacion de un solo usuario*/
+    @GetMapping("/leerusuarioU")
+    public String leerusuarioU(Model model) {
+        List<Usuario> listaUsuario = usuarioService.getAllUsuario();
+        model.addAttribute("titulo", "Lista de Usuarios");
+        model.addAttribute("usuario", listaUsuario);
+        return "leerusuarioU";
+    }
+    
+    @GetMapping("/verPerfil/{ID}")
+    public String verPerfil(Model model, @PathVariable("ID") Long id) {
+        Usuario U = usuarioService.getUsuarioById(id);
+        model.addAttribute("usuario", U);
+        return "nuevoUsuario";
+    }
+
+    /*Metodo para crear una persona
+    este se usa en el boton de login*/
     @GetMapping("/usuarioN")
     public String crearUsuario(Model model) {
         model.addAttribute("usuario", new Usuario());
+
         return "nuevoUsuario";
     }
 
     @PostMapping("/saveU")
     public String guardarUsuario(@ModelAttribute Usuario U, @RequestParam(name = "file", required = false) MultipartFile imagen, RedirectAttributes flash) {
-        U.setActive(1);
-        U.setPermisos("USER");
-        U.setRoles("USER");
 
         if (!imagen.isEmpty()) {
-            String ruta = "C://temp//fotos";
+            String ruta = "C://temp//fotosU";
 
             try {
                 byte[] bytes = imagen.getBytes();
                 Path rutaAbsoluta = Paths.get(ruta + "//" + imagen.getOriginalFilename());
                 Files.write(rutaAbsoluta, bytes);
                 U.setImagen(imagen.getOriginalFilename());
+                U.setActive(1);
+                U.setPermisos("USER");
+                U.setRoles("USER");
 
             } catch (Exception e) {
 
@@ -72,11 +90,46 @@ public class UsuarioController {
         usuarioService.saveUsuario(U);
         return "redirect:/login";
     }
+    
+        /*Metodo para crear una persona
+    este se usa en el boton de leerusuarios*/
+    @GetMapping("/usuarioNI")
+    public String crearUsuarioI(Model model) {
+        model.addAttribute("usuario", new Usuario());
+
+        return "nuevoUsuario";
+    }
+
+    @PostMapping("/saveUI")
+    public String guardarUsuarioI(@ModelAttribute Usuario U, @RequestParam(name = "file", required = false) MultipartFile imagen, RedirectAttributes flash) {
+
+        if (!imagen.isEmpty()) {
+            String ruta = "C://temp//fotosU";
+
+            try {
+                byte[] bytes = imagen.getBytes();
+                Path rutaAbsoluta = Paths.get(ruta + "//" + imagen.getOriginalFilename());
+                Files.write(rutaAbsoluta, bytes);
+                U.setImagen(imagen.getOriginalFilename());
+                U.setActive(1);
+                U.setPermisos("USER");
+                U.setRoles("USER");
+
+            } catch (Exception e) {
+
+            }
+
+        }
+
+        usuarioService.saveUsuario(U);
+        return "leerusuarios";
+    }
+    
 
     /*Metodo para editar un usuario*/
     @GetMapping("/EditarUsuario/{ID}")
-    public String EditarUsuario(@PathVariable("ID") Long ID, Model model) {
-        Usuario U = usuarioService.getUsuarioById(ID);
+    public String EditarUsuario(@PathVariable("ID") Long id, Model model) {
+        Usuario U = usuarioService.getUsuarioById(id);
         model.addAttribute("usuario", U);
         return "nuevoUsuario";
     }
@@ -90,8 +143,8 @@ public class UsuarioController {
 
     /*Metodo para eliminar un usuario*/
     @GetMapping("/EliminarUsuario/{ID}")
-    public String EliminarUsuario(@PathVariable("ID") Long ID) {
-        usuarioService.EliminarUsuario(ID);
+    public String EliminarUsuario(@PathVariable("ID") Long id) {
+        usuarioService.EliminarUsuario(id);
         return "redirect:/leerusuarios";
     }
 

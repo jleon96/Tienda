@@ -48,13 +48,10 @@
                                 <td th:text="${user.getTelefono}"></td>
                                 <td th:text="${user.getEmail}"></td>
                                 <td>
-                                    <a th:href="@{/EditarUsuario/{ID}(ID=${user.getID})}" th:text="#{accion.editar}"></a>
+                                    <a role="button" th:href="@{/verPerfil/{ID}(ID=${user.getID})}" >Ver</a>
                                 </td>
                                 <td>
                                     <a th:href="@{/EliminarUsuario/{ID}(ID=${user.getID})}" th:text="#{accion.eliminar}"></a>
-                                </td>
-                                                                <td>
-                                    <a th:href="@{/leerusuarioU/{ID}(ID=${user.getID})}" >Ver</a>
                                 </td>
                             </tr>
                         </th:block>
@@ -65,7 +62,7 @@
         </div>
 
         <div class="d-flex justify-content-center">
-            <a class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"  role="button" th:href="@{/usuarioNI/}" th:text="#{accion.nuevousuario}"></a>
+            <a class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"  role="button" th:href="@{/usuarioN/}" th:text="#{accion.nuevousuario}"></a>
         </div>
 
 

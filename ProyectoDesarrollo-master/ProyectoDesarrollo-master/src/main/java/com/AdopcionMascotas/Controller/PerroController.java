@@ -31,6 +31,14 @@ public class PerroController {
         return "leerperros";
     }
 
+        @GetMapping("/leerperrosU")
+    public String leerperrosU(Model model) {
+        List<Perro> listaPerro = perroService.getAllPerro();
+        model.addAttribute("titulo", "Lista de Perros");
+        model.addAttribute("perros", listaPerro);
+        return "leerperrosU";
+    }
+    
     @GetMapping("crearperroN")
     public String CrearPerro(Model model) {
         model.addAttribute("perros", new Perro());
