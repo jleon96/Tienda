@@ -54,7 +54,7 @@ public class ComentarioController {
         @Autowired
     private ComentarioReportService PReportService;
 
-    @GetMapping(path = "/leercomentarios/Comentarios", produces = MediaType.APPLICATION_PDF_VALUE)
+    @GetMapping(path = "/leerusuarios/Comentarios", produces = MediaType.APPLICATION_PDF_VALUE)
     public @ResponseBody
     byte[] getFile() throws IOException {
         try {

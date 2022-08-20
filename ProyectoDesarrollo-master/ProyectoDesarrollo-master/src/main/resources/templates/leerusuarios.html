@@ -3,7 +3,7 @@
     <head th:replace="plantilla/template::head">
     </head>
     <body>
-        
+
         <header th:replace="plantilla/template::header"></header>
         <div class="fondopagina">
             <div class="descripcion" align-content="center">
@@ -25,7 +25,7 @@
                                 <th scope="col" th:text="#{accion.eliminar}"> </th>
                                 </tr>
                             </thead>
-                            </th:block>
+                        </th:block>
                     </tbody>
                     <tbody>
                         <th:block th:each="user : ${usuario}">
@@ -80,13 +80,27 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
+                        <h3>Reporte de usuarios</h3>
                         <a sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.reporte}" th:href="@{/leerusuarios/Usuarios}"
                            class="btn btn-primary">
                             <i class="fas fa-file"></i>  </a>
                     </div>
                 </div>
             </div>
-        </section><!-- comment -->
+        </section>
+        <section class="py-4 mb-4 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
+                        <h3>Reporte de comentarios</h3>
+                        <a sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.reporte}" th:href="@{/leerusuarios/Comentarios}"
+                           class="btn btn-primary">
+                            <i class="fas fa-file"></i>  </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- comment -->
         <footer th:replace="plantilla/template::footer"></footer>
     </body>
 </html>
