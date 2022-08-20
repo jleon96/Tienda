@@ -4,7 +4,7 @@
     </head>
     <body>
         <header th:replace="plantilla/template::header"></header>
-        
+
         <div class="fondopagina">
             <div class="descripcion" align-content="center">
                 <h1 th:text="#{leerusuario.titulo}"></h1>
@@ -72,24 +72,11 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </th:block>
-
         </div>
 
-        <section class="py-4 mb-4 bg-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
-                        <a sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.reporte}" th:href="@{/leerusuarios/Usuarios}"
-                           class="btn btn-primary">
-                            <i class="fas fa-file"></i>  </a>
-                    </div>
-                </div>
-            </div>
-        </section><!-- comment -->
-
+        <!-- comment -->
         <footer th:replace="plantilla/template::footer"></footer>
     </body>
 </html>

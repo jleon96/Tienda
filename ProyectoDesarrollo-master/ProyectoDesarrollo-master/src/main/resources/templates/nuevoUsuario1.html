@@ -2,14 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 
     <head th:replace="plantilla/template::head"></head>
-
-
     <body>
         <header th:replace="plantilla/template::header"></header>
 
         <!--  Inicio formulario -->
         <section class="vh-100 bg-image">
-            <a class="btn btn-primary" th:href="@{/leerusuarios}"  role="button" >Volver  </a>
+            <a class="btn btn-primary" th:href="@{/leerusuarios}"  role="button" th:text="#{accion.volver}"></a>
             <div class="mask d-flex align-items-center h-100 gradient-custom-3">
                 <div class="container h-100">
                     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -27,36 +25,33 @@
 
                                             <div class="form-outline mb-4">
                                                 <input type="text" required="obligatorio" id="form3Example1cg" class="form-control form-control-lg" th:field="*{Nombre}" /> 
-                                                <label class="form-label" for="form3Example1cg"> Nombre</label> <span class="obligatorio">*</span>
+                                                <label class="form-label" for="form3Example1cg" th:text="#{usuario.nombre}"></label> <span class="obligatorio">*</span>
                                             </div>
 
                                             <div class="form-outline mb-4">
                                                 <input type="text" required="obligatorio" id="form3Example1cg" class="form-control form-control-lg" th:field="*{Apellido1}" /> 
-                                                <label class="form-label" for="form3Example1cg"> Primer apellido</label> <span class="obligatorio">*</span>
+                                                <label class="form-label" for="form3Example1cg" th:text="#{usuario.apellido1}"></label> <span class="obligatorio">*</span>
                                             </div>
+
                                             <div class="form-outline mb-4">
                                                 <input type="text" required="obligatorio" id="form3Example1cg" class="form-control form-control-lg" th:field="*{Apellido2}" /> 
-                                                <label class="form-label" for="form3Example1cg"> Segundo apellido</label> <span class="obligatorio">*</span>
+                                                <label class="form-label" for="form3Example1cg" th:text="#{usuario.apellido2}"></label> <span class="obligatorio">*</span>
                                             </div>
 
                                             <div class="form-outline mb-4">
                                                 <input type="text" required="obligatorio" id="form3Example1cg" class="form-control form-control-lg" th:field="*{telefono}" /> 
-                                                <label class="form-label" for="form3Example1cg"> Telefono </label> <span class="obligatorio">*</span>
+                                                <label class="form-label" for="form3Example1cg" th:text="#{usuario.telefono}"></label> <span class="obligatorio">*</span>
                                             </div>
 
                                             <div class="form-outline mb-4">
                                                 <input type="email" required="obligatorio" id="form3Example3cg" class="form-control form-control-lg" th:field="*{email}" />
-                                                <label class="form-label" for="form3Example3cg">Correo</label> <span class="obligatorio">*</span>
+                                                <label class="form-label" for="form3Example3cg" th:text="#{usuario.email}"></label> <span class="obligatorio">*</span>
                                             </div>
-
-
 
                                             <div class="form-outline mb-4">
                                                 <input type="password" required="obligatorio" id="form3Example4cg" class="form-control form-control-lg" th:field="*{password}" />
-                                                <label class="form-label" for="form3Example4cg">Contrasena</label> <span class="obligatorio">*</span>
+                                                <label class="form-label" for="form3Example4cg" th:text="#{usuario.contraseña}"></label> <span class="obligatorio">*</span>
                                             </div>
-
-
 
                                             <div class="form-group row">
                                                 <label class="col-md-2" for="imagen">Imagen *</label>
@@ -68,18 +63,14 @@
                                             </div>
 
                                             <p class="aviso">
-                                                <span class="obligatorio"> * </span>los campos son obligatorios.
+                                                <span class="obligatorio" th:text="#{accion.obligatorio}"></span>los campos son obligatorios.
                                             </p>
 
                                             <div class="d-flex justify-content-center">
                                                 <button type="submit"
-                                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Crear Usuario</button>
+                                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" th:text="#{usuario.registrar}"></button>
                                             </div>
-
-
-
                                     </form>
-
                                 </div>
                             </div>
                         </div>
@@ -87,8 +78,6 @@
                 </div>
             </div>
         </section>
-
-
-
+        <footer th:replace="plantilla/template::footer"></footer>
     </body>
 </html>
