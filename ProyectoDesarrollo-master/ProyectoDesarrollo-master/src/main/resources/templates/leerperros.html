@@ -50,7 +50,7 @@
             </button>
         </div>
 
-        
+
         <div class="container mt-5">
             <th:block th:each="user : ${perros}">
                 <div class="row justify-content-center ">
@@ -65,15 +65,25 @@
                                     <p th:text="${user.getDescripcion}"></p>
                                     <a th:href="@{/EditarPerro/{ID}(ID=${user.getID})}" class="btn btn-dark">Editar</a>
                                     <a th:href="@{/EliminarPerro/{ID}(ID=${user.getID})}" class="btn btn-dark">Adoptar</a>
-
                             </div>
                         </div>
                     </div>
-
                 </div>
             </th:block>
-
         </div>
-    <footer th:replace="plantilla/template::footer">
+
+        <section class="py-4 mb-4 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
+                        <h3>Reporte de perros</h3>
+                        <a sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.reporte}" th:href="@{/leerperros/Perros}"
+                           class="btn btn-primary">
+                            <i class="fas fa-file"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer th:replace="plantilla/template::footer">
     </body>
 </html>
