@@ -32,17 +32,8 @@
             </nav>
             </div>
         </header>
-
-
-
         <footer th:fragment="footer" class="">
-
             <div class="mb-0 bg-dark">
-                <!-- Grid container -->
-
-                <!-- Grid container -->
-
-                <!-- Copyright -->
                 <div class="text-center p-3 text-white" style="background-color: rgba(0, 0, 0, 0.2)">
                     © 2022 Copyright:
                     <a class="text-white" href="#">Adopcion</a>
@@ -52,12 +43,7 @@
                     <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
                        th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
                 </div>
-                <!-- Copyright -->
             </div>
-
         </footer>
-
-
     </body>
-
 </html>

@@ -11,39 +11,7 @@
     </head>
     <body>
         <header>
-            <!--<h1>Peludos</h1>-->
 
-            <!--<nav>
-                <ul class="menu">
-
-                    <li ><a href="index.html">Inicio</a></li>
-                    <li ><a href="#">Animales en adopcion</a>
-                        <ul class="submenu">
-                            <li><a href="perros.html">Perros</a></li>
-                            <li><a href="/gatos">Gatos</a></li>
-                        </ul>
-                    </li>
-                    <li ><a href="#">Servicios</a>
-                        <ul class="submenu">
-                            <li><a href="consejos.html">Consejos</a></li>
-                            <li><a href="Alimentos.html">Alimentos</a></li>
-                        </ul>
-                    </li>
-                    <li ><a href="/crearcomentarioN">Comentarios</a></li>
-                    <li ><a href="acercaDe.html">¿Quienes somos?</a></li>
-                    <li ><a href="/donacionesN">Donaciones</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.usuarios}">
-                            Usuarios
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" th:href="@{/leerusuarios/}" th:text="#{accion.leerusuarios}"></a></li>
-                            <li><a class="dropdown-item" th:href="@{/usuariosN/}" th:text="#{accion.nuevousuario}"></a></li>
-
-                        </ul>
-                    </li>
-                </ul>
-            </nav>-->
             <nav class="navbar navbar-expand-lg navbar" style="background-color: red; ">
                 <div class="container-fluid">
                     <a class=" navbar-brand"><h1><img src="images/Logo.png" width="50px" height="50px"></span>Adopta un Amigo</h1></a>
@@ -54,10 +22,10 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active" aria-current="page" href="index">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link" href="/leerAlimentos">Alimentos</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -86,29 +54,15 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="/leerperrosU" th:text="#{animal.perro}" >Perros</a></li>
-                                    <li><a class="dropdown-item" href="/leergatosU" th:text="#{animal.gato}">Gatos</a></li>
- 
-                                    
-                                    <!-- <li><hr class="dropdown-divider"></li>
-                                         <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+                                    <li><a class="dropdown-item" href="/leergatosU" th:text="#{animal.gato}">Gatos</a></li>                                 
                                 </ul>
                             </li>
-                            <!-- <li class="nav-item">
-                                 <a class="nav-link disabled">Disabled</a>
-                             </li>
-                         </ul>
-                         <form class="d-flex" role="search">
-                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                             <button class="btn btn-outline-success" type="submit">Search</button>
-                         </form>-->
+                          
                     </div>
                 </div>
             </nav>
-
-
         </header>
         <div class="imagenes perro1">
-            <!--<img src="images/perro-gato.webp" class="perro1" alt="Esto es una imagen de un perro">-->
         </div>
         <div class="" >
             <div class="row">
@@ -125,11 +79,6 @@
         <div class="Purina">
             <img src="images/Purina.png" lt="Esto es una imagen de Purina">
         </div>
-        <!--<div class="img">
-            <img src="images/perro1.jpg" class="perro1" alt="Esto es una imagen de un perro">
-            <img src="images/Purina.png" class="purina" alt="Esto es una imagen de Purina">
-            
-                    </div>-->
         <div class="text">
             <p>Sabemos que la adopcion de mascotas representa grandes beneficios para la sociedad. Es por eso que promovemos la adopcion responsable con distintas acciones como: <strong>donar alimento de primera calidad a refugios de animales, informar sobre los procesos de adopcion e impulsar campañas de adopcion.</strong>  </p>
         </div>

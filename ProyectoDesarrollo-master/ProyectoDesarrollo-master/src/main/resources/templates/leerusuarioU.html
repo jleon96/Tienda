@@ -53,13 +53,13 @@
             <a class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"  role="button" th:href="@{/usuarioN/}" th:text="#{accion.nuevousuario}"></a>
         </div>
 
-        <!-- Prueba para mostar los datos de los usuarios usando el CARD de bootstrap -->
+
         <div class="container mt-5">
             <th:block th:each="user : ${usuario}">
                 <div class="row justify-content-center ">
                     <div class="card" style="width: 30rem; margin: 3rem 3rem 3rem 3rem;">
                         <div class="row">
-                            <!--<img src="images/gato1.png" class="card-img-top" alt="gato">-->
+
 
                             <div class="col-md-7">
                                 <img th:src="@{'/fotosU/' + ${user.getImagen}}" class="float-left ml-1" style="max-height: 75%;

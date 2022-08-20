@@ -28,12 +28,7 @@
                             <li class="nav-item ">
                                 <a class="nav-link  active"  href="/Alimentos.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.alimentoMascotas}">
                                 </a>
-                                <!--    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#" th:text="#{animal.perro}" > </a></li>
-                                        <li><a class="dropdown-item" href="#">Para Gatos</a></li>
-                                <!-- <li><hr class="dropdown-divider"></li>
-                                     <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>-->
+
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.usuarios}">
@@ -58,23 +53,12 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" th:href="@{/leerperros}" th:text="#{animal.perro}" ></a></li>
                                     <li><a class="dropdown-item" th:href="@{/leergatos}"th:text="#{animal.gato}"></a></li>
-                                    <!-- <li><hr class="dropdown-divider"></li>
-                                         <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+
                                 </ul>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" th:href="@{/leerusuarios}"  th:text="#{usuario.perfil}"></a>
-                            </li>
+
                         </ul>
-                        <!-- <form class="d-flex" role="search">
-                                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                      <button  class="btn btn-dark" type="submit"> Search</button>
-                              </form>
-                        
-                                                    <li class="nav-item">
-                                <a class="nav-link disabled">Disabled</a>
-                            </li>
-                        -->
+
                         <form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/logout}">
                             <button sec:authorize="isAuthenticated()" class="btn btn-dark btn-lg " type="submit" th:text="#{accion.cerrarsesion}"></button>
                         </form>
@@ -85,9 +69,7 @@
         </header>
         <footer th:fragment="footer" class="">
             <div class="mb-0 bg-dark">
-                <!-- Grid container -->
-                <!-- Grid container -->
-                <!-- Copyright -->
+
                 <div class="text-center p-3 text-white" style="background-color: rgba(0, 0, 0, 0.2)">
                     © 2022 Copyright:
                     <a class="text-white" href="#">Adopcion</a>
@@ -97,7 +79,7 @@
                     <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
                        th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
                 </div>
-                <!-- Copyright -->
+
             </div>
         </footer>
     </body>
