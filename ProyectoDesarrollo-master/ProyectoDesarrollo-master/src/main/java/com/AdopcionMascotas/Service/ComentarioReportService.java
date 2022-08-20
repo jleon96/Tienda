@@ -29,7 +29,7 @@ public class ComentarioReportService {
 //Instanciar la conexión
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/adopcion", "root", "brl092022");
+                    "jdbc:mysql://localhost/adopcion", "root", "admin");
 // Llena el reporte
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, con);
 // Exporta a PDF

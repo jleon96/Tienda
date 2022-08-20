@@ -18,16 +18,16 @@ public class Comentario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private long ID;
+    private long id;
     private String Usuario;
     private String Comentario;
 
     public long getID() {
-        return ID;
+        return id;
     }
 
     public void setID(long ID) {
-        this.ID = ID;
+        this.id = ID;
     }
 
     public String getUsuario() {

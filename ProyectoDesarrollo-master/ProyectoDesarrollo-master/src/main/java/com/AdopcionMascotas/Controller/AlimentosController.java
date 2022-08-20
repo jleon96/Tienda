@@ -32,6 +32,14 @@ public class AlimentosController {
         return "leerAlimentos";
     }
 
+    @GetMapping("/leerAlimentosU")
+    public String leerAlimentosU(Model model) {
+        List<Alimentos> listaAlimentos = alimentosService.getAllAlimentos();
+        model.addAttribute("titulo", "Lista de Alimentos");
+        model.addAttribute("alimentos", listaAlimentos);
+        return "leerAlimentosU";
+    }
+
     @GetMapping("agregarAlimentoN")
     public String AgregarAlimento(Model model) {
         model.addAttribute("alimentos", new Alimentos());
