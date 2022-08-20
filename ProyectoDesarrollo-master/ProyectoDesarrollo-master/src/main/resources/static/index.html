@@ -2,93 +2,96 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
     <head >
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- CSS only -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-        <link href="css/index.css" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-        <header>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <!-- CSS only -->
+                <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+                <!-- JavaScript Bundle with Popper -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+                <link href="css/index.css" rel="stylesheet" type="text/css"/>
+                </head>
+                <body>
+                    <header>
 
-            <nav class="navbar navbar-expand-lg navbar" style="background-color: red; ">
-                <div class="container-fluid">
-                    <a class=" navbar-brand"><h1><img src="images/Logo.png" width="50px" height="50px"></span>Adopta un Amigo</h1></a>
-                    <!--<a class="navbar-brand" href="#">Navbar</a>-->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/leerAlimentos">Alimentos</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Más información</a></li>
-                                    <li><a class="dropdown-item" href="acercaDe.html">Acerca del sitio web</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="/crearcomentarioN">Realizar un comentario</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.usuarios}">
-                                    Usuarios
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/leerusuarios" >Usuarios</a></li>
-                                    <li><a class="dropdown-item" href="/usuarioNI" >Nuevo Usuario</a></li>
+                        <nav class="navbar navbar-expand-lg navbar" style="background-color: red; ">
+                            <div class="container-fluid">
+                                <a class=" navbar-brand"><h1><img src="images/Logo.png" width="50px" height="50px"></span>Adopta un Amigo</h1></a>
+                                <!--<a class="navbar-brand" href="#">Navbar</a>-->
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="index">Inicio</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/leerAlimentos">Alimentos</a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Dropdown
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Más información</a></li>
+                                                <li><a class="dropdown-item" href="acercaDe.html">Acerca del sitio web</a></li>
+                                                <li><hr class="dropdown-divider"></li>
+                                                <li><a class="dropdown-item" href="/crearcomentarioN">Realizar un comentario</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.usuarios}">
+                                                Usuarios
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="/leerusuarios" >Usuarios</a></li>
+                                                <li><a class="dropdown-item" href="/usuarioNI" >Nuevo Usuario</a></li>
 
-                                </ul>
+                                            </ul>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{animales.adopcion}">
-                                    Animales en Adopcion
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/leerperrosU" th:text="#{animal.perro}" >Perros</a></li>
-                                    <li><a class="dropdown-item" href="/leergatosU" th:text="#{animal.gato}">Gatos</a></li>                                 
-                                </ul>
-                            </li>
-                          
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{animales.adopcion}">
+                                                    Animales en Adopcion
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="/leerperrosU" th:text="#{animal.perro}" >Perros</a></li>
+                                                    <li><a class="dropdown-item" href="/leergatosU" th:text="#{animal.gato}">Gatos</a></li>                                 
+                                                </ul>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link active" aria-current="page" href="/contactoN">Contactenos</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </header>
+                    <div class="imagenes perro1">
                     </div>
-                </div>
-            </nav>
-        </header>
-        <div class="imagenes perro1">
-        </div>
-        <div class="" >
-            <div class="row">
-                <div class="col-12 banner">
-                    <h1 class="text11">
-                        Ellos merecen otra oportunidad
-                    </h1>
-                    <h2 class="text12">
-                        Juntos la vida es mejor
-                    </h2>
-                </div>
-            </div>	
-        </div>
-        <div class="Purina">
-            <img src="images/Purina.png" lt="Esto es una imagen de Purina">
-        </div>
-        <div class="text">
-            <p>Sabemos que la adopcion de mascotas representa grandes beneficios para la sociedad. Es por eso que promovemos la adopcion responsable con distintas acciones como: <strong>donar alimento de primera calidad a refugios de animales, informar sobre los procesos de adopcion e impulsar campañas de adopcion.</strong>  </p>
-        </div>
+                    <div class="" >
+                        <div class="row">
+                            <div class="col-12 banner">
+                                <h1 class="text11">
+                                    Ellos merecen otra oportunidad
+                                </h1>
+                                <h2 class="text12">
+                                    Juntos la vida es mejor
+                                </h2>
+                            </div>
+                        </div>	
+                    </div>
+                    <div class="Purina">
+                        <img src="images/Purina.png" lt="Esto es una imagen de Purina">
+                    </div>
+                    <div class="text">
+                        <p>Sabemos que la adopcion de mascotas representa grandes beneficios para la sociedad. Es por eso que promovemos la adopcion responsable con distintas acciones como: <strong>donar alimento de primera calidad a refugios de animales, informar sobre los procesos de adopcion e impulsar campañas de adopcion.</strong>  </p>
+                    </div>
 
-        <div class="text">
-            <p>Ubicacion de nuestras instalaciones:</p>
-        </div>
+                    <div class="text">
+                        <p>Ubicacion de nuestras instalaciones:</p>
+                    </div>
 
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d982.3045908099351!2d-84.12079739684864!3d9.998813346580238!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa9028c7685d15b0b!2sVeterinaria%20Drs.%20Arguedas%20y%20Cruz!5e0!3m2!1ses-419!2scr!4v1660782380668!5m2!1ses-419!2scr" 
-                width="1689" height="700" style="border-radius: 5px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <footer th:replace="plantilla/template::footer"></footer> 
-    </body>
-</html>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d982.3045908099351!2d-84.12079739684864!3d9.998813346580238!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa9028c7685d15b0b!2sVeterinaria%20Drs.%20Arguedas%20y%20Cruz!5e0!3m2!1ses-419!2scr!4v1660782380668!5m2!1ses-419!2scr" 
+                            width="1689" height="700" style="border-radius: 5px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <footer th:replace="plantilla/template::footer"></footer> 
+                </body>
+                </html>

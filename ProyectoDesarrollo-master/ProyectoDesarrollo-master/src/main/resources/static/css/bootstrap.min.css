@@ -161,11 +161,11 @@ sup{
     top:-.5em
 }
 a{
- color:white;
+ color:black;
     text-decoration:none
 }
 a:hover{
-    color:black;
+    color:white;
 }
 a:not([href]):not([class]),a:not([href]):not([class]):hover{
     color:inherit;
@@ -3212,7 +3212,7 @@ textarea.form-control-lg{
 .nav-link{
     display:block;
     padding:.5rem 1rem;
-    color:white;
+    color:black;
     text-decoration:none;
     transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out
 }
@@ -3222,7 +3222,7 @@ textarea.form-control-lg{
     }
 }
 .nav-link:focus,.nav-link:hover{
-    color:black
+    color:white;
 }
 .nav-link.disabled{
     color:#6c757d;
