@@ -1,6 +1,7 @@
 package com.AdopcionMascotas.Controller;
 
 import com.AdopcionMascotas.Entity.Comentario;
+import com.AdopcionMascotas.Service.ComentarioReportService;
 import com.AdopcionMascotas.Service.IComentarioService;
 import com.AdopcionMascotas.Service.PerroReportService;
 import java.io.File;
@@ -51,7 +52,7 @@ public class ComentarioController {
     }
     
         @Autowired
-    private PerroReportService PReportService;
+    private ComentarioReportService PReportService;
 
     @GetMapping(path = "/leercomentarios/Comentarios", produces = MediaType.APPLICATION_PDF_VALUE)
     public @ResponseBody

@@ -33,7 +33,7 @@ public class ComentarioReportService {
 // Llena el reporte
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, con);
 // Exporta a PDF
-            JasperExportManager.exportReportToPdfFile(jasperPrint, reportPath + "\\Perros.pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint, reportPath + "\\Comentarios.pdf");
             return reportPath + "\\Comentarios.pdf";
         } catch (Exception e) {
             return e.getMessage();
