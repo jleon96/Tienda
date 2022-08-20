@@ -54,7 +54,7 @@ public class ComentarioController {
         @Autowired
     private ComentarioReportService PReportService;
 
-    @GetMapping(path = "/leerusuarios/Comentarios", produces = MediaType.APPLICATION_PDF_VALUE)
+    @GetMapping(path = "/leercomentarios/Comentarios", produces = MediaType.APPLICATION_PDF_VALUE)
     public @ResponseBody
     byte[] getFile() throws IOException {
         try {
@@ -63,10 +63,10 @@ public class ComentarioController {
             fis.read(targetArray);
             return targetArray;
         } catch (FileNotFoundException e) {
-// TODO Auto-generated catch block
+
             e.printStackTrace();
         } catch (IOException e) {
-// TODO Auto-generated catch block
+
             e.printStackTrace();
         }
         return null;

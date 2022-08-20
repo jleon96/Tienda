@@ -2,7 +2,7 @@ package com.AdopcionMascotas.Controller;
 
 import com.AdopcionMascotas.Entity.Usuario;
 import com.AdopcionMascotas.Service.IUsuarioService;
-import com.AdopcionMascotas.Service.PersonaReportService;
+import com.AdopcionMascotas.Service.UsuariosReportService;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -160,7 +160,7 @@ public class UsuarioController {
     }
 
     @Autowired
-    private PersonaReportService PReportService;
+    private UsuariosReportService PReportService;
 
     @GetMapping(path = "/leerusuarios/Usuarios", produces = MediaType.APPLICATION_PDF_VALUE)
     public @ResponseBody

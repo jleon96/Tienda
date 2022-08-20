@@ -19,7 +19,7 @@ public class Comentario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private long id;
-    private String Usuario;
+    private String Nombre;
     private String Comentario;
 
     public long getID() {
@@ -30,12 +30,12 @@ public class Comentario implements Serializable {
         this.id = ID;
     }
 
-    public String getUsuario() {
-        return Usuario;
+    public String getNombre() {
+        return Nombre;
     }
 
-    public void setUsuario(String Usuario) {
-        this.Usuario = Usuario;
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
 
     public String getComentario() {

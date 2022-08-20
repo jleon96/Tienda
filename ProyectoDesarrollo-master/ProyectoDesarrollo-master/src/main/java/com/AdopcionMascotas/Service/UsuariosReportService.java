@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
 @Service
-public class PersonaReportService {
+public class UsuariosReportService {
 
     private String reportPath;
 
@@ -29,7 +29,7 @@ public class PersonaReportService {
 //Instanciar la conexión
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/adopcion", "root", "brl092022");
+                    "jdbc:mysql://localhost/adopcion", "root", "admin");
 // Llena el reporte
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, con);
 // Exporta a PDF
