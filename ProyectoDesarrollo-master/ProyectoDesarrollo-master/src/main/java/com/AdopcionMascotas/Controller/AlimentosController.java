@@ -11,7 +11,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import static org.hibernate.criterion.Projections.id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -67,7 +66,7 @@ public class AlimentosController {
         }
         alimentosService.saveAlimentos(A);
 //        flash.addFlashAttribute("Alimento agregado con exito!");
-      flash.addFlashAttribute("success", "Alimento Creado con Exito! ");
+        flash.addFlashAttribute("success", "Alimento Creado con Exito! ");
         return "redirect:/leerAlimentos";
     }
 
@@ -83,7 +82,7 @@ public class AlimentosController {
         alimentosService.EliminarAlimentos(A.getId());
         return "redirect:/leerAlimentos";
     }
-    
+
     @Autowired
     private AlimentoReportService AReportService;
 

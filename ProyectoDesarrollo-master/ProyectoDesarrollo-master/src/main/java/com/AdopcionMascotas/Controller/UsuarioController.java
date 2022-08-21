@@ -44,24 +44,6 @@ public class UsuarioController {
         return "leerusuarios";
     }
 
-//    /*Se trato de configurar paraa ver la informacion de un solo usuario*/
-//    @GetMapping("/leerusuarioU")
-//    public String leerusuarioU(Model model) {
-//        List<Usuario> listaUsuario = usuarioService.getAllUsuario();
-//        model.addAttribute("titulo", "Lista de Usuarios");
-//        model.addAttribute("usuario", listaUsuario);
-//        return "leerusuarioU";
-//    }
-//    
-//    @GetMapping("/verPerfil/{ID}")
-//    public String verPerfil(Model model, @PathVariable("ID") Long id) {
-//        Usuario U = usuarioService.getUsuarioById(id);
-//        model.addAttribute("usuario", U);
-//        return "nuevoUsuario";
-//    }
-//
-//    
-//    
     /*Metodo para crear una persona
     este se usa en el boton de login*/
     @GetMapping("/usuarioN")
@@ -134,9 +116,6 @@ public class UsuarioController {
         flash.addFlashAttribute("success","Usuario Creado Con Exito!");
         return "redirect:/leerusuarios";
     }
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /*Metodo para editar un usuario*/
     @GetMapping("/EditarUsuario/{ID}")
@@ -180,19 +159,4 @@ public class UsuarioController {
         }
         return null;
     }
-
-//    @Controller
-//    public class ScopesController {
-//
-//        @Resource(name = "usuario")
-//        Usuario sessionScopedBean;
-//
-//        @RequestMapping("/EditarUsuario/session")
-//        public String getSessionScopeMessage(final Model model, @PathVariable("ID") Long ID) {
-//            model.addAttribute("usuario", sessionScopedBean.getNombre());
-//            usuarioService.getUsuarioById(ID);
-//            model.addAttribute("usuario", sessionScopedBean.getPassword());
-//            return "scopesExample";
-//        }
-//    }
 }

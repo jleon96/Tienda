@@ -50,8 +50,8 @@ public class ComentarioController {
         ICS.EliminarComentario(C.getID());
         return "redirect:/leercomentarios";
     }
-    
-        @Autowired
+
+    @Autowired
     private ComentarioReportService PReportService;
 
     @GetMapping(path = "/leercomentarios/Comentarios", produces = MediaType.APPLICATION_PDF_VALUE)
@@ -63,13 +63,10 @@ public class ComentarioController {
             fis.read(targetArray);
             return targetArray;
         } catch (FileNotFoundException e) {
-
             e.printStackTrace();
         } catch (IOException e) {
-
             e.printStackTrace();
         }
         return null;
     }
-
 }

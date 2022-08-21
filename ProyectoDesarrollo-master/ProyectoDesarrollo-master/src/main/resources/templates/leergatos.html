@@ -42,9 +42,9 @@
                 </th:block>
                 </tbody>
             </table>
-            <button>
-                <a href="/creargatoN">Crear nuevo Gato</a>
-            </button>
+            <form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/creargatoN}">
+                <button sec:authorize="isAuthenticated()" class="btn btn-dark btn-lg " type="submit" th:text="#{accion.creargatonuevo}"></button>
+            </form>
         </div>
 
 
@@ -70,19 +70,18 @@
 
                 </div>
             </th:block>
-            
+
             <section class="py-4 mb-4 bg-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
-                        <h3>Reporte de perros</h3>
-                        <a sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.reporte}" th:href="@{/leerperros/Perros}"
-                           class="btn btn-dark">
-                            <i class="fas fa-file"></i></a>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
+                            <a sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.reportegatos}" th:href="@{/leergatos/Gatos}"
+                               class="btn btn-dark">
+                                <i class="fas fa-file"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
         </div>
         <footer th:replace="plantilla/template::footer"></footer>

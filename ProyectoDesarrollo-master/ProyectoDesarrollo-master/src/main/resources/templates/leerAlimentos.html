@@ -47,9 +47,9 @@
                 </th:block>
                 </tbody>
             </table>
-            <button>
-                <a href="/agregarAlimentoN">Agregar alimento</a>
-            </button>
+            <form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/agregarAlimentoN}">
+                <button sec:authorize="isAuthenticated()" class="btn btn-dark btn-lg " type="submit" th:text="#{accion.agregaralimento}"></button>
+            </form>
         </div>
 
         <div class="container mt-5">
@@ -73,12 +73,11 @@
                 </div>
             </th:block>
             
-            <section class="py-4 mb-4 bg-light">
+           <section class="py-4 mb-4 bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
-                        <h3>Reporte de perros</h3>
-                        <a sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.reporte}" th:href="@{/leerperros/Perros}"
+                        <a sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.reportealimentos}" th:href="@{/leerAlimentos/Alimentos}"
                            class="btn btn-dark">
                             <i class="fas fa-file"></i></a>
                     </div>

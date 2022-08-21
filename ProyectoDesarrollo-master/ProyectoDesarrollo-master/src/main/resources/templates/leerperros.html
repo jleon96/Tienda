@@ -77,7 +77,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
-
                         <a sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.reporteperros}" th:href="@{/leerperros/Perros}"
                            class="btn btn-dark">
                             <i class="fas fa-file"></i></a>
