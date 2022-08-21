@@ -14,17 +14,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
 @Service
-public class UsuariosReportService {
+public class GatoReportService {
 
     private String reportPath;
 
     public String generateReport() {
         try {
-            File file = ResourceUtils.getFile("classpath:Usuarios.jasper");
+            File file = ResourceUtils.getFile("classpath:Gatos.jasper");
             reportPath = file.getParent();
 // Carga el reporte
             JasperReport jasperReport = (JasperReport) JRLoader.loadObject(file);
-// Añade paramáteros (pero para este caso no hay)
+// Añade paramáteros
             Map<String, Object> parameters = new HashMap<>();
 //Instanciar la conexión
             Class.forName("com.mysql.jdbc.Driver");
@@ -33,8 +33,8 @@ public class UsuariosReportService {
 // Llena el reporte
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, con);
 // Exporta a PDF
-            JasperExportManager.exportReportToPdfFile(jasperPrint, reportPath + "\\Usuarios.pdf");
-            return reportPath + "\\Usuarios.pdf";
+            JasperExportManager.exportReportToPdfFile(jasperPrint, reportPath + "\\Gatos.pdf");
+            return reportPath + "\\Gatos.pdf";
         } catch (Exception e) {
             return e.getMessage();
         }

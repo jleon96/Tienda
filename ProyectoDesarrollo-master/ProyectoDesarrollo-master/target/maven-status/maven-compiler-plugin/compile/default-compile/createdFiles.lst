@@ -9,7 +9,6 @@ com\AdopcionMascotas\Service\UserService.class
 com\AdopcionMascotas\Entity\Comentario.class
 com\AdopcionMascotas\Service\IGatoService.class
 com\AdopcionMascotas\Service\ComentarioReportService.class
-com\AdopcionMascotas\Service\PersonaReportService.class
 com\AdopcionMascotas\Service\IPerroService.class
 com\AdopcionMascotas\Service\DonacionService.class
 com\AdopcionMascotas\Repository\AlimentosRepository.class

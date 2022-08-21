@@ -70,6 +70,19 @@
 
                 </div>
             </th:block>
+            
+            <section class="py-4 mb-4 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
+                        <h3>Reporte de perros</h3>
+                        <a sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.reporte}" th:href="@{/leerperros/Perros}"
+                           class="btn btn-dark">
+                            <i class="fas fa-file"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         </div>
         <footer th:replace="plantilla/template::footer"></footer>

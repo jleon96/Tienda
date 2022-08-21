@@ -45,9 +45,10 @@
                     </th:block>
                 </tbody>
             </table>
-            <button>
-                <a href="/crearperroN">Crear nuevo Perro</a>
-            </button>
+            <form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/crearperroN}">
+                <button sec:authorize="isAuthenticated()" class="btn btn-dark btn-lg " type="submit" th:text="#{accion.crearperronuevo}"></button>
+            </form>
+
         </div>
 
 
@@ -76,9 +77,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
-                        <h3>Reporte de perros</h3>
-                        <a sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.reporte}" th:href="@{/leerperros/Perros}"
-                           class="btn btn-primary">
+
+                        <a sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.reporteperros}" th:href="@{/leerperros/Perros}"
+                           class="btn btn-dark">
                             <i class="fas fa-file"></i></a>
                     </div>
                 </div>

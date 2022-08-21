@@ -1,7 +1,10 @@
 package com.AdopcionMascotas.Controller;
 
 import com.AdopcionMascotas.Entity.Gato;
+import com.AdopcionMascotas.Service.GatoReportService;
 import com.AdopcionMascotas.Service.IGatoService;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,6 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.tomcat.jni.File;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import org.springframework.ui.Model;
@@ -19,6 +23,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -36,6 +41,7 @@ public class GatoController {
         model.addAttribute("gatos", listaGato);
         return "leergatos";
     }
+
     @GetMapping("/leergatosU")
     public String leergatosU(Model model) {
         List<Gato> listaGato = gatoService.getAllGato();
@@ -78,5 +84,24 @@ public class GatoController {
     public String EliminarGato(Gato G) {
         gatoService.EliminarGato(G.getID());
         return "redirect:/leergatos";
+    }
+
+    @Autowired
+    private GatoReportService GReportService;
+
+    @GetMapping(path = "/leergatos/Gatos", produces = MediaType.APPLICATION_PDF_VALUE)
+    public @ResponseBody
+    byte[] getFile() throws IOException {
+        try {
+            FileInputStream fis = new FileInputStream(new java.io.File(GReportService.generateReport()));
+            byte[] targetArray = new byte[fis.available()];
+            fis.read(targetArray);
+            return targetArray;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

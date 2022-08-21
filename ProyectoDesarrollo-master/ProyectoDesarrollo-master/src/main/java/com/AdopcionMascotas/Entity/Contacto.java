@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.AdopcionMascotas.Entity;
 
 import java.io.Serializable;
@@ -11,10 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- *
- * @author lyonc
- */
 @Entity
 @Table(name = "contactoform")
 public class Contacto implements Serializable {
