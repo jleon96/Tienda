@@ -10,7 +10,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <body>
         <header th:replace="plantilla/template::header"></header>
         <div>
-            <h1 style="text-align: center">Gracias por querer ponerte en contacto con nosotros, llena todos los campos y en breve te responderemos.</h1>
+            <h1 style="text-align: center" th:text="#{accion.contactoTitulo}"></h1>
         </div>
 
         <div class="container py-4 ">
@@ -31,34 +31,35 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                 <!-- Name input -->
                 <div class="mb-3">
-                    <label class="form-label" for="name">Nombre</label>
-                    <input class="form-control" id="name" type="text" placeholder="Tu nombre" th:field="*{nombre}" />
+                    <label class="form-label" for="name" th:text="#{cliente.nombre}"></label>
+                    <input class="form-control" id="name" type="text" th:placeholder="#{cliente.nombre}" th:field="*{nombre}" />
                 </div>
 
                 <!-- Email address input -->
                 <div class="mb-3">
-                    <label class="form-label" for="emailAddress">Correo</label>
-                    <input class="form-control" id="emailAddress" type="email" placeholder="Tu correo" th:field="*{correo}" />
+                    <label class="form-label" for="emailAddress" th:text="#{cliente.correo}"></label>
+                    <input class="form-control" id="emailAddress" type="email" th:placeholder="#{cliente.correo}" th:field="*{correo}" />
                 </div>
                 <!-- Email address input -->
                 <div class="mb-3">
-                    <label class="form-label" for="emailAddress">Telefono</label>
-                    <input class="form-control"  type="tel" placeholder="Tu telefono" th:field="*{telefono}" />
+                    <label class="form-label" for="emailAddress" th:text="#{cliente.telefono}"></label>
+                    <input class="form-control"  type="tel" th:placeholder="#{cliente.telefono}" th:field="*{telefono}" />
                 </div>
 
                 <!-- Message input -->
                 <div class="mb-3">
-                    <label class="form-label" for="message">Message</label>
-                    <textarea class="form-control" id="message" type="text" placeholder="Mensaje" th:field="*{mensaje}" style="height: 10rem;"></textarea>
+                    <label class="form-label" for="message" th:text="#{cliente.mensaje}"></label>
+                    <textarea class="form-control" id="message" type="text" th:placeholder="#{cliente.mensaje}" th:field="*{mensaje}" style="height: 10rem;"></textarea>
                 </div>
 
                 <!-- Form submit button -->
                 <div class="d-grid">
-                    <button class="btn btn-dark btn-lg" type="submit">Enviar</button>
+                    <button class="btn btn-dark btn-lg" type="submit" th:placeholder="#{boton.enviar}">Enviar</button>
                 </div>
 
             </form>
             </div>
         </div>
+          <footer th:replace="plantilla/template2::footer"></footer>
     </body>
 </html>

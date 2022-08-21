@@ -14,10 +14,12 @@
 
             <div class="container">
                 <h1 th:text="#{leerusuarios.lista}"></h1>
+                
                 <div class="alert alert-success alert-dismissible fade show" role="alert" th:if="${success != null}">
                     <label th:text="${success}"></label>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
+                
                 <table class="table table-dark table-hover"> 
                     <tbody>
                         <th:block th:each="user : ${usuario}">

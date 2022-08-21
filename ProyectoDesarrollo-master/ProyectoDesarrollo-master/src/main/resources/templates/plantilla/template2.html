@@ -32,22 +32,19 @@
             </nav>
             </div>
         </header>
-        <footer th:fragment="footer" class=" bg-dark fixed-bottom text-white text-lg-start">
+        <footer th:fragment="footer" class="mt-5 bg-dark fixed-bottom text-white text-lg-start">
             <!-- Copyright -->
             <div class=" bg-dark text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                 © 2022 Copyright:
                 <a class="text-white" href="#">Adopcion</a>
-            </div>
-            <!-- Fin Copyright -->
-
-
             </sapn> 
             <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
                th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>  
             <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
                th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
+            
             </div>
-            </div>
+         
         </footer>
     </body>
 </html>

@@ -44,6 +44,15 @@ public class UsuarioController {
         return "leerusuarios";
     }
 
+    /*Metodo para leer los usuario*/
+    @GetMapping("/leerusuarioU")
+    public String leerusuarioU(Model model) {
+        List<Usuario> listaUsuario = usuarioService.getAllUsuario();
+        model.addAttribute("titulo", "Lista de Usuarios");
+        model.addAttribute("usuario", listaUsuario);
+        return "leerusuarioU";
+    }
+
     /*Metodo para crear una persona
     este se usa en el boton de login*/
     @GetMapping("/usuarioN")
@@ -113,7 +122,7 @@ public class UsuarioController {
         }
 
         usuarioService.saveUsuario(U);
-        flash.addFlashAttribute("success","Usuario Creado Con Exito!");
+        flash.addFlashAttribute("success", "Usuario Creado Con Exito!");
         return "redirect:/leerusuarios";
     }
 

@@ -4,56 +4,6 @@
     </head>
     <body>
         <header th:replace="plantilla/template::header"></header>
-
-        <div class="fondopagina">
-            <div class="descripcion" align-content="center">
-                <h1 th:text="#{leerusuario.titulo}"></h1>
-            </div>
-            <div class="container">
-                <h1 th:text="#{leerusuarios.lista}"></h1>
-                <table class="table table-dark table-hover"> 
-                    <tbody>
-
-                        <th:block th:each="user : ${usuario}">
-                            <thead class="thead-dark">
-                                <th scope="col" th:text="#{cliente.nombre}"></th>
-                                <th scope="col" th:text="#{cliente.apellido}"></th>
-                                <th scope="col" th:text="#{cliente.apellido2}"></th>
-                                <th scope="col" th:text="#{cliente.telefono}"></th>
-                                <th scope="col" th:text="#{cliente.correo}"></th>
-                                <th scope="col" th:text="#{accion.editar}"> </th>
-                                <th scope="col" th:text="#{accion.eliminar}"></th>
-                                </tr>
-                            </thead>
-                        </th:block>
-                    </tbody>
-                    <tbody>
-
-                        <th:block th:each="user : ${usuario}">
-                            <tr>
-                                <td th:text="${user.getNombre}"></td>
-                                <td th:text="${user.getApellido1}"></td>
-                                <td th:text="${user.getApellido2}"></td>
-
-                                <td th:text="${user.getTelefono}"></td>
-                                <td th:text="${user.getEmail}"></td>
-                                <td>
-                                    <a role="button" th:href="@{/verPerfil/{ID}(ID=${user.getID})}">Ver</a>
-                                </td>
-                                <td>
-                                    <a th:href="@{/EliminarUsuario/{ID}(ID=${user.getID})}" th:text="#{accion.eliminar}"></a>
-                                </td>
-                            </tr>
-                        </th:block>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="d-flex justify-content-center">
-            <a class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"  role="button" th:href="@{/usuarioN/}" th:text="#{accion.nuevousuario}"></a>
-        </div>
-
-
         <div class="container mt-5">
             <th:block th:each="user : ${usuario}">
                 <div class="row justify-content-center ">
