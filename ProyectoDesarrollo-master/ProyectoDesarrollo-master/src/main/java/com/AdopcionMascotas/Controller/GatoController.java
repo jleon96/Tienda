@@ -64,7 +64,7 @@ public class GatoController {
             }
         }
         gatoService.saveGato(G);
-//        flash.addFlashAttribute("Gato creado con exito!");
+        flash.addFlashAttribute("success", "¡Gato editado o creado con exito!");
         return "redirect:/leergatos";
     }
 

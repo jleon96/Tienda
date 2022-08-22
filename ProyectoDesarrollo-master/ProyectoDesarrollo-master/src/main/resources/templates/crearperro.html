@@ -8,7 +8,11 @@
     <body>
         <header th:replace="plantilla/template::header"></header>
         <div class="Container">
-
+            <div class="alert alert-success alert-dismissible fade show" role="alert" th:if="${success != null}">
+                <label th:text="${success}"></label>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            
             <div class="card-header bg-white text-black"> 
                 <div class="container">
                     <form th:object ="${perros}"

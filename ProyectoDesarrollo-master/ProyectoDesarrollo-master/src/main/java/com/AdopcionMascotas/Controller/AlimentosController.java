@@ -65,8 +65,7 @@ public class AlimentosController {
             }
         }
         alimentosService.saveAlimentos(A);
-//        flash.addFlashAttribute("Alimento agregado con exito!");
-        flash.addFlashAttribute("success", "Alimento Creado o Editado con Exito! ");
+        flash.addFlashAttribute("success", "¡Alimento Creado o Editado con Exito! ");
         return "redirect:/leerAlimentos";
     }
 

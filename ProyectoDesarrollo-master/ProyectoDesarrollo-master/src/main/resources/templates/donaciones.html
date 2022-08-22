@@ -12,6 +12,11 @@
 
         <div class="container">
 
+            <div class="alert alert-success alert-dismissible fade show" role="alert" th:if="${success != null}">
+                <label th:text="${success}"></label>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
             <div class="contact_form">
                 <form th:object ="${donacion}"
                       th:action ="@{/saveD}"
@@ -32,15 +37,15 @@
                             <input type="text" th:field="*{monto}"class="form-control" id="monto" placeholder="Monto a donar">
                         </div>
                         <button name="" id="enviar" class="btn btn-dark btn-lg" type="submit"  th:text="#{accion.hacerdonacion}"</button>
-                        <div class="">
-                            <button class="btn btn-dark btn-group-sm " type="submit" th:text="#{accion.hacerdonacion}" ></button>
-                        </div>
-                </form>
-            </div>
-        </div>
+                            <div class="">
+                                <button class="btn btn-dark btn-group-sm " type="submit" th:text="#{accion.hacerdonacion}" ></button>
+                            </div>
+                            </form>
+                            </div>
+                            </div>
 
 
-        <footer th:replace="plantilla/template::footer">  
-        </footer>
-    </body>
-</html>
+                            <footer th:replace="plantilla/template::footer">  
+                            </footer>
+                            </body>
+                            </html>

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.AdopcionMascotas.Service;
 
 import com.AdopcionMascotas.Entity.Contacto;
@@ -11,10 +7,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author lyonc
- */
 @Service
 public class ContactoService implements IContactoService {
 
@@ -23,17 +15,17 @@ public class ContactoService implements IContactoService {
 
     @Override
     public List<Contacto> getAllContacto() {
-    return ( List<Contacto>) contactoRepository.findAll();
+        return (List<Contacto>) contactoRepository.findAll();
     }
 
     @Override
     public void saveContacto(Contacto C) {
-     contactoRepository.save(C);  
+        contactoRepository.save(C);
     }
 
     @Override
     public void EliminarContacto(long ID) {
-      contactoRepository.deleteById(ID);   
+        contactoRepository.deleteById(ID);
     }
 
     @Override
@@ -45,6 +37,5 @@ public class ContactoService implements IContactoService {
     public Contacto findByNombre(String nombre) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
 
 }
