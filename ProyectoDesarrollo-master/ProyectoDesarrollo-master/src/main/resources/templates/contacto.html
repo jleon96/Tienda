@@ -21,45 +21,51 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
             <!--1 Bootstrap 5 starter form -->
             <div style="background-color: white;">
-            <form id="contactForm"
-                  th:object="${contactoform}"
-                  th:action="@{/saveContact}"
-                  method="POST"
-                  enctype ="multipart/form-data"
-                  >
-                <input type="hidden" th:field="*{id}">
+                <form id="contactForm"
+                      th:object="${contactoform}"
+                      th:action="@{/saveContact}"
+                      method="POST"
+                      enctype ="multipart/form-data"
+                      >
+                    <input type="hidden" th:field="*{id}">
 
-                <!-- Name input -->
-                <div class="mb-3">
-                    <label class="form-label" for="name" th:text="#{cliente.nombre}"></label>
-                    <input class="form-control" id="name" type="text" th:placeholder="#{cliente.nombre}" th:field="*{nombre}" />
-                </div>
+                    <!-- Name input -->
+                    <div class="mb-3">
+                        <label class="form-label" for="name" th:text="#{cliente.nombre}"></label>
+                        <input class="form-control" id="name" type="text" th:placeholder="#{cliente.nombre}" th:field="*{nombre}" />
+                    </div>
 
-                <!-- Email address input -->
-                <div class="mb-3">
-                    <label class="form-label" for="emailAddress" th:text="#{cliente.correo}"></label>
-                    <input class="form-control" id="emailAddress" type="email" th:placeholder="#{cliente.correo}" th:field="*{correo}" />
-                </div>
-                <!-- Email address input -->
-                <div class="mb-3">
-                    <label class="form-label" for="emailAddress" th:text="#{cliente.telefono}"></label>
-                    <input class="form-control"  type="tel" th:placeholder="#{cliente.telefono}" th:field="*{telefono}" />
-                </div>
+                    <!-- Email address input -->
+                    <div class="mb-3">
+                        <label class="form-label" for="emailAddress" th:text="#{cliente.correo}"></label>
+                        <input class="form-control" id="emailAddress" type="email" th:placeholder="#{cliente.correo}" th:field="*{correo}" />
+                    </div>
+                    <!-- Email address input -->
+                    <div class="mb-3">
+                        <label class="form-label" for="emailAddress" th:text="#{cliente.telefono}"></label>
+                        <input class="form-control"  type="tel" th:placeholder="#{cliente.telefono}" th:field="*{telefono}" />
+                    </div>
 
-                <!-- Message input -->
-                <div class="mb-3">
-                    <label class="form-label" for="message" th:text="#{cliente.mensaje}"></label>
-                    <textarea class="form-control" id="message" type="text" th:placeholder="#{cliente.mensaje}" th:field="*{mensaje}" style="height: 10rem;"></textarea>
-                </div>
+                    <!-- Message input -->
+                    <div class="mb-3">
+                        <label class="form-label" for="message" th:text="#{cliente.mensaje}"></label>
+                        <textarea class="form-control" id="message" type="text" th:placeholder="#{cliente.mensaje}" th:field="*{mensaje}" style="height: 10rem;"></textarea>
+                    </div>
 
-                <!-- Form submit button -->
-                <div class="d-grid">
-                    <button class="btn btn-dark btn-lg" type="submit" th:placeholder="#{boton.enviar}">Enviar</button>
-                </div>
+                    <!-- Form submit button -->
+                    <div class="">
+                        <button class="btn btn-dark btn-group-sm " type="submit" th:text="#{boton.enviar}" ></button>
+                    </div>
 
-            </form>
+                </form>
             </div>
         </div>
-          <footer th:replace="plantilla/template2::footer"></footer>
+        <div class="mb-1"  style="text-align: center" >
+            <h2 th:text="#{contacto.ubicacion}"></h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d982.3045908099351!2d-84.12079739684864!3d9.998813346580238!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa9028c7685d15b0b!2sVeterinaria%20Drs.%20Arguedas%20y%20Cruz!5e0!3m2!1ses-419!2scr!4v1660782380668!5m2!1ses-419!2scr" 
+                    width="1550" height="650" style="border-radius: 5px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+        <footer  class="mt-5" th:replace="plantilla/template2::footer"></footer>
     </body>
 </html>

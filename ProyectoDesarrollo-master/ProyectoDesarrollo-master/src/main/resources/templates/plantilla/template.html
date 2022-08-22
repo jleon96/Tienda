@@ -67,12 +67,12 @@
 
                                     <li><a class="dropdown-item" th:href="@{/leerdonaciones/}" th:text="#{accion.verdonaciones}"></a></li>
                                     <li><a class="dropdown-item" th:href="@{/usuarioNI/}" th:text="#{accion.nuevousuario}"></a></li>
-                                    <li><a class="dropdown-item" th:href="@{/leerAlimentos}" th:text="#{accion.alimentoMascotas}" ></a></li>
-                                    <li><a class="dropdown-item" th:href="@{/leercomentaris}"> Comenttarios</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/leerAlimentos}" th:text="#{accion.alimentoMascotas}"></a></li>
+                                    <li><a class="dropdown-item" th:href="@{/leercomentarios}"> Comentarios</a></li>
                                     <li><a class="dropdown-item" th:href="@{/leergatos}" th:text="#{animal.gato}" ></a></li>
                                     <li><a class="dropdown-item" th:href="@{/leerperros}"th:text="#{animal.perro}"></a></li>
-                                    <li><a class="dropdown-item" th:href="@{/leerperrosU}" th:text="#{animal.perro}" ></a></li>
-                                    <li><a class="dropdown-item" th:href="@{/leergatosU}"th:text="#{accion.contactenos}"></a></li>
+                                    <li><a class="dropdown-item" th:href="@{/leerdonaciones}" th:text="#{donaciones.leer}" ></a></li>
+                   
 
                                 </ul>
                             </li>
@@ -87,7 +87,7 @@
             </nav>
             </div>
         </header>
-       <footer th:fragment="footer" class="">
+       <footer th:fragment="footer" class="mt-5 bg-dark fixed-bottom text-white text-lg-start">
             <div class="mb-0 bg-dark">
 
                 <div class="text-center p-3 text-white" style="background-color: rgba(0, 0, 0, 0.2)">

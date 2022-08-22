@@ -10,59 +10,84 @@
                 <link href="css/index.css" rel="stylesheet" type="text/css"/>
                 </head>
                 <body>
-                    <header>
-
-                        <nav class="navbar navbar-expand-lg navbar" style="background-color: red; ">
+                    <header th:fragment="header">
+                        <nav class="navbar navbar-expand-lg navbar" style="background-color: red;">
                             <div class="container-fluid">
-                                <a class=" navbar-brand"><h1><img src="images/Logo.png" width="50px" height="50px"></span>Adopta un Amigo</h1></a>
-                                <!--<a class="navbar-brand" href="#">Navbar</a>-->
+                                <a class="navbar-brand" href="index.html"><img src="images/Logo.png" width="50px" height="50px"></span>Adopcion Mascotas</a>
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav justify-content-end">
                                         <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                                            <a class="nav-link active" aria-current="page" href="/Index.html" th:text="#{accion.inicio}">Inicio</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/leerAlimentosU">Alimentos</a>
+                                            <a class="nav-link" href="#"></a>
                                         </li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Para ti</a>
-                                            <ul class="dropdown-menu">
-                                             
-                                                <li><a class="dropdown-item" href="acercaDe.html">Acerca del sitio web</a></li>
-                                                <li><hr class="dropdown-divider"></li>
-                                                <li><a class="dropdown-item" href="/crearcomentarioN">Realizar un comentario</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.usuarios}">
-                                                Usuarios
+                                            <a class="nav-link dropdown-toggle  active"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" > Alimentos
                                             </a>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="/leerusuarioU" >Usuarios</a></li>
-                                                <li><a class="dropdown-item" href="/usuarioNI" >Nuevo Usuario</a></li>
+                                                <li><a class="dropdown-item"  href="/leerAlimentosU" >Ver Alimentos</a></li>
 
                                             </ul>
 
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{animales.adopcion}">
-                                                    Animales en Adopcion
-                                                </a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="/leerperrosU" th:text="#{animal.perro}" >Perros</a></li>
-                                                    <li><a class="dropdown-item" href="/leergatosU" th:text="#{animal.gato}">Gatos</a></li>                                 
-                                                </ul>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link active" aria-current="page" href="/contactoN">Contactenos</a>
-                                            </li>
-                                    </ul>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Nuestros Usuarios
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="/leerusuarioU" >Ver Usuarios</a></li>
 
+                                            </ul>
+                                        </li>
+                                        
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >Donaciones
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="/donacionesN" th:text="#{accion.hacerdonacion}">Hacer Donacion</a></li>
+
+                                            </ul>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                                Animales en Adopcion
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" :href="/leerperrosU" th:text="#{animal.perro}" >Perros</a></li>
+                                                <li><a class="dropdown-item" :href="/leergatosU"th:text="#{animal.gato}">Gatos</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="/contactoN" th:text="#{accion.contactenos}">Contactos</a>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" > Funciones para Administrador
+                                            </a>
+                                            <ul class="dropdown-menu">
+
+                                                <li><a class="dropdown-item" href="/leerdonaciones" >Ver Donaciones</a></li>
+                                                <li><a class="dropdown-item" href="/usuarioNI" >Nuevo usuario</a></li>
+                                                <li><a class="dropdown-item" href="/leerAlimentos" >Alimentos</a></li>
+                                                <li><a class="dropdown-item" href="/leercomentaris">Comentarios</a></li>
+                                                <li><a class="dropdown-item" href="/leergatos"  ></a></li>
+                                                <li><a class="dropdown-item" href="/leerperros"></a></li>
+
+
+
+                                            </ul>
+                                        </li>
+
+                                    </ul>
                                 </div>
                             </div>
                         </nav>
+                        </div>
                     </header>
                     <div class="imagenes perro1">
                     </div>
@@ -85,14 +110,8 @@
                         <p>Sabemos que la adopcion de mascotas representa grandes beneficios para la sociedad. Es por eso que promovemos la adopcion responsable con distintas acciones como: <strong>donar alimento de primera calidad a refugios de animales, informar sobre los procesos de adopcion e impulsar campañas de adopcion.</strong>  </p>
                     </div>
 
-                    <div class="text">
-                        <p>Ubicacion de nuestras instalaciones:</p>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d982.3045908099351!2d-84.12079739684864!3d9.998813346580238!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa9028c7685d15b0b!2sVeterinaria%20Drs.%20Arguedas%20y%20Cruz!5e0!3m2!1ses-419!2scr!4v1660782380668!5m2!1ses-419!2scr" 
-                                width="1689" height="700" style="border-radius: 5px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-                    </div>
-                    <div>
-                    </div>
+
                     <footer  class="text-center text-white p-3" style="background-color:black;">
                         <div class="text-center text-white" style="background-color: black;">
                             © 2022 Copyright:
@@ -101,7 +120,7 @@
                         <!-- Copyright -->
                     </footer>
 
- 
+
                 </body>
 
                 </html>

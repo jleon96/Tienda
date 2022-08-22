@@ -66,7 +66,6 @@ public class UsuarioController {
 
         if (!imagen.isEmpty()) {
             String ruta = "C://temp//fotosU";
-
             try {
                 byte[] bytes = imagen.getBytes();
                 Path rutaAbsoluta = Paths.get(ruta + "//" + imagen.getOriginalFilename());
