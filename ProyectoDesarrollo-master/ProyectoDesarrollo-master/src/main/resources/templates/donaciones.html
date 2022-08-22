@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
-  <head th:replace="plantilla/template::head"></head>
-<body>
-     <header th:replace="plantilla/template::header"></header>
-    <div>
-        <div class="text">
-            <h1 th:text="#{accion.infodonaciones}"></h1>
-            <h2 th:text="#{accion.donaciongracias}"></h2>
+    <head th:replace="plantilla/template::head"></head>
+    <body>
+        <header th:replace="plantilla/template::header"></header>
+        <div>
+            <div class="text">
+                <h1 th:text="#{accion.infodonaciones}"></h1>
+                <h2 th:text="#{accion.donaciongracias}"></h2>
+            </div>
         </div>
-    </div>
 
-    <div>
+        <div class="container">
 
-        <div class="contact_form">
-            <form th:object ="${donacion}"
-                  th:action ="@{/saveD}"
-                  method="POST" 
-                  >
-                <input type="hidden" th:field="*{id}">
+            <div class="contact_form">
+                <form th:object ="${donacion}"
+                      th:action ="@{/saveD}"
+                      method="POST" 
+                      >
+                    <input type="hidden" th:field="*{id}">
 
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label" th:text="#{donacion.numtarjeta}" ></label>
-                        <input type="text" th:field="*{numero}" class="form-control" id="numero" placeholder="Numero de tarjeta">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label" th:text="#{donacion.codigo}"></label>
-                        <input type="text" th:field="*{codigo}" class="form-control" id="codigo" placeholder="Codigo de seguridad">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label" th:text="#{donacion.monto}"></label>
-                        <input type="text" th:field="*{monto}"class="form-control" id="monto" placeholder="Monto a donar">
-                    </div>
-                    <button name="Inicio" id="enviar"><p class="btn btn-dark btn-lg" type="submit"  th:text="#{accion.hacerdonacion}"></p></button>
-            </form>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" th:text="#{donacion.numtarjeta}" ></label>
+                            <input type="text" th:field="*{numero}" class="form-control" id="numero" placeholder="Numero de tarjeta">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" th:text="#{donacion.codigo}"></label>
+                            <input type="password" th:field="*{codigo}" class="form-control" id="codigo" placeholder="Codigo de seguridad">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" th:text="#{donacion.monto}"></label>
+                            <input type="text" th:field="*{monto}"class="form-control" id="monto" placeholder="Monto a donar">
+                        </div>
+                        <button name="" id="enviar" class="btn btn-dark btn-lg" type="submit"  th:text="#{accion.hacerdonacion}"</button>
+                        <div class="">
+                            <button class="btn btn-dark btn-group-sm " type="submit" th:text="#{accion.hacerdonacion}" ></button>
+                        </div>
+                </form>
+            </div>
         </div>
-    </div>
 
 
-    <footer th:replace="plantilla/template::footer">  
-    </footer>
-</body>
+        <footer th:replace="plantilla/template::footer">  
+        </footer>
+    </body>
 </html>
