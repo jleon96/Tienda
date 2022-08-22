@@ -26,26 +26,26 @@
 
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" th:text="#{donacion.numtarjeta}" ></label>
-                            <input type="text" th:field="*{numero}" class="form-control" id="numero" placeholder="Numero de tarjeta">
+                            <input type="text" th:field="*{numero}" class="form-control" id="numero" required="obligatorio" placeholder="Numero de tarjeta">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" th:text="#{donacion.codigo}"></label>
-                            <input type="password" th:field="*{codigo}" class="form-control" id="codigo" placeholder="Codigo de seguridad">
+                            <input type="password" th:field="*{codigo}" class="form-control" id="codigo" required="obligatorio"  placeholder="Codigo de seguridad">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" th:text="#{donacion.monto}"></label>
-                            <input type="text" th:field="*{monto}"class="form-control" id="monto" placeholder="Monto a donar">
+                            <input type="text" th:field="*{monto}"class="form-control" id="monto" required="obligatorio" placeholder="Monto a donar">
                         </div>
-                        <button name="" id="enviar" class="btn btn-dark btn-lg" type="submit"  th:text="#{accion.hacerdonacion}"</button>
-                            <div class="">
-                                <button class="btn btn-dark btn-group-sm " type="submit" th:text="#{accion.hacerdonacion}" ></button>
-                            </div>
-                            </form>
-                            </div>
-                            </div>
+
+                        <div class="">
+                            <button class="btn btn-dark btn-group-sm " type="submit" th:text="#{accion.hacerdonacion}" ></button>
+                        </div>
+                </form>
+            </div>
+        </div>
 
 
-                            <footer th:replace="plantilla/template::footer">  
-                            </footer>
-                            </body>
-                            </html>
+        <footer th:replace="plantilla/template::footer">  
+        </footer>
+    </body>
+</html>

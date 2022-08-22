@@ -86,6 +86,12 @@ public class PerroController {
         perroService.EliminarPerro(P.getID());
         return "redirect:/leerperros";
     }
+    
+    @GetMapping("/EliminarPerroS/{ID}")
+    public String EliminarPerroS (Perro P) {
+        perroService.EliminarPerro(P.getID());
+        return "redirect:/leerperrosU";
+    }
 
     @Autowired
     private PerroReportService PReportService;

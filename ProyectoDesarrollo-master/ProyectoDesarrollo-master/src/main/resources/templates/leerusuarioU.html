@@ -17,8 +17,7 @@
                                     <h3 class="card-title" th:text="${user.getNombre}"></h3>
                                     <h4 th:text="${user.getApellido1}"></h4>
                                     <p th:text="${user.getApellido2}"></p>
-                                    <a th:href="@{/EditarUsuario/{ID}(ID=${user.getID})}" th:text="#{accion.editar}" class="btn btn-dark">Editar</a>
-                                    <a th:href="@{/EliminarUsuario/{ID}(ID=${user.getID})}" th:text="#{accion.eliminar}"class="btn btn-dark">Editar</a>
+
                             </div>
                         </div>
                     </div>

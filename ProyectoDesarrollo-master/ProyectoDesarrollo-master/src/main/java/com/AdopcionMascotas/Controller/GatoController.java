@@ -76,9 +76,16 @@ public class GatoController {
     }
 
     @GetMapping("/EliminarGato/{ID}")
-    public String EliminarGato(Gato G) {
+    public String EliminarGato(Gato G, RedirectAttributes flash) {
         gatoService.EliminarGato(G.getID());
+        flash.addFlashAttribute("success", "¡Gato eliminado con exito!");
         return "redirect:/leergatos";
+    }
+
+    @GetMapping("/EliminarGatos/{ID}")
+    public String EliminarGatoS(Gato G) {
+        gatoService.EliminarGato(G.getID());
+        return "redirect:/leergatosU";
     }
 
     @Autowired

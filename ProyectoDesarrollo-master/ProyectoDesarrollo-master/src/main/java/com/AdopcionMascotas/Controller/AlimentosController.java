@@ -77,9 +77,10 @@ public class AlimentosController {
     }
 
     @GetMapping("/EliminarAlimento/{id}")
-    public String EliminarAlimento(Alimentos A) {
+    public String EliminarAlimento(Alimentos A, RedirectAttributes flash) {
         alimentosService.EliminarAlimentos(A.getId());
-        return "redirect:/leerAlimentos";
+        flash.addFlashAttribute("info", "¡Alimento comprado con exito!");
+        return "redirect:/leerAlimentosU";
     }
 
     @Autowired

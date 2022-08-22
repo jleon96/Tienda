@@ -20,7 +20,7 @@
                                     <h3 class="card-title" th:text="${user.getNombre}"></h3>
                                     <h4 th:text="${user.getRaza}"></h4>
                                     <p th:text="${user.getDescripcion}"></p>
-                                    <a th:href="@{/EliminarPerro/{ID}(ID=${user.getID})}" class="btn btn-dark">Adoptar</a>
+                                    <a th:href="@{/EliminarPerroS/{ID}(ID=${user.getID})}" class="btn btn-dark">Adoptar</a>
                             </div>
                         </div>
                     </div>

@@ -64,8 +64,8 @@
             </table>
         </div>
 
-        <section class="py-4 mb-4 bg-light">
-            <div class="container">
+        <section class="py-4 mb-4">
+            <div class="container" style="background-color: white">
                 <div class="row">
                     <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
                         <a sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.reportecomentarios}" th:href="@{/leercomentarios/Comentarios}"

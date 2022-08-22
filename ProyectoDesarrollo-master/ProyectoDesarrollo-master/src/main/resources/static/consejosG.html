@@ -49,13 +49,29 @@
                                             </ul>
                                         </li>
 
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="/leercomentarios" > Comentarios</a>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                                Consejos
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="consejos.html" >Consejos Para Perros</a></li>
+                                                <li><a class="dropdown-item" href="consejosG.html">Consejos Para Gatos</a></li>
+
+                                            </ul>
+                                        </li>
+
+
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                                                 Animales en Adopcion
                                             </a>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" :href="/leerperrosU" th:text="#{animal.perro}" >Perros</a></li>
-                                                <li><a class="dropdown-item" :href="/leergatosU"th:text="#{animal.gato}">Gatos</a></li>
+                                                <li><a class="dropdown-item" href="/leerperrosU" >Perros</a></li>
+                                                <li><a class="dropdown-item" href="/leergatosU">Gatos</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item">
@@ -68,7 +84,6 @@
                                                 <li><a class="dropdown-item" href="/leerdonaciones" >Ver Donaciones</a></li>
                                                 <li><a class="dropdown-item" href="/usuarioNI" >Nuevo usuario</a></li>
                                                 <li><a class="dropdown-item" href="/leerAlimentos" >Alimentos</a></li>
-                                                <li><a class="dropdown-item" href="/leercomentaris">Comentarios</a></li>
                                                 <li><a class="dropdown-item" href="/leergatos"  ></a></li>
                                                 <li><a class="dropdown-item" href="/leerperros"></a></li>
                                             </ul>
@@ -131,8 +146,8 @@
                             </div>
                         </div>
                     </div>
-                    </div>
-                    </div>
+
+
                     <footer  class="text-center text-white p-3" style="background-color:red;">
                         <div class="text-center text-white" style="background-color: red;">
                             © 2022 Copyright:

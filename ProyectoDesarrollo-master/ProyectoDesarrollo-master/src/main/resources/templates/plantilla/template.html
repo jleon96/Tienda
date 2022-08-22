@@ -38,7 +38,7 @@
                                 <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.usuarios}">
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" th:href="@{/leerusuarioU/}" th:text="#{accion.leerusuarios}"></a></li>
+                                    <li><a class="dropdown-item" th:href="@{/leerusuarioU}" th:text="#{accion.leerusuarios}"></a></li>
                                 </ul>
                             </li>
 
@@ -46,8 +46,22 @@
                                 <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.donaciones}">
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" th:href="@{/donacionesN/}" th:text="#{accion.hacerdonacion}"></a></li>
+                                    <li><a class="dropdown-item" th:href="@{/donacionesN}" th:text="#{accion.hacerdonacion}"></a></li>
                                 </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                    Consejos
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="consejos.html" >Consejos Para Perros</a></li>
+                                    <li><a class="dropdown-item" href="consejosG.html">Consejos Para Gatos</a></li>
+
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/leercomentarios" > Comentarios</a>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -67,10 +81,8 @@
                                 <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.administrador}">
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" th:href="@{/leerdonaciones/}" th:text="#{accion.verdonaciones}"></a></li>
-                                    <li><a class="dropdown-item" th:href="@{/usuarioNI/}" th:text="#{accion.nuevousuario}"></a></li>
+                                    <li><a class="dropdown-item" th:href="@{/leerusuarios}" th:text="#{accion.usuarios}"></a></li>
                                     <li><a class="dropdown-item" th:href="@{/leerAlimentos}" th:text="#{accion.alimentoMascotas}"></a></li>
-                                    <li><a class="dropdown-item" th:href="@{/leercomentarios}"> Comentarios</a></li>
                                     <li><a class="dropdown-item" th:href="@{/leergatos}" th:text="#{animal.gato}" ></a></li>
                                     <li><a class="dropdown-item" th:href="@{/leerperros}"th:text="#{animal.perro}"></a></li>
                                     <li><a class="dropdown-item" th:href="@{/leerdonaciones}" th:text="#{donaciones.leer}" ></a></li>

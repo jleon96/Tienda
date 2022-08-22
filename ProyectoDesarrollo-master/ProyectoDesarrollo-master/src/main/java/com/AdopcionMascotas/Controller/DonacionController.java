@@ -44,7 +44,7 @@ public class DonacionController {
         donacionService.saveDonacion(D);
         flash.addFlashAttribute("success", "Manos que dan nunca estaran vacias");
 
-        return "donacionesN";
+        return "redirect:/donacionesN";
     }
 
     @Autowired

@@ -60,9 +60,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/leerusuarios","/leerusuarioU", "/usuarioNI", "/login", "/leergatos", "/leerperros", "/creargato", "/creargatoN", "/crearperro", "/crearperroN","/index.html", "/leerdonaciones")
+                .antMatchers("/leerusuarios","/leerusuarioU", "/usuarioNI", "/login", "/leergatos", "/leerperros", "/creargato", "/creargatoN", "/crearperro", "/crearperroN","/index.html", "/leerdonaciones","/leerAlimentos")
                 .hasRole("ADMIN")
-                .antMatchers("/leercomentarios","/leerusuarioU",  "/index2", "/leergatosU", "/login", "/donaciones", "/alimentos.html", "/acercaDe.html", "/gatos.html", "/perros.html", "/index.html", "/donacionesN", "/leergatos")
+                .antMatchers("/leercomentarios","/leerusuarioU",  "/index2", "/leergatosU", "/login", "/donaciones", "/alimentos.html", "/acercaDe.html", "/gatos.html", "/perros.html", "/index.html", "/donacionesN")
                 .hasAnyRole("USER", "ADMIN")
                 .anyRequest().authenticated()
                 .and()

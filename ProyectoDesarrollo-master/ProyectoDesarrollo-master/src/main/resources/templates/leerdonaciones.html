@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html  xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
     <head th:replace="plantilla/template::head"></head>
-    
+
     <body>
         <header th:replace="plantilla/template::header"></header>
-        
-        
+
+
         <div class="descripcion" align-items="center">
             <h1>Informacion de donaciones realizadas</h1>
         </div>
@@ -31,7 +31,7 @@
                 </tbody>
             </table>
         </div>
-         <section class="py-4 mb-4 bg-light">
+        <section class="py-4 mb-4">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
@@ -43,7 +43,7 @@
             </div>
         </section>
 
-       <footer th:replace="plantilla/template2::footer"></footer>
+        <footer th:replace="plantilla/template2::footer"></footer>
     </body>
 </html>
 
