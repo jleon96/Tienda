@@ -25,25 +25,28 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#"></a>
                             </li>
-                            <li class="nav-item ">
-                                <a class="nav-link  active"  th:href="@{/leerAlimentos}" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.alimentoMascotas}">
-                                </a>
 
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle  active"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" > Alimentos
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item"  href="/leerAlimentosU" th:text="#{accion.alimentoMascotas}"></a></li>
+                                </ul>
                             </li>
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.usuarios}">
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" th:href="@{/leerusuarioU/}" th:text="#{accion.leerusuarios}"></a></li>
-
                                 </ul>
                             </li>
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.donaciones}">
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" th:href="@{/donacionesN/}" th:text="#{accion.hacerdonacion}"></a></li>
-
                                 </ul>
                             </li>
 
@@ -53,9 +56,9 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" th:href="@{/leerperrosU}" th:text="#{animal.perro}" ></a></li>
                                     <li><a class="dropdown-item" th:href="@{/leergatosU}"th:text="#{animal.gato}"></a></li>
-
                                 </ul>
                             </li>
+
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" th:href="@{/contactoN}" th:text="#{accion.contactenos}"></a>
                             </li>
@@ -64,7 +67,6 @@
                                 <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.administrador}">
                                 </a>
                                 <ul class="dropdown-menu">
-
                                     <li><a class="dropdown-item" th:href="@{/leerdonaciones/}" th:text="#{accion.verdonaciones}"></a></li>
                                     <li><a class="dropdown-item" th:href="@{/usuarioNI/}" th:text="#{accion.nuevousuario}"></a></li>
                                     <li><a class="dropdown-item" th:href="@{/leerAlimentos}" th:text="#{accion.alimentoMascotas}"></a></li>
@@ -72,11 +74,8 @@
                                     <li><a class="dropdown-item" th:href="@{/leergatos}" th:text="#{animal.gato}" ></a></li>
                                     <li><a class="dropdown-item" th:href="@{/leerperros}"th:text="#{animal.perro}"></a></li>
                                     <li><a class="dropdown-item" th:href="@{/leerdonaciones}" th:text="#{donaciones.leer}" ></a></li>
-                   
-
                                 </ul>
                             </li>
-
                         </ul>
 
                         <form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/logout}">
@@ -85,9 +84,9 @@
                     </div>
                 </div>
             </nav>
-            </div>
+
         </header>
-       <footer th:fragment="footer" class="mt-5 bg-dark fixed-bottom text-white text-lg-start">
+        <footer th:fragment="footer" class="mt-5 bg-dark fixed-bottom text-white text-lg-start">
             <div class="mb-0 bg-dark">
 
                 <div class="text-center p-3 text-white" style="background-color: rgba(0, 0, 0, 0.2)">
