@@ -50,18 +50,17 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                                    Consejos
+                                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.consejo}">
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="consejos.html" >Consejos Para Perros</a></li>
-                                    <li><a class="dropdown-item" href="consejosG.html">Consejos Para Gatos</a></li>
+                                    <li><a class="dropdown-item" href="consejos.html" th:text="#{accion.consejop}"></a></li>
+                                    <li><a class="dropdown-item" href="consejosG.html" th:text="#{accion.consejog}"></a></li>
 
                                 </ul>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/leercomentarios" > Comentarios</a>
+                                <a class="nav-link active" aria-current="page" href="/leercomentarios" th:text="#{accion.comentario}"></a>
                             </li>
 
                             <li class="nav-item dropdown">
