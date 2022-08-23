@@ -6,11 +6,11 @@
     <body>
         <header th:replace="plantilla/template::header"></header>
         <div class="descripcion" align-items="center">
-            <h1>Informacion de alimentos disponibles</h1>
+            <h1 style="text-align: center" th:text="#{alimentos.disponibles}"></h1>
         </div>
 
         <div class="container">
-            <h2 th:text="${titulo}"></h2>
+            <h2 th:text="#{alimento.lista}"  style="text-align: center"></h2>
 
             <div class="alert alert-success alert-dismissible fade show" th:if="${success != null}" role="alert">
                  <label th:text="${success}"></label>
@@ -20,13 +20,13 @@
             <table class="table table-dark table-striped"> 
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Tipo</th>
-                        <th scope="col">Edad</th>
-                        <th scope="col">Peso</th>
-                        <th scope="col">Descripción</th>
-                        <th scope="col">Editar </th>
-                        <th scope="col">Eliminar </th>
+                        <th scope="col" th:text="#{alimento.nombre}"></th>
+                        <th scope="col" th:text="#{alimento.tipo}"></th>
+                        <th scope="col" th:text="#{alimento.edad}"></th>
+                        <th scope="col" th:text="#{alimento.peso}"></th>
+                        <th scope="col" th:text="#{alimento.descripcionS}"></th>
+                        <th scope="col" th:text="#{accion.editar}"> </th>
+                        <th scope="col" th:text="#{accion.eliminar}"> </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,10 +38,10 @@
                         <td th:text="${user.getPeso}"></td>
                         <td th:text="${user.getDescripcion}"></td>
                         <td>
-                            <a th:href="@{/EditarAlimento/{Id}(Id=${user.getId})}">Editar</a>
+                            <a th:href="@{/EditarAlimento/{Id}(Id=${user.getId})}" th:text="#{accion.editar}"></a>
                         </td>
                         <td>
-                            <a th:href="@{/EliminarAlimento/{Id}(Id=${user.getId})}">Eliminar</a>
+                            <a th:href="@{/EliminarAlimento/{Id}(Id=${user.getId})}" th:text="#{accion.eliminar}"></a>
                         </td>
                     </tr>
                 </th:block>
@@ -65,8 +65,8 @@
                                 <p th:text="${user.getEdad}"></p>
                                 <p th:text="${user.getPeso}"></p>
                                 <p th:text="${user.getDescripcion}"></p>                             
-                                <a th:href="@{/EditarAlimento/{id}(id=${user.getId})}" class="btn btn-dark">Editar</a>
-                                <a th:href="@{/EliminarAlimentoA/{id}(id=${user.getId})}" class="btn btn-dark">Eliminar</a>
+                                <a th:href="@{/EditarAlimento/{id}(id=${user.getId})}" class="btn btn-dark" th:text="#{accion.editar}">Editar</a>
+                                <a th:href="@{/EliminarAlimentoA/{id}(id=${user.getId})}" class="btn btn-dark" th:text="#{accion.eliminar}">Eliminar</a>
                             </div>
                         </div>
                     </div>

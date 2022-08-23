@@ -6,25 +6,25 @@
     <body>
         <header th:replace="plantilla/template::header"></header>
         <div class="descripcion" align-items="center">
-            <h1>Informacion de gatos disponibles</h1>
+            <h1 style="text-align: center" th:text="#{gato.titulo}"></h1>
         </div>
         <div class="container">
             <div class="alert alert-success alert-dismissible fade show" role="alert" th:if="${success != null}">
                 <label th:text="${success}"></label>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <h2 th:text="${titulo}"></h2>
+            <h2 th:text="#{gato.lista}" style="text-align: center"></h2>
             <table class="table table-dark table-striped"> 
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col" th:text="#{cliente.nombre}">Nombre</th>
-                        <th scope="col">Raza</th>
-                        <th scope="col">Género</th>
-                        <th scope="col">Edad</th>
-                        <th scope="col">Estado</th>
-                        <th scope="col">Descripción</th>
-                        <th scope="col"  th:text="#{accion.editar}"> </th>
-                        <th scope="col"th:text="#{accion.eliminar}"> </th>
+                        <th scope="col" th:text="#{perro.nombre}"></th>
+                        <th scope="col" th:text="#{gato.raza}"></th>
+                        <th scope="col" th:text="#{perro.genero}"></th>
+                        <th scope="col" th:text="#{perro.edad}"></th>
+                        <th scope="col" th:text="#{perro.estado}"></th>
+                        <th scope="col" th:text="#{perro.descripcion}"></th>
+                        <th scope="col" th:text="#{accion.editar}" > </th>
+                        <th scope="col"  th:text="#{accion.eliminar}"> </th>
                     </tr>
                 </thead>
                 <tbody>
