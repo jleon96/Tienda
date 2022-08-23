@@ -8,8 +8,12 @@
             <h1 th:text="#{perro.info}"></h1>
         </div>
 
-        
+
         <div class="container mt-5">
+            <div class="alert alert-success alert-dismissible fade show" role="alert" th:if="${success != null}">
+                <label th:text="${success}"></label>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
             <th:block th:each="user : ${perros}">
                 <div class="row justify-content-center ">
                     <div class="card" style="width: 30rem; margin: 3rem 3rem 3rem 3rem;">

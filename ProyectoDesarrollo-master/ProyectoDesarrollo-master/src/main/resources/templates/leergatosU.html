@@ -7,10 +7,10 @@
         <div class="descripcion" align-items="center">
             <h1 th:text="#{gato.info}"></h1>
         </div>
-        
+
         <div class="container mt-5">
-            <div class="alert alert-info alert-dismissible fade show" role="alert" th:if="${info != null}">
-                <label th:text="${info}"></label>
+            <div class="alert alert-success alert-dismissible fade show" role="alert" th:if="${success != null}">
+                <label th:text="${success}"></label>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <th:block th:each="user : ${gatos}">

@@ -82,14 +82,16 @@ public class PerroController {
     }
 
     @GetMapping("/EliminarPerro/{ID}")
-    public String EliminarPerro(Perro P) {
+    public String EliminarPerro(Perro P, RedirectAttributes flash) {
         perroService.EliminarPerro(P.getID());
+        flash.addFlashAttribute("success", "¡Perro eliminado con exito!");
         return "redirect:/leerperros";
     }
-    
+
     @GetMapping("/EliminarPerroS/{ID}")
-    public String EliminarPerroS (Perro P) {
+    public String EliminarPerroS(Perro P, RedirectAttributes flash) {
         perroService.EliminarPerro(P.getID());
+        flash.addFlashAttribute("success", "¡Perro adoptado con exito!");
         return "redirect:/leerperrosU";
     }
 

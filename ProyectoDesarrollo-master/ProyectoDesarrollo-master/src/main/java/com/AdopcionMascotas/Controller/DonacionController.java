@@ -42,7 +42,7 @@ public class DonacionController {
     @PostMapping("/saveD")
     public String GuardarDonacion(@ModelAttribute Donacion D,RedirectAttributes flash) {
         donacionService.saveDonacion(D);
-        flash.addFlashAttribute("success", "Manos que dan nunca estaran vacias");
+        flash.addFlashAttribute("success", "¡Manos que dan nunca estaran vacias,gracias!");
 
         return "redirect:/donacionesN";
     }
