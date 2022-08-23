@@ -85,6 +85,7 @@ public class UsuarioController {
         }
 
         usuarioService.saveUsuario(U);
+        flash.addFlashAttribute("success", "Usuario Creado Con Exito, por favor inicia sesion con tu usuario y clave!");
         return "redirect:/login";
     }
 
@@ -121,7 +122,7 @@ public class UsuarioController {
         }
 
         usuarioService.saveUsuario(U);
-        flash.addFlashAttribute("success", "Usuario Creado Con Exito!");
+        flash.addFlashAttribute("success", "Usuario Creadoo Editado Con Exito!");
         return "redirect:/leerusuarios";
     }
 

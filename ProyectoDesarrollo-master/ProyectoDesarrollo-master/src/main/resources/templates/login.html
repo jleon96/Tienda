@@ -5,8 +5,13 @@
     <body>
         <header th:replace="plantilla/template2::header"></header>
         <div class="content">
+
             <div style="width: 600px; margin-left: auto; margin-right: auto; margin-top: 24px; padding: 24px;">
                 <div class="card">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert" th:if="${success != null}">
+                        <label th:text="${success}"></label>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                     <div class="card-header"><i class="fa fa-user" th:text="#{login.iniciarsesion}"></i></div>
                     <div class="card-block" style="padding: 24px;">
                         <form name="f" th:action="@{/login}" method="post" >
@@ -21,7 +26,7 @@
                                     <strong><label th:text="#{login.label}"></label></strong>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                     <strong><a th:href="@{usuarioN}" th:text="#{login.creaU}"></a> </strong>
+                                    <strong><a th:href="@{usuarioN}" th:text="#{login.creaU}"></a> </strong>
                                 </div>
                                 </div>
                                 <!--  <a class="btn btn-dark btn-block btn-lg gradient-custom-4" role="button" href="usuarioN" th:text="#{login.crear}"></a>-->

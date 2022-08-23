@@ -2,18 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
     <head th:replace="plantilla/template::head">
     </head>
-    <body>
+    <body style="display: grid; min-height: 100vh; grid-template-rows: auto 1fr auto;">
 
         <header th:replace="plantilla/template::header"></header>
         <div class="fondopagina">
-            <div class="descripcion" align-content="center">
+            <div class="descripcion"  style="text-align: center;" >
                 <h1 th:text="#{leerusuario.titulo}"></h1>
             </div>
 
 
 
-            <div class="container">
-                <h1 th:text="#{leerusuarios.lista}"></h1>
+            <div class="container"  style="text-align: center;">
+                <h2 th:text="#{leerusuarios.lista}"></h2>
 
                 <div class="alert alert-success alert-dismissible fade show" role="alert" th:if="${success != null}">
                     <label th:text="${success}"></label>

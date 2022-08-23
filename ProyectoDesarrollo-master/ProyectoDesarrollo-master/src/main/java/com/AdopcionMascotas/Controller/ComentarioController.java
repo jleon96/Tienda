@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class ComentarioController {
@@ -33,22 +34,32 @@ public class ComentarioController {
         return "leercomentarios";
     }
 
+    @GetMapping("/comentariosLista")
+    public String comentarosLista(Model model) {
+        List<Comentario> listaComentario = ICS.getAllComentario();
+        model.addAttribute("titulo", "Lista de Comentarios");
+        model.addAttribute("comentario", listaComentario);
+        return "comentariosLista";
+    }
+
     @GetMapping("crearcomentarioN")
-    public String CrearComentario(Model model) {
+    public String CrearComentario(Model model
+    ) {
         model.addAttribute("comentarioN", new Comentario());
         return "leercomentarios";
     }
 
     @PostMapping("/saveC")
-    public String GuardarComentario(@ModelAttribute Comentario C) {
+    public String GuardarComentario(@ModelAttribute Comentario C, RedirectAttributes flash) {
         ICS.saveComentario(C);
+        flash.addFlashAttribute("success", "Hemos agredado tu comentario exitosamente!");
         return "redirect:/leercomentarios";
     }
 
     @GetMapping("/EliminarComentario/{ID}")
     public String EliminarComentario(Comentario C) {
         ICS.EliminarComentario(C.getID());
-        return "redirect:/leercomentarios";
+        return "redirect:/comentariosLista";
     }
 
     @Autowired

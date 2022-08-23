@@ -2,10 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head th:replace="plantilla/template::head">
     </head>
-    <body>
+    <body style="display: flex; flex-direction: column; min-height: 100vh;">
         <header th:replace="plantilla/template::header"></header>
         <div class="descripcion" align-items="center">
-            <h1 th:text="#{gato.info}"></h1>
+            <h1 style="text-align: center;" th:text="#{gato.info}"></h1>
         </div>
 
         <div class="container mt-5">
@@ -24,7 +24,7 @@
                                 <h3 class="card-title" th:text="${user.getNombre}"></h3>
                                 <h4 th:text="${user.getRaza}"></h4>
                                 <p th:text="${user.getDescripcion}"></p>                 
-                                <a th:href="@{/EliminarGatos/{ID}(ID=${user.getID})}" class="btn btn-dark">Adoptar</a>
+                                <a th:href="@{/EliminarGatos/{ID}(ID=${user.getID})}" class="btn btn-dark" th:text="#{accion.adoptar}"></a>
                             </div>
                         </div>
                     </div>

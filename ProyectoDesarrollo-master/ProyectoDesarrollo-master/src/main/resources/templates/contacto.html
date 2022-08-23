@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
 <html>
     <head th:replace="plantilla/template::head"></head>
 
 
-    <body>
+    <body style="display: flex; flex-direction: column; min-height: 100vh;">
         <header th:replace="plantilla/template::header"></header>
         <div>
             <h1 style="text-align: center" th:text="#{accion.contactoTitulo}"></h1>
@@ -66,6 +62,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     width="1550" height="650" style="border-radius: 5px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         </div>
-        <footer  class="mt-5" th:replace="plantilla/template2::footer"></footer>
+        <footer  class="mt-5" th:replace="plantilla/template::footer"></footer>
     </body>
 </html>

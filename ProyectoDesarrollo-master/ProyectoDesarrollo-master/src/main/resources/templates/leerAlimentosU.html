@@ -5,7 +5,7 @@
     </head>
     <body>
         <header th:replace="plantilla/template::header"></header>
-        <div class="descripcion" align-items="center">
+        <div class="descripcion" style="text-align: center;">
             <h1 th:text="#{alimento.titulo}"></h1>
             <h2 th:text="#{alimento.descripcion}"></h2>
         </div>    
@@ -29,7 +29,7 @@
                                     <h4 th:text="${user.getEdad}"></h4>
                                     <h4 th:text="${user.getPeso}"></h4>
                                     <h4 th:text="${user.getDescripcion}"></h4>
-                                    <a th:href="@{/EliminarAlimento/{id}(id=${user.getId})}" class="btn btn-dark">Comprar</a>
+                                    <a th:href="@{/EliminarAlimento/{id}(id=${user.getId})}" class="btn btn-dark" th:text="#{accion.comprarAlimento}">Comprar</a>
                             </div>
                         </div>
                     </div>

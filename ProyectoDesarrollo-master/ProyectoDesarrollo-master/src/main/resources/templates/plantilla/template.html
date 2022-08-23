@@ -80,11 +80,12 @@
                                 <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{accion.administrador}">
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" th:href="@{/leerusuarios}" th:text="#{accion.usuarios}"></a></li>
+                                    <li><a class="dropdown-item" th:href="@{/leerusuarios}" th:text="#{accion.manejodeUsuarios}"></a></li>
                                     <li><a class="dropdown-item" th:href="@{/leerAlimentos}" th:text="#{accion.alimentoMascotas}"></a></li>
                                     <li><a class="dropdown-item" th:href="@{/leergatos}" th:text="#{animal.gato}" ></a></li>
                                     <li><a class="dropdown-item" th:href="@{/leerperros}"th:text="#{animal.perro}"></a></li>
                                     <li><a class="dropdown-item" th:href="@{/leerdonaciones}" th:text="#{donaciones.leer}" ></a></li>
+                                    <li><a class="dropdown-item" th:href="@{/comentariosLista}"   th:text="#{accion.comentariosmanejo}"></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -97,7 +98,7 @@
             </nav>
 
         </header>
-        <footer th:fragment="footer" class="mt-5 bg-dark fixed-bottom text-white text-lg-start">
+        <footer th:fragment="footer" class="mt-5 bg-dark fixed-bottom text-white text-lg-start" style="position: relative;">
             <div class="mb-0 bg-dark">
 
                 <div class="text-center p-3 text-white" style="background-color: rgba(0, 0, 0, 0.2)">
